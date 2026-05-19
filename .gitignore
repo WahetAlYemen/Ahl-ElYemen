@@ -1,0 +1,12 @@
+# Memory / internal tools
+memory/
+CLAUDE.md
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+*.swp

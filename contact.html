@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تواصل معنا | مطعم أهل اليمن</title>
+  <meta name="description" content="تواصل مع مطعم أهل اليمن – أرقام الهاتف، البريد الإلكتروني، وسائل التواصل الاجتماعي، والعنوان في الدقي، الجيزة.">
+  <link rel="icon" type="image/jpeg" href="photos/شعار.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ── Contact Hero ── */
+    .contact-hero {
+      position: relative;
+      padding: 140px 0 80px;
+      text-align: center;
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 45%, #4a1428 100%);
+    }
+    .contact-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 40% at 20% 50%, rgba(201,168,76,0.08) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 60% at 80% 30%, rgba(139,31,60,0.12) 0%, transparent 70%),
+        repeating-linear-gradient(60deg, transparent, transparent 50px, rgba(201,168,76,0.025) 50px, rgba(201,168,76,0.025) 51px);
+    }
+    .contact-hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 80px;
+      background: linear-gradient(to bottom, transparent, var(--cream));
+      pointer-events: none;
+    }
+    .contact-hero-content { position: relative; z-index: 1; }
+    .contact-hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 18px;
+      border: 1px solid rgba(201,168,76,0.35);
+      border-radius: 50px;
+      background: rgba(201,168,76,0.08);
+      color: var(--gold);
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      margin-bottom: 24px;
+      backdrop-filter: blur(8px);
+    }
+    .contact-hero h1 {
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 14px;
+      line-height: 1.2;
+    }
+    .contact-hero h1 span { color: var(--gold); }
+    .contact-hero p {
+      color: rgba(255,255,255,0.65);
+      font-size: 1.1rem;
+      max-width: 500px;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
+    .contact-hero-ornament {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 32px;
+    }
+    .contact-hero-ornament-line {
+      width: 60px;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(201,168,76,0.5));
+    }
+    .contact-hero-ornament-line:first-child {
+      background: linear-gradient(to left, transparent, rgba(201,168,76,0.5));
+    }
+    .contact-hero-ornament svg {
+      width: 22px;
+      height: 22px;
+      color: rgba(201,168,76,0.6);
+    }
+
+    /* ── Main Layout ── */
+    .contact-body {
+      background: var(--cream);
+      padding: 80px 0 120px;
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      align-items: start;
+    }
+    @media (max-width: 900px) {
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ── Cards ── */
+    .contact-card {
+      background: var(--white);
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 24px rgba(26,43,84,0.07);
+      overflow: hidden;
+    }
+    .contact-card-head {
+      padding: 28px 28px 20px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .contact-card-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .contact-card-icon.gold {
+      background: linear-gradient(135deg, var(--gold) 0%, #a87e2a 100%);
+    }
+    .contact-card-icon.navy {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+    }
+    .contact-card-icon.maroon {
+      background: linear-gradient(135deg, var(--maroon) 0%, #5a0f22 100%);
+    }
+    .contact-card-icon svg { width: 24px; height: 24px; color: #fff; }
+    .contact-card-title { font-size: 1.15rem; font-weight: 800; color: var(--navy); }
+    .contact-card-subtitle { font-size: 0.8rem; color: var(--text-muted); margin-top: 2px; }
+    .contact-card-body { padding: 24px 28px 28px; }
+
+    /* ── Social Links ── */
+    .social-links {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .social-link {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 18px;
+      border-radius: 14px;
+      border: 1.5px solid var(--border);
+      text-decoration: none;
+      transition: all 0.25s;
+      cursor: pointer;
+    }
+    .social-link:hover {
+      transform: translateX(-4px);
+      border-color: transparent;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.12);
+    }
+    .social-link.facebook:hover { background: #f0f4ff; }
+    .social-link.instagram:hover { background: #fff0f5; }
+    .social-link.whatsapp:hover { background: #f0fff5; }
+    .social-link.email:hover { background: #fffbf0; }
+
+    .social-link-ico {
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .social-link.facebook .social-link-ico { background: #1877f2; }
+    .social-link.instagram .social-link-ico { background: linear-gradient(135deg, #f58529 0%, #dd2a7b 50%, #8134af 100%); }
+    .social-link.whatsapp .social-link-ico { background: #25d366; }
+    .social-link.email .social-link-ico { background: linear-gradient(135deg, var(--gold) 0%, #a87e2a 100%); }
+
+    .social-link-ico svg { width: 22px; height: 22px; color: #fff; }
+
+    .social-link-info { flex: 1; }
+    .social-link-name { font-size: 0.95rem; font-weight: 700; color: var(--navy); }
+    .social-link-handle { font-size: 0.78rem; color: var(--text-muted); margin-top: 2px; direction: ltr; text-align: right; }
+
+    .social-link-arrow {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--cream);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .social-link-arrow svg { width: 14px; height: 14px; color: var(--text-muted); }
+
+    /* ── Phone/Contact Info ── */
+    .contact-info-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .contact-info-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 16px 18px;
+      border-radius: 14px;
+      border: 1.5px solid var(--border);
+      background: var(--cream);
+      text-decoration: none;
+      transition: all 0.25s;
+    }
+    .contact-info-item:hover {
+      border-color: var(--gold);
+      background: var(--white);
+      box-shadow: 0 4px 16px rgba(201,168,76,0.15);
+    }
+    .contact-info-ico {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+    }
+    .contact-info-ico.gold-bg {
+      background: linear-gradient(135deg, var(--gold) 0%, #a87e2a 100%);
+    }
+    .contact-info-ico.green-bg {
+      background: linear-gradient(135deg, #25d366 0%, #128c4a 100%);
+    }
+    .contact-info-ico svg { width: 20px; height: 20px; color: #fff; }
+    .contact-info-text { flex: 1; }
+    .contact-info-label { font-size: 0.75rem; color: var(--text-muted); font-weight: 600; margin-bottom: 2px; }
+    .contact-info-value { font-size: 1rem; font-weight: 800; color: var(--navy); direction: ltr; text-align: right; }
+    .contact-info-value.arabic { direction: rtl; text-align: right; }
+
+    /* ── Map ── */
+    .map-card { overflow: hidden; }
+    .map-embed {
+      width: 100%;
+      height: 320px;
+      border: none;
+      display: block;
+    }
+    .map-address {
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-top: 1px solid var(--border);
+    }
+    .map-address svg { width: 20px; height: 20px; color: var(--maroon); flex-shrink: 0; }
+    .map-address-text { font-size: 0.9rem; color: var(--text-muted); font-weight: 600; flex: 1; }
+    .map-address-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      border-radius: 50px;
+      background: var(--navy);
+      color: #fff;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background 0.2s;
+    }
+    .map-address-link:hover { background: var(--navy-dark); }
+    .map-address-link svg { width: 13px; height: 13px; }
+
+    /* ── Hours ── */
+    .hours-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .hours-item {
+      padding: 14px 16px;
+      border-radius: 12px;
+      background: var(--cream);
+      border: 1px solid var(--border);
+    }
+    .hours-day { font-size: 0.78rem; color: var(--text-muted); font-weight: 600; margin-bottom: 4px; }
+    .hours-time { font-size: 0.88rem; font-weight: 800; color: var(--navy); direction: ltr; }
+    .hours-item.open-now {
+      background: linear-gradient(135deg, rgba(26,43,84,0.05) 0%, rgba(201,168,76,0.08) 100%);
+      border-color: rgba(201,168,76,0.4);
+    }
+    .hours-item.open-now .hours-time { color: var(--maroon); }
+    .hours-badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 50px;
+      background: #d4edda;
+      color: #155724;
+      font-size: 0.65rem;
+      font-weight: 700;
+      margin-right: 6px;
+      vertical-align: middle;
+    }
+
+    /* ── Divider ── */
+    .section-divider {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin: 60px 0 40px;
+    }
+    .section-divider-line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--border), transparent);
+    }
+    .section-divider-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 2px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .section-divider-icon svg { width: 18px; height: 18px; color: var(--gold); }
+
+    /* ── WhatsApp Float ── */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 30px;
+      left: 30px;
+      z-index: 500;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: #25d366;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+      transition: transform 0.25s, box-shadow 0.25s;
+      text-decoration: none;
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 30px rgba(37,211,102,0.5);
+    }
+    .whatsapp-float svg { width: 28px; height: 28px; color: #fff; }
+
+    /* ── CTA Banner ── */
+    .cta-banner {
+      background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 50%, #4a1428 100%);
+      border-radius: 24px;
+      padding: 48px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      margin-top: 32px;
+    }
+    .cta-banner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(201,168,76,0.03) 40px, rgba(201,168,76,0.03) 41px);
+    }
+    .cta-banner-content { position: relative; z-index: 1; }
+    .cta-banner h2 { font-size: 1.6rem; font-weight: 900; color: #fff; margin-bottom: 10px; }
+    .cta-banner h2 span { color: var(--gold); }
+    .cta-banner p { color: rgba(255,255,255,0.65); font-size: 0.95rem; margin-bottom: 28px; }
+    .cta-banner-btns {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 28px;
+      border-radius: 50px;
+      font-family: 'Cairo', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.25s;
+      border: 2px solid transparent;
+    }
+    .cta-btn svg { width: 18px; height: 18px; }
+    .cta-btn-gold {
+      background: var(--gold);
+      color: var(--navy-dark);
+    }
+    .cta-btn-gold:hover { background: #e6c258; transform: translateY(-2px); }
+    .cta-btn-outline {
+      border-color: rgba(255,255,255,0.3);
+      color: #fff;
+      background: transparent;
+    }
+    .cta-btn-outline:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+  </style>
+</head>
+<body>
+
+<div id="scrollProgress" class="scroll-progress" role="progressbar" aria-label="تقدم التمرير"></div>
+
+<!-- ═══════════════════ HEADER ═══════════════════ -->
+<header class="header" id="mainHeader">
+  <div class="container header-inner">
+    <a href="index.html" class="logo">
+      <img class="logo-img" src="photos/شعار.jpg" alt="مطعم أهل اليمن">
+      <div class="logo-text">
+        <span class="logo-name" data-ar="أهل اليمن">Ahl Al-Yemen</span>
+        <span class="logo-tagline" data-ar="أصل الطعم اليمني في مصر">Authentic Yemeni Taste in Egypt</span>
+      </div>
+    </a>
+    <nav class="nav">
+      <a href="index.html" data-ar="الرئيسية">Home</a>
+      <a href="menu.html" data-ar="قائمة الطعام">Menu</a>
+      <a href="branches.html" data-ar="فروعنا">Our Branches</a>
+      <a href="contact.html" class="active" data-ar="تواصل معنا">Contact Us</a>
+    </nav>
+    <div class="header-actions">
+      <button class="lang-toggle" id="langToggle" onclick="toggleLanguage()" aria-label="Switch language">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+        <span id="langLabel">English</span>
+      </button>
+      <a href="tel:+201212002005" class="header-phone">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.09a16 16 0 006 6l1.45-1.45a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+        012 12002005
+      </a>
+      <button class="btn-cart" onclick="openCart()" aria-label="Order Cart">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
+        <span data-ar="سلة الطلب">Order Cart</span>
+        <span class="cart-badge" hidden>0</span>
+      </button>
+    </div>
+    <button class="menu-toggle" id="menuToggle" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile overlay + drawer -->
+<div class="mobile-overlay" id="mobileOverlay"></div>
+<aside class="mobile-drawer" id="mobileDrawer">
+  <div class="mobile-drawer-head">
+    <a href="index.html" class="logo">
+      <img class="logo-img" src="photos/شعار.jpg" alt="أهل اليمن" style="width:38px;height:38px;">
+      <div class="logo-text"><span class="logo-name" data-ar="أهل اليمن">Ahl Al-Yemen</span></div>
+    </a>
+    <button class="mobile-drawer-close" id="mobileClose" aria-label="Close">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <nav class="mobile-drawer-nav">
+    <a href="index.html" data-ar="الرئيسية">Home</a>
+    <a href="menu.html" data-ar="قائمة الطعام">Menu</a>
+    <a href="branches.html" data-ar="فروعنا">Our Branches</a>
+    <a href="contact.html" class="active" data-ar="تواصل معنا">Contact Us</a>
+  </nav>
+  <div class="mobile-drawer-foot">
+    <button class="btn btn-gold" onclick="openCart();document.getElementById('mobileDrawer').classList.remove('open');" style="width:100%;justify-content:center;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
+      <span data-ar="سلة الطلب">Order Cart</span> <span class="cart-badge" hidden>0</span>
+    </button>
+    <a href="tel:+201212002005" class="btn btn-navy" style="width:100%;justify-content:center;direction:ltr;">012 12002005</a>
+  </div>
+</aside>
+
+<!-- ═══════════════════ HERO ═══════════════════ -->
+<section class="contact-hero">
+  <div class="container contact-hero-content">
+    <div class="contact-hero-badge">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.09a16 16 0 006 6l1.45-1.45a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+      تواصل معنا
+    </div>
+    <h1>نحن هنا <span>لخدمتك</span></h1>
+    <p>يسعدنا التواصل معك في أي وقت — عبر الهاتف، واتساب، البريد الإلكتروني أو وسائل التواصل الاجتماعي</p>
+    <div class="contact-hero-ornament">
+      <div class="contact-hero-ornament-line"></div>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      <div class="contact-hero-ornament-line"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ CONTACT BODY ═══════════════════ -->
+<div class="contact-body">
+  <div class="container">
+
+    <div class="contact-grid">
+
+      <!-- LEFT COLUMN -->
+      <div style="display:flex;flex-direction:column;gap:28px;">
+
+        <!-- Social Media -->
+        <div class="contact-card">
+          <div class="contact-card-head">
+            <div class="contact-card-icon gold">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
+            </div>
+            <div>
+              <div class="contact-card-title">وسائل التواصل الاجتماعي</div>
+              <div class="contact-card-subtitle">تابعنا وتواصل معنا</div>
+            </div>
+          </div>
+          <div class="contact-card-body">
+            <div class="social-links">
+
+              <a href="https://www.facebook.com/ahlelyemeneg/" target="_blank" rel="noopener" class="social-link facebook">
+                <div class="social-link-ico">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                </div>
+                <div class="social-link-info">
+                  <div class="social-link-name">فيسبوك</div>
+                  <div class="social-link-handle">facebook.com/ahlelyemeneg</div>
+                </div>
+                <div class="social-link-arrow">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+                </div>
+              </a>
+
+              <a href="https://www.instagram.com/ahlalyaman/?hl=ar" target="_blank" rel="noopener" class="social-link instagram">
+                <div class="social-link-ico">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                </div>
+                <div class="social-link-info">
+                  <div class="social-link-name">إنستجرام</div>
+                  <div class="social-link-handle">@ahlalyaman</div>
+                </div>
+                <div class="social-link-arrow">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+                </div>
+              </a>
+
+              <a href="https://wa.me/201212002005" target="_blank" rel="noopener" class="social-link whatsapp">
+                <div class="social-link-ico">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                </div>
+                <div class="social-link-info">
+                  <div class="social-link-name">واتساب</div>
+                  <div class="social-link-handle">012 12002005</div>
+                </div>
+                <div class="social-link-arrow">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+                </div>
+              </a>
+
+              <a href="mailto:info@ahlalyemen.com" class="social-link email">
+                <div class="social-link-ico">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                </div>
+                <div class="social-link-info">
+                  <div class="social-link-name">البريد الإلكتروني</div>
+                  <div class="social-link-handle">info@ahlalyemen.com</div>
+                </div>
+                <div class="social-link-arrow">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+                </div>
+              </a>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Phone & Info -->
+        <div class="contact-card">
+          <div class="contact-card-head">
+            <div class="contact-card-icon navy">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.09a16 16 0 006 6l1.45-1.45a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+            </div>
+            <div>
+              <div class="contact-card-title">معلومات التواصل</div>
+              <div class="contact-card-subtitle">هاتف، واتساب، وبريد إلكتروني</div>
+            </div>
+          </div>
+          <div class="contact-card-body">
+            <div class="contact-info-list">
+
+              <a href="tel:+201212002005" class="contact-info-item">
+                <div class="contact-info-ico">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.09a16 16 0 006 6l1.45-1.45a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+                </div>
+                <div class="contact-info-text">
+                  <div class="contact-info-label">الهاتف</div>
+                  <div class="contact-info-value">012 12002005</div>
+                </div>
+              </a>
+
+              <a href="https://wa.me/201212002005" target="_blank" rel="noopener" class="contact-info-item">
+                <div class="contact-info-ico green-bg">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                </div>
+                <div class="contact-info-text">
+                  <div class="contact-info-label">واتساب</div>
+                  <div class="contact-info-value">012 12002005</div>
+                </div>
+              </a>
+
+              <a href="mailto:info@ahlalyemen.com" class="contact-info-item">
+                <div class="contact-info-ico gold-bg">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                </div>
+                <div class="contact-info-text">
+                  <div class="contact-info-label">البريد الإلكتروني</div>
+                  <div class="contact-info-value">info@ahlalyemen.com</div>
+                </div>
+              </a>
+
+              <div class="contact-info-item" style="cursor:default;">
+                <div class="contact-info-ico">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                </div>
+                <div class="contact-info-text">
+                  <div class="contact-info-label">ساعات العمل</div>
+                  <div class="contact-info-value arabic">يومياً من 12 ظهراً – 2 فجراً</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- RIGHT COLUMN -->
+      <div style="display:flex;flex-direction:column;gap:28px;">
+
+        <!-- Map -->
+        <div class="contact-card map-card">
+          <div class="contact-card-head">
+            <div class="contact-card-icon maroon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <div class="contact-card-title">موقعنا على الخريطة</div>
+              <div class="contact-card-subtitle">63 شارع الدقى، الدقي، الجيزة</div>
+            </div>
+          </div>
+          <iframe
+            class="map-embed"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3453.4!2d31.2!3d30.05!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14584519f6d72c4d%3A0x1f38b6f15dc89a08!2z2YX8p9iv2Vgg2KPZh9mEINin2YTZitmY2YU!5e0!3m2!1sar!2seg!4v1700000000000!5m2!1sar!2seg"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="موقع مطعم أهل اليمن">
+          </iframe>
+          <div class="map-address">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span class="map-address-text">63 شارع الدقى، الدقي، الجيزة، مصر</span>
+            <a href="https://maps.app.goo.gl/UrzkGZxTTeP987tWA" target="_blank" rel="noopener" class="map-address-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+              افتح في خرائط جوجل
+            </a>
+          </div>
+        </div>
+
+        <!-- Hours -->
+        <div class="contact-card">
+          <div class="contact-card-head">
+            <div class="contact-card-icon gold">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div>
+              <div class="contact-card-title">ساعات العمل</div>
+              <div class="contact-card-subtitle">نفتح أبوابنا كل يوم</div>
+            </div>
+          </div>
+          <div class="contact-card-body">
+            <div class="hours-list">
+              <div class="hours-item open-now">
+                <div class="hours-day">السبت – الأربعاء</div>
+                <div class="hours-time">12:00 PM – 2:00 AM</div>
+              </div>
+              <div class="hours-item open-now">
+                <div class="hours-day">الخميس – الجمعة</div>
+                <div class="hours-time">12:00 PM – 3:00 AM</div>
+              </div>
+              <div class="hours-item" style="grid-column:1/-1;background:linear-gradient(135deg,rgba(201,168,76,0.06),rgba(139,31,60,0.06));border-color:rgba(201,168,76,0.3);">
+                <div class="hours-day">الخط الساخن</div>
+                <div class="hours-time" style="font-size:1rem;color:var(--navy);">012 12002005</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- CTA Banner -->
+    <div class="cta-banner">
+      <div class="cta-banner-content">
+        <h2>هل أنت مستعد لتجربة <span>أصل الطعم اليمني؟</span></h2>
+        <p>اطلب الآن عبر واتساب أو قم بزيارتنا في الدقي — يسعدنا خدمتك</p>
+        <div class="cta-banner-btns">
+          <a href="https://wa.me/201212002005?text=%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D8%B7%D9%84%D8%A8" target="_blank" rel="noopener" class="cta-btn cta-btn-gold">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            اطلب الآن عبر واتساب
+          </a>
+          <a href="menu.html" class="cta-btn cta-btn-outline">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="2" ry="2"/></svg>
+            تصفح القائمة
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════ FOOTER ═══════════════════ -->
+<footer class="footer">
+  <div class="container footer-grid">
+    <div>
+      <a href="index.html" class="logo" style="margin-bottom:14px;display:inline-flex;">
+        <img class="logo-img" src="photos/شعار.jpg" alt="أهل اليمن">
+        <div class="logo-text"><span class="logo-name">أهل اليمن</span><span class="logo-tagline">أصل الطعم اليمني في مصر</span></div>
+      </a>
+      <p class="footer-tagline">معلمين المندي والمشويات والطواجن — مطعم يمني أصيل في قلب الجيزة.</p>
+      <div class="footer-social-row">
+        <a href="https://www.facebook.com/ahlelyemeneg/" target="_blank" rel="noopener" class="footer-social-ico" aria-label="فيسبوك">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/ahlalyaman/?hl=ar" target="_blank" rel="noopener" class="footer-social-ico" aria-label="إنستجرام">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+        <a href="https://maps.app.goo.gl/UrzkGZxTTeP987tWA" target="_blank" rel="noopener" class="footer-social-ico" aria-label="موقعنا">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-col-title">روابط سريعة</h3>
+      <ul class="footer-links">
+        <li><a href="index.html">الرئيسية</a></li>
+        <li><a href="menu.html">قائمة الطعام</a></li>
+        <li><a href="branches.html">فروعنا</a></li>
+        <li><a href="contact.html">تواصل معنا</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-col-title">تواصل معنا</h3>
+      <ul class="footer-links">
+        <li><a href="tel:+201212002005">012 12002005</a></li>
+        <li><a href="mailto:info@ahlalyemen.com">info@ahlalyemen.com</a></li>
+        <li><a href="https://wa.me/201212002005" target="_blank" rel="noopener">واتساب</a></li>
+        <li><a href="https://www.facebook.com/ahlelyemeneg/" target="_blank" rel="noopener">فيسبوك</a></li>
+        <li><a href="https://www.instagram.com/ahlalyaman/" target="_blank" rel="noopener">إنستجرام</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-col-title">العنوان</h3>
+      <p class="footer-tagline" style="margin-bottom:12px;">63 شارع الدقى، الدقي، الجيزة، مصر</p>
+      <a href="https://maps.app.goo.gl/UrzkGZxTTeP987tWA" target="_blank" rel="noopener" class="btn btn-gold" style="font-size:0.82rem;padding:8px 16px;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        الاتجاهات
+      </a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2024 مطعم أهل اليمن. جميع الحقوق محفوظة.</p>
+  </div>
+</footer>
+
+<!-- WhatsApp Float -->
+<a href="https://wa.me/201212002005" target="_blank" rel="noopener" class="whatsapp-float" aria-label="تواصل عبر واتساب">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- Cart & Checkout Drawers (shared from main.js) -->
+<div class="cart-overlay" id="cartOverlay"></div>
+<aside class="cart-drawer" id="cartDrawer">
+  <div class="cart-head">
+    <div class="cart-head-title">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
+      سلة الطلب
+      <span class="cart-head-count" id="cartHeadCount" hidden>0</span>
+    </div>
+    <button class="cart-close" id="cartClose" aria-label="إغلاق السلة">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <div class="cart-body" id="cartBody"></div>
+  <div class="cart-foot" id="cartFoot" hidden>
+    <div class="cart-total">
+      المجموع: <span class="cart-total-amount"><span id="cartTotalAmt">0</span> جنيه</span>
+    </div>
+    <button class="cart-checkout-btn" id="cartCheckoutBtn">إتمام الطلب عبر واتساب</button>
+  </div>
+</aside>
+
+<div class="checkout-overlay" id="checkoutOverlay"></div>
+<div class="checkout-modal" id="checkoutModal" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle">
+  <div class="checkout-head">
+    <h2 class="checkout-title" id="checkoutTitle">تأكيد الطلب</h2>
+    <button class="checkout-close" id="checkoutClose" aria-label="إغلاق">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <div class="checkout-body">
+    <div class="co-field">
+      <label class="co-label" for="coName">الاسم</label>
+      <input class="co-input" id="coName" type="text" placeholder="اسمك الكريم" autocomplete="name">
+    </div>
+    <div class="co-field">
+      <label class="co-label" for="coPhone">رقم الهاتف <span class="co-required">*</span></label>
+      <input class="co-input" id="coPhone" type="tel" placeholder="01xxxxxxxxx" autocomplete="tel">
+      <span class="field-error" id="errPhone">يرجى إدخال رقم هاتف صحيح</span>
+    </div>
+    <div class="co-field">
+      <label class="co-label" for="coAddress">العنوان <span class="co-required">*</span></label>
+      <input class="co-input" id="coAddress" type="text" placeholder="الشارع، الحي، المدينة" autocomplete="street-address">
+      <span class="field-error" id="errAddress">يرجى إدخال العنوان</span>
+    </div>
+    <div class="co-field">
+      <label class="co-label" for="coNotes">ملاحظات</label>
+      <textarea class="co-input" id="coNotes" rows="3" placeholder="أي طلبات خاصة؟"></textarea>
+    </div>
+  </div>
+  <div class="checkout-foot">
+    <button class="checkout-submit" id="checkoutSubmit">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      أرسل الطلب عبر واتساب
+    </button>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
