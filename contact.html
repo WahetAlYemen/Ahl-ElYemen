@@ -426,13 +426,13 @@
     <nav class="nav">
       <a href="index.html" data-ar="الرئيسية">Home</a>
       <a href="menu.html" data-ar="قائمة الطعام">Menu</a>
-      <a href="branches.html" data-ar="فروعنا">Our Branches</a>
+      <a href="about.html" data-ar="من نحن">About Us</a>
       <a href="contact.html" class="active" data-ar="تواصل معنا">Contact Us</a>
     </nav>
     <div class="header-actions">
       <button class="lang-toggle" id="langToggle" onclick="toggleLanguage()" aria-label="Switch language">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
-        <span id="langLabel">English</span>
+        <span id="langLabel" class="lang-lbl">English</span>
       </button>
       <a href="tel:+201212002005" class="header-phone">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.09a16 16 0 006 6l1.45-1.45a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
@@ -465,7 +465,7 @@
   <nav class="mobile-drawer-nav">
     <a href="index.html" data-ar="الرئيسية">Home</a>
     <a href="menu.html" data-ar="قائمة الطعام">Menu</a>
-    <a href="branches.html" data-ar="فروعنا">Our Branches</a>
+    <a href="about.html" data-ar="من نحن">About Us</a>
     <a href="contact.html" class="active" data-ar="تواصل معنا">Contact Us</a>
   </nav>
   <div class="mobile-drawer-foot">
@@ -474,6 +474,10 @@
       <span data-ar="سلة الطلب">Order Cart</span> <span class="cart-badge" hidden>0</span>
     </button>
     <a href="tel:+201212002005" class="btn btn-navy" style="width:100%;justify-content:center;direction:ltr;">012 12002005</a>
+    <button class="lang-toggle" onclick="toggleLanguage()" style="width:100%;justify-content:center;" aria-label="Switch language">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+      <span class="lang-lbl">English</span>
+    </button>
   </div>
 </aside>
 
@@ -482,10 +486,10 @@
   <div class="container contact-hero-content">
     <div class="contact-hero-badge">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.09a16 16 0 006 6l1.45-1.45a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
-      تواصل معنا
+      <span data-ar="تواصل معنا">Contact Us</span>
     </div>
-    <h1>نحن هنا <span>لخدمتك</span></h1>
-    <p>يسعدنا التواصل معك في أي وقت — عبر الهاتف، واتساب، البريد الإلكتروني أو وسائل التواصل الاجتماعي</p>
+    <h1><span data-ar="نحن هنا" style="color:inherit">We're Here </span><span data-ar="لخدمتك">for You</span></h1>
+    <p data-ar="يسعدنا التواصل معك في أي وقت — عبر الهاتف، واتساب، البريد الإلكتروني أو وسائل التواصل الاجتماعي">We're happy to hear from you anytime — via phone, WhatsApp, email, or social media</p>
     <div class="contact-hero-ornament">
       <div class="contact-hero-ornament-line"></div>
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
@@ -510,8 +514,8 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
             </div>
             <div>
-              <div class="contact-card-title">وسائل التواصل الاجتماعي</div>
-              <div class="contact-card-subtitle">تابعنا وتواصل معنا</div>
+              <div class="contact-card-title" data-ar="وسائل التواصل الاجتماعي">Social Media</div>
+              <div class="contact-card-subtitle" data-ar="تابعنا وتواصل معنا">Follow us and get in touch</div>
             </div>
           </div>
           <div class="contact-card-body">
@@ -522,7 +526,7 @@
                   <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
                 </div>
                 <div class="social-link-info">
-                  <div class="social-link-name">فيسبوك</div>
+                  <div class="social-link-name" data-ar="فيسبوك">Facebook</div>
                   <div class="social-link-handle">facebook.com/ahlelyemeneg</div>
                 </div>
                 <div class="social-link-arrow">
@@ -535,7 +539,7 @@
                   <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
                 </div>
                 <div class="social-link-info">
-                  <div class="social-link-name">إنستجرام</div>
+                  <div class="social-link-name" data-ar="إنستجرام">Instagram</div>
                   <div class="social-link-handle">@ahlalyaman</div>
                 </div>
                 <div class="social-link-arrow">
@@ -548,7 +552,7 @@
                   <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
                 </div>
                 <div class="social-link-info">
-                  <div class="social-link-name">واتساب</div>
+                  <div class="social-link-name" data-ar="واتساب">WhatsApp</div>
                   <div class="social-link-handle">012 12002005</div>
                 </div>
                 <div class="social-link-arrow">
@@ -561,7 +565,7 @@
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                 </div>
                 <div class="social-link-info">
-                  <div class="social-link-name">البريد الإلكتروني</div>
+                  <div class="social-link-name" data-ar="البريد الإلكتروني">Email</div>
                   <div class="social-link-handle">info@ahlalyemen.com</div>
                 </div>
                 <div class="social-link-arrow">
@@ -580,8 +584,8 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.09a16 16 0 006 6l1.45-1.45a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
             </div>
             <div>
-              <div class="contact-card-title">معلومات التواصل</div>
-              <div class="contact-card-subtitle">هاتف، واتساب، وبريد إلكتروني</div>
+              <div class="contact-card-title" data-ar="معلومات التواصل">Contact Information</div>
+              <div class="contact-card-subtitle" data-ar="هاتف، واتساب، وبريد إلكتروني">Phone, WhatsApp & email</div>
             </div>
           </div>
           <div class="contact-card-body">
@@ -592,7 +596,7 @@
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.09a16 16 0 006 6l1.45-1.45a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
                 </div>
                 <div class="contact-info-text">
-                  <div class="contact-info-label">الهاتف</div>
+                  <div class="contact-info-label" data-ar="الهاتف">Phone</div>
                   <div class="contact-info-value">012 12002005</div>
                 </div>
               </a>
@@ -602,7 +606,7 @@
                   <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
                 </div>
                 <div class="contact-info-text">
-                  <div class="contact-info-label">واتساب</div>
+                  <div class="contact-info-label" data-ar="واتساب">WhatsApp</div>
                   <div class="contact-info-value">012 12002005</div>
                 </div>
               </a>
@@ -612,7 +616,7 @@
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                 </div>
                 <div class="contact-info-text">
-                  <div class="contact-info-label">البريد الإلكتروني</div>
+                  <div class="contact-info-label" data-ar="البريد الإلكتروني">Email</div>
                   <div class="contact-info-value">info@ahlalyemen.com</div>
                 </div>
               </a>
@@ -622,8 +626,8 @@
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
                 </div>
                 <div class="contact-info-text">
-                  <div class="contact-info-label">ساعات العمل</div>
-                  <div class="contact-info-value arabic">يومياً من 12 ظهراً – 2 فجراً</div>
+                  <div class="contact-info-label" data-ar="ساعات العمل">Working Hours</div>
+                  <div class="contact-info-value arabic" data-ar="يومياً من 12 ظهراً – 2 فجراً">Daily 12 PM – 2 AM</div>
                 </div>
               </div>
 
@@ -643,8 +647,8 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
             </div>
             <div>
-              <div class="contact-card-title">موقعنا على الخريطة</div>
-              <div class="contact-card-subtitle">63 شارع الدقى، الدقي، الجيزة</div>
+              <div class="contact-card-title" data-ar="موقعنا على الخريطة">Our Location</div>
+              <div class="contact-card-subtitle" data-ar="63 شارع الدقى، الدقي، الجيزة">63 Al-Dokki St., Al-Dokki, Giza</div>
             </div>
           </div>
           <iframe
@@ -657,10 +661,10 @@
           </iframe>
           <div class="map-address">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            <span class="map-address-text">63 شارع الدقى، الدقي، الجيزة، مصر</span>
+            <span class="map-address-text" data-ar="63 شارع الدقى، الدقي، الجيزة، مصر">63 Al-Dokki St., Al-Dokki, Giza, Egypt</span>
             <a href="https://maps.app.goo.gl/UrzkGZxTTeP987tWA" target="_blank" rel="noopener" class="map-address-link">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
-              افتح في خرائط جوجل
+              <span data-ar="افتح في خرائط جوجل">Open in Google Maps</span>
             </a>
           </div>
         </div>
@@ -672,22 +676,22 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
             </div>
             <div>
-              <div class="contact-card-title">ساعات العمل</div>
-              <div class="contact-card-subtitle">نفتح أبوابنا كل يوم</div>
+              <div class="contact-card-title" data-ar="ساعات العمل">Working Hours</div>
+              <div class="contact-card-subtitle" data-ar="نفتح أبوابنا كل يوم">Open every day</div>
             </div>
           </div>
           <div class="contact-card-body">
             <div class="hours-list">
               <div class="hours-item open-now">
-                <div class="hours-day">السبت – الأربعاء</div>
+                <div class="hours-day" data-ar="السبت – الأربعاء">Sat – Wed</div>
                 <div class="hours-time">12:00 PM – 2:00 AM</div>
               </div>
               <div class="hours-item open-now">
-                <div class="hours-day">الخميس – الجمعة</div>
+                <div class="hours-day" data-ar="الخميس – الجمعة">Thu – Fri</div>
                 <div class="hours-time">12:00 PM – 3:00 AM</div>
               </div>
               <div class="hours-item" style="grid-column:1/-1;background:linear-gradient(135deg,rgba(201,168,76,0.06),rgba(139,31,60,0.06));border-color:rgba(201,168,76,0.3);">
-                <div class="hours-day">الخط الساخن</div>
+                <div class="hours-day" data-ar="الخط الساخن">Hotline</div>
                 <div class="hours-time" style="font-size:1rem;color:var(--navy);">012 12002005</div>
               </div>
             </div>
@@ -700,16 +704,16 @@
     <!-- CTA Banner -->
     <div class="cta-banner">
       <div class="cta-banner-content">
-        <h2>هل أنت مستعد لتجربة <span>أصل الطعم اليمني؟</span></h2>
-        <p>اطلب الآن عبر واتساب أو قم بزيارتنا في الدقي — يسعدنا خدمتك</p>
+        <h2><span data-ar="هل أنت مستعد لتجربة">Ready to Experience</span> <span data-ar="أصل الطعم اليمني؟">Authentic Yemeni Taste?</span></h2>
+        <p data-ar="اطلب الآن عبر واتساب أو قم بزيارتنا في الدقي — يسعدنا خدمتك">Order now via WhatsApp or visit us in Al-Dokki — we're delighted to serve you</p>
         <div class="cta-banner-btns">
           <a href="https://wa.me/201212002005?text=%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D8%B7%D9%84%D8%A8" target="_blank" rel="noopener" class="cta-btn cta-btn-gold">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            اطلب الآن عبر واتساب
+            <span data-ar="اطلب الآن عبر واتساب">Order Now via WhatsApp</span>
           </a>
           <a href="menu.html" class="cta-btn cta-btn-outline">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="2" ry="2"/></svg>
-            تصفح القائمة
+            <span data-ar="تصفح القائمة">Browse Menu</span>
           </a>
         </div>
       </div>
@@ -724,9 +728,9 @@
     <div>
       <a href="index.html" class="logo" style="margin-bottom:14px;display:inline-flex;">
         <img class="logo-img" src="photos/شعار.jpg" alt="أهل اليمن">
-        <div class="logo-text"><span class="logo-name">أهل اليمن</span><span class="logo-tagline">أصل الطعم اليمني في مصر</span></div>
+        <div class="logo-text"><span class="logo-name" data-ar="أهل اليمن">Bab AlYemen</span><span class="logo-tagline" data-ar="أصل الطعم اليمني في مصر">Authentic Yemeni Taste in Egypt</span></div>
       </a>
-      <p class="footer-tagline">معلمين المندي والمشويات والطواجن — مطعم يمني أصيل في قلب الجيزة.</p>
+      <p class="footer-tagline" data-ar="معلمين المندي والمشويات والطواجن — مطعم يمني أصيل في قلب الجيزة.">Masters of Mandi, Grills & Stews — Authentic Yemeni restaurant in the heart of Giza.</p>
       <div class="footer-social-row">
         <a href="https://www.facebook.com/ahlelyemeneg/" target="_blank" rel="noopener" class="footer-social-ico" aria-label="فيسبوك">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
@@ -740,35 +744,35 @@
       </div>
     </div>
     <div>
-      <h3 class="footer-col-title">روابط سريعة</h3>
+      <h3 class="footer-col-title" data-ar="روابط سريعة">Quick Links</h3>
       <ul class="footer-links">
-        <li><a href="index.html">الرئيسية</a></li>
-        <li><a href="menu.html">قائمة الطعام</a></li>
-        <li><a href="branches.html">فروعنا</a></li>
-        <li><a href="contact.html">تواصل معنا</a></li>
+        <li><a href="index.html" data-ar="الرئيسية">Home</a></li>
+        <li><a href="menu.html" data-ar="قائمة الطعام">Food Menu</a></li>
+        <li><a href="index.html#branches" data-ar="فرعنا">Our Branch</a></li>
+        <li><a href="contact.html" data-ar="تواصل معنا">Contact Us</a></li>
       </ul>
     </div>
     <div>
-      <h3 class="footer-col-title">تواصل معنا</h3>
+      <h3 class="footer-col-title" data-ar="تواصل معنا">Contact Us</h3>
       <ul class="footer-links">
         <li><a href="tel:+201212002005">012 12002005</a></li>
         <li><a href="mailto:info@ahlalyemen.com">info@ahlalyemen.com</a></li>
-        <li><a href="https://wa.me/201212002005" target="_blank" rel="noopener">واتساب</a></li>
-        <li><a href="https://www.facebook.com/ahlelyemeneg/" target="_blank" rel="noopener">فيسبوك</a></li>
-        <li><a href="https://www.instagram.com/ahlalyaman/" target="_blank" rel="noopener">إنستجرام</a></li>
+        <li><a href="https://wa.me/201212002005" target="_blank" rel="noopener" data-ar="واتساب">WhatsApp</a></li>
+        <li><a href="https://www.facebook.com/ahlelyemeneg/" target="_blank" rel="noopener" data-ar="فيسبوك">Facebook</a></li>
+        <li><a href="https://www.instagram.com/ahlalyaman/" target="_blank" rel="noopener" data-ar="إنستجرام">Instagram</a></li>
       </ul>
     </div>
     <div>
-      <h3 class="footer-col-title">العنوان</h3>
-      <p class="footer-tagline" style="margin-bottom:12px;">63 شارع الدقى، الدقي، الجيزة، مصر</p>
+      <h3 class="footer-col-title" data-ar="العنوان">Address</h3>
+      <p class="footer-tagline" style="margin-bottom:12px;" data-ar="63 شارع الدقى، الدقي، الجيزة، مصر">63 Al-Dokki St., Al-Dokki, Giza, Egypt</p>
       <a href="https://maps.app.goo.gl/UrzkGZxTTeP987tWA" target="_blank" rel="noopener" class="btn btn-gold" style="font-size:0.82rem;padding:8px 16px;">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        الاتجاهات
+        <span data-ar="الاتجاهات">Directions</span>
       </a>
     </div>
   </div>
   <div class="footer-bottom">
-    <p>© 2024 مطعم أهل اليمن. جميع الحقوق محفوظة.</p>
+    <p data-ar="© 2024 مطعم أهل اليمن. جميع الحقوق محفوظة.">© 2024 Bab AlYemen Restaurant. All Rights Reserved.</p>
   </div>
 </footer>
 
@@ -779,59 +783,126 @@
 
 <!-- Cart & Checkout Drawers (shared from main.js) -->
 <div class="cart-overlay" id="cartOverlay"></div>
-<aside class="cart-drawer" id="cartDrawer">
+<aside class="cart-drawer" id="cartDrawer" role="dialog" aria-label="سلة التسوق">
   <div class="cart-head">
     <div class="cart-head-title">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
-      سلة الطلب
-      <span class="cart-head-count" id="cartHeadCount" hidden>0</span>
+      <span data-ar="سلة الطلب">Your Cart</span>
+      <span class="cart-head-count" id="cartHeadCount">0</span>
     </div>
-    <button class="cart-close" id="cartClose" aria-label="إغلاق السلة">
+    <button class="cart-close" onclick="closeCart()" aria-label="إغلاق">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
     </button>
   </div>
-  <div class="cart-body" id="cartBody"></div>
-  <div class="cart-foot" id="cartFoot" hidden>
-    <div class="cart-total">
-      المجموع: <span class="cart-total-amount"><span id="cartTotalAmt">0</span> جنيه</span>
+  <div class="cart-body">
+    <div class="cart-empty" id="cartEmpty">
+      <div class="cart-empty-ico">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
+      </div>
+      <h3 data-ar="سلتك فارغة">Your cart is empty</h3>
+      <p data-ar="أضف أطباقك المفضلة من القائمة">Add your favourite dishes from the menu</p>
+      <a href="menu.html" class="btn btn-gold" style="font-size:0.88rem;padding:10px 24px;" onclick="closeCart()" data-ar="شوف القائمة">Browse Menu</a>
     </div>
-    <button class="cart-checkout-btn" id="cartCheckoutBtn">إتمام الطلب عبر واتساب</button>
+    <div class="cart-items-list" id="cartItemsList"></div>
+  </div>
+  <div class="cart-footer" id="cartFooter" hidden>
+    <div class="cart-total-row">
+      <span class="cart-total-label" data-ar="الإجمالي">Total</span>
+      <span class="cart-total-amount" id="cartTotalAmt">0.00 EGP</span>
+    </div>
+    <button class="cart-checkout-btn" onclick="openCheckout()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+      <span data-ar="إتمام الطلب">Checkout</span>
+    </button>
   </div>
 </aside>
 
 <div class="checkout-overlay" id="checkoutOverlay"></div>
-<div class="checkout-modal" id="checkoutModal" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle">
+<div class="checkout-modal" id="checkoutModal" role="dialog" aria-label="تأكيد الطلب">
   <div class="checkout-head">
-    <h2 class="checkout-title" id="checkoutTitle">تأكيد الطلب</h2>
-    <button class="checkout-close" id="checkoutClose" aria-label="إغلاق">
+    <div class="checkout-title">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+      <span data-ar="تأكيد الطلب">Confirm Order</span>
+    </div>
+    <button class="checkout-close" onclick="closeCheckout()" aria-label="إغلاق">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
     </button>
   </div>
   <div class="checkout-body">
-    <div class="co-field">
-      <label class="co-label" for="coName">الاسم</label>
-      <input class="co-input" id="coName" type="text" placeholder="اسمك الكريم" autocomplete="name">
+    <div class="checkout-section-title" data-ar="بياناتك">Your Details</div>
+    <div class="co-fields">
+      <div class="co-field">
+        <label><span data-ar="الاسم">Name</span> <span class="req">*</span></label>
+        <input class="co-input" type="text" id="orderName" placeholder="Your full name" data-ar-placeholder="اسمك الكريم">
+        <p class="field-error" id="errName" data-ar="الاسم مطلوب">Name is required</p>
+      </div>
+      <div class="co-field">
+        <label><span data-ar="رقم هاتفك">Phone Number</span> <span class="req">*</span></label>
+        <input class="co-input" type="tel" id="orderPhone" placeholder="01xxxxxxxxx" dir="ltr">
+        <p class="field-error" id="errPhone" data-ar="رقم الهاتف مطلوب">Phone number is required</p>
+      </div>
+      <div class="co-field">
+        <label><span data-ar="عنوانك بالتفصيل">Detailed Address</span> <span class="req">*</span></label>
+        <textarea class="co-input" id="orderAddress" rows="2" placeholder="Street name, building no., floor, apartment..." data-ar-placeholder="اسم الشارع، رقم العمارة، الدور، الشقة..."></textarea>
+        <p class="field-error" id="errAddress" data-ar="العنوان مطلوب">Address is required</p>
+      </div>
+      <div class="co-field">
+        <label><span data-ar="ملاحظات">Notes</span> <span class="opt" data-ar="(اختياري)">(Optional)</span></label>
+        <textarea class="co-input" id="orderNotes" rows="2" placeholder="Extra spice, no chili..." data-ar-placeholder="توابل أكتر، بدون حار..."></textarea>
+      </div>
     </div>
-    <div class="co-field">
-      <label class="co-label" for="coPhone">رقم الهاتف <span class="co-required">*</span></label>
-      <input class="co-input" id="coPhone" type="tel" placeholder="01xxxxxxxxx" autocomplete="tel">
-      <span class="field-error" id="errPhone">يرجى إدخال رقم هاتف صحيح</span>
+    <div class="checkout-section-title" data-ar="ملخص الطلب">Order Summary</div>
+    <div class="co-order-summary" id="checkoutItems"></div>
+    <div class="co-total-box">
+      <div class="co-total-row">
+        <span class="co-total-label" data-ar="إجمالي الأصناف">Items Total</span>
+        <span class="co-total-val" id="checkoutTotal">0.00 EGP</span>
+      </div>
+      <div class="co-total-row">
+        <span class="co-total-label" data-ar="رسوم التوصيل">Delivery Fee</span>
+        <span class="co-total-note" data-ar="تُحدد عند التواصل">Confirmed upon contact</span>
+      </div>
     </div>
-    <div class="co-field">
-      <label class="co-label" for="coAddress">العنوان <span class="co-required">*</span></label>
-      <input class="co-input" id="coAddress" type="text" placeholder="الشارع، الحي، المدينة" autocomplete="street-address">
-      <span class="field-error" id="errAddress">يرجى إدخال العنوان</span>
-    </div>
-    <div class="co-field">
-      <label class="co-label" for="coNotes">ملاحظات</label>
-      <textarea class="co-input" id="coNotes" rows="3" placeholder="أي طلبات خاصة؟"></textarea>
+    <div class="co-telegram-note">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13"/><path d="M22 2L15 22 11 13 2 9l20-7z"/></svg>
+      <span data-ar="سيتم إرسال طلبك فوراً إلى المطعم">Your order will be sent directly to the restaurant</span>
     </div>
   </div>
   <div class="checkout-foot">
-    <button class="checkout-submit" id="checkoutSubmit">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      أرسل الطلب عبر واتساب
+    <button class="checkout-submit" onclick="submitOrder()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><path d="M22 2L11 13"/><path d="M22 2L15 22 11 13 2 9l20-7z"/></svg>
+      <span data-ar="أرسل الطلب">Send Order</span>
     </button>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="cartToast" role="alert" aria-live="polite">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="width:18px;height:18px;color:var(--gold);flex-shrink:0;">
+    <polyline points="20 6 9 17 4 12"/>
+  </svg>
+  <span data-ar="تمت إضافة">Added</span> <strong class="toast-name"></strong> <span data-ar="للسلة">to cart</span>
+</div>
+
+<!-- Floating cart (mobile) -->
+<button class="float-cart" onclick="openCart()" aria-label="عربة التسوق">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+  </svg>
+  <span class="cart-badge" id="cartBadgeFloat">0</span>
+</button>
+
+<!-- ORDER SUCCESS OVERLAY -->
+<div class="order-success-overlay" id="orderSuccessOverlay">
+  <div class="order-success-card">
+    <div class="order-success-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="20 6 9 17 4 12"/></svg>
+    </div>
+    <h3 class="order-success-title" data-ar="تم إرسال طلبك بنجاح!">Order Sent Successfully!</h3>
+    <p class="order-success-msg" data-ar="سيتواصل معك المطعم قريباً على رقم الهاتف المُدخل">The restaurant will contact you shortly on your phone number</p>
+    <div class="order-success-num" id="orderSuccessNum"></div>
+    <button class="order-success-btn" onclick="closeOrderSuccess()" data-ar="حسناً">OK</button>
   </div>
 </div>
 

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
@@ -179,6 +179,7 @@
       letter-spacing: 0.5px;
     }
     .item-photo-badge {
+      display: none;
       position: absolute;
       top: 12px;
       right: 12px;
@@ -309,13 +310,13 @@
     <nav class="nav">
       <a href="index.html" data-ar="الرئيسية">Home</a>
       <a href="menu.html" class="active" data-ar="قائمة الطعام">Menu</a>
-      <a href="branches.html" data-ar="فروعنا">Our Branches</a>
+      <a href="about.html" data-ar="من نحن">About Us</a>
       <a href="contact.html" data-ar="تواصل معنا">Contact Us</a>
     </nav>
     <div class="header-actions">
       <button class="lang-toggle" id="langToggle" onclick="toggleLanguage()" aria-label="Switch language">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
-        <span id="langLabel">English</span>
+        <span id="langLabel" class="lang-lbl">English</span>
       </button>
       <a href="tel:+201212002005" class="header-phone">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.09a16 16 0 006 6l1.45-1.45a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
@@ -348,7 +349,7 @@
   <nav class="mobile-drawer-nav">
     <a href="index.html" data-ar="الرئيسية">Home</a>
     <a href="menu.html" class="active" data-ar="قائمة الطعام">Menu</a>
-    <a href="branches.html" data-ar="فروعنا">Our Branches</a>
+    <a href="about.html" data-ar="من نحن">About Us</a>
     <a href="contact.html" data-ar="تواصل معنا">Contact Us</a>
   </nav>
   <div class="mobile-drawer-foot">
@@ -357,14 +358,18 @@
       <span data-ar="سلة الطلب">Order Cart</span> <span class="cart-badge" hidden>0</span>
     </button>
     <a href="tel:+201212002005" class="btn btn-navy" style="width:100%;justify-content:center;direction:ltr;">012 12002005</a>
+    <button class="lang-toggle" onclick="toggleLanguage()" style="width:100%;justify-content:center;" aria-label="Switch language">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+      <span class="lang-lbl">English</span>
+    </button>
   </div>
 </aside>
 
 <!-- ═══════════════════ HERO ═══════════════════ -->
 <section class="menu-hero">
   <div class="container menu-hero-content">
-    <h1>قائمة الطعام</h1>
-    <p>أكثر من 60 طبقاً يمنياً أصيلاً – اختر وأضف للسلة مباشرة</p>
+    <h1 data-ar="قائمة الطعام">Food Menu</h1>
+    <p data-ar="أكثر من 60 طبقاً يمنياً أصيلاً – اختر وأضف للسلة مباشرة">Over 60 authentic Yemeni dishes — choose and add to cart directly</p>
   </div>
 </section>
 
@@ -374,43 +379,43 @@
     <div class="menu-tabs-scroll" role="tablist">
       <button class="menu-tab active" data-target="sec-meat" role="tab">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18.6 14.4c.8-.8 1.4-2 1.4-3.4 0-2.8-2.2-5-5-5-1.4 0-2.6.6-3.5 1.5"/><path d="M6.4 9.6C5.6 10.4 5 11.6 5 13c0 2.8 2.2 5 5 5 1.4 0 2.6-.6 3.5-1.5"/><line x1="2" y1="2" x2="22" y2="22"/></svg>
-        وجبات اللحم
+        <span data-ar="وجبات اللحم">Meat Dishes</span>
       </button>
       <button class="menu-tab" data-target="sec-chicken" role="tab">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-        وجبات الدجاج
+        <span data-ar="وجبات الدجاج">Chicken Dishes</span>
       </button>
       <button class="menu-tab" data-target="sec-rocket" role="tab">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L8.5 8.5 2 9.27l4.75 4.63L5.5 20 12 16.77 18.5 20l-1.25-6.1L22 9.27l-6.5-.77L12 2z"/></svg>
-        روكيت ولحم
+        <span data-ar="روكيت ولحم">Rocket &amp; Meat</span>
       </button>
       <button class="menu-tab" data-target="sec-bread" role="tab">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/></svg>
-        خبز
+        <span data-ar="خبز">Bread</span>
       </button>
       <button class="menu-tab" data-target="sec-sweets" role="tab">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21a9 9 0 1 1 0-18 9 9 0 0 1 0 18z"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
-        حلويات
+        <span data-ar="حلويات">Sweets</span>
       </button>
       <button class="menu-tab" data-target="sec-salads" role="tab">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V12"/><path d="M5 12H2a10 10 0 0 0 20 0h-3"/><circle cx="12" cy="5" r="3"/></svg>
-        سلطات وشوربة
+        <span data-ar="سلطات وشوربة">Salads &amp; Soup</span>
       </button>
       <button class="menu-tab" data-target="sec-hotdrinks" role="tab">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V8z"/><line x1="6" y1="2" x2="6" y2="4"/><line x1="10" y1="2" x2="10" y2="4"/><line x1="14" y1="2" x2="14" y2="4"/></svg>
-        مشروبات ساخنة
+        <span data-ar="مشروبات ساخنة">Hot Drinks</span>
       </button>
       <button class="menu-tab" data-target="sec-juices" role="tab">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="2" x2="8" y2="4"/><line x1="16" y1="2" x2="16" y2="4"/><path d="M3 10h18"/><path d="M3 6h18v16H3z"/></svg>
-        عصائر
+        <span data-ar="عصائر">Fresh Juices</span>
       </button>
       <button class="menu-tab" data-target="sec-cocktails" role="tab">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13 16 8 11 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
-        كوكتيل
+        <span data-ar="كوكتيل">Cocktails</span>
       </button>
       <button class="menu-tab" data-target="sec-soft" role="tab">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/></svg>
-        مشروبات غازية
+        <span data-ar="مشروبات غازية">Soft Drinks</span>
       </button>
     </div>
   </div>
@@ -426,8 +431,8 @@
         <div class="menu-section-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18.6 14.4c.8-.8 1.4-2 1.4-3.4 0-2.8-2.2-5-5-5-1.4 0-2.6.6-3.5 1.5"/><path d="M6.4 9.6C5.6 10.4 5 11.6 5 13c0 2.8 2.2 5 5 5 1.4 0 2.6-.6 3.5-1.5"/><line x1="2" y1="2" x2="22" y2="22"/></svg>
         </div>
-        <h2 class="menu-section-title">وجبات اللحم</h2>
-        <span class="menu-section-count">10 أطباق</span>
+        <h2 class="menu-section-title" data-ar="وجبات اللحم">Meat Dishes</h2>
+        <span class="menu-section-count" data-ar="10 أطباق">10 Dishes</span>
       </div>
       <div class="menu-grid">
 
@@ -436,18 +441,18 @@
             <div class="item-photo-holder">
               <div class="item-photo-pattern"></div>
               <svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18.6 14.4c.8-.8 1.4-2 1.4-3.4 0-2.8-2.2-5-5-5-1.4 0-2.6.6-3.5 1.5"/><path d="M6.4 9.6C5.6 10.4 5 11.6 5 13c0 2.8 2.2 5 5 5 1.4 0 2.6-.6 3.5-1.5"/><line x1="2" y1="2" x2="22" y2="22"/></svg>
-              <span class="item-photo-label">صورة الطبق</span>
+              <span class="item-photo-label" data-ar="صورة الطبق">Dish Photo</span>
             </div>
-            <div class="item-photo-badge">وجبات اللحم</div>
+            <div class="item-photo-badge" data-ar="وجبات اللحم">Meat Dishes</div>
           </div>
           <div class="item-body">
-            <h3 class="item-name">نفر لحم مندي</h3>
-            <p class="item-desc">مندي لحم يمني أصيل محضّر بالفحم والتوابل اليمنية المختارة</p>
+            <h3 class="item-name" data-ar="نفر لحم مندي">Lamb Mandi (Full)</h3>
+            <p class="item-desc" data-ar="مندي لحم يمني أصيل محضّر بالفحم والتوابل اليمنية المختارة">Authentic Yemeni charcoal mandi lamb with selected Yemeni spices</p>
             <div class="item-footer">
-              <div class="item-price">456 <small>جنيه</small></div>
-              <button class="btn-add" data-id="meat-1" data-name="نفر لحم مندي" data-price="456">
+              <div class="item-price">456 <small data-ar="جنيه">EGP</small></div>
+              <button class="btn-add" data-id="meat-1" data-name="Lamb Mandi (Full)" data-price="456">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                <span class="btn-add-text">أضف للسلة</span>
+                <span class="btn-add-text" data-ar="أضف للسلة">Add to Cart</span>
               </button>
             </div>
           </div>
@@ -458,18 +463,18 @@
             <div class="item-photo-holder">
               <div class="item-photo-pattern"></div>
               <svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18.6 14.4c.8-.8 1.4-2 1.4-3.4 0-2.8-2.2-5-5-5-1.4 0-2.6.6-3.5 1.5"/><path d="M6.4 9.6C5.6 10.4 5 11.6 5 13c0 2.8 2.2 5 5 5 1.4 0 2.6-.6 3.5-1.5"/><line x1="2" y1="2" x2="22" y2="22"/></svg>
-              <span class="item-photo-label">صورة الطبق</span>
+              <span class="item-photo-label" data-ar="صورة الطبق">Dish Photo</span>
             </div>
-            <div class="item-photo-badge">وجبات اللحم</div>
+            <div class="item-photo-badge" data-ar="وجبات اللحم">Meat Dishes</div>
           </div>
           <div class="item-body">
-            <h3 class="item-name">ربع لحم مندي</h3>
-            <p class="item-desc">مندي لحم يمني بالفحم والتوابل للوجبة الفردية</p>
+            <h3 class="item-name" data-ar="ربع لحم مندي">Lamb Mandi (Quarter)</h3>
+            <p class="item-desc" data-ar="مندي لحم يمني بالفحم والتوابل للوجبة الفردية">Charcoal mandi lamb for a single serving</p>
             <div class="item-footer">
-              <div class="item-price">130 <small>جنيه</small></div>
-              <button class="btn-add" data-id="meat-2" data-name="ربع لحم مندي" data-price="130">
+              <div class="item-price">130 <small data-ar="جنيه">EGP</small></div>
+              <button class="btn-add" data-id="meat-2" data-name="Lamb Mandi (Quarter)" data-price="130">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                <span class="btn-add-text">أضف للسلة</span>
+                <span class="btn-add-text" data-ar="أضف للسلة">Add to Cart</span>
               </button>
             </div>
           </div>
@@ -480,18 +485,18 @@
             <div class="item-photo-holder">
               <div class="item-photo-pattern"></div>
               <svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18.6 14.4c.8-.8 1.4-2 1.4-3.4 0-2.8-2.2-5-5-5-1.4 0-2.6.6-3.5 1.5"/><path d="M6.4 9.6C5.6 10.4 5 11.6 5 13c0 2.8 2.2 5 5 5 1.4 0 2.6-.6 3.5-1.5"/><line x1="2" y1="2" x2="22" y2="22"/></svg>
-              <span class="item-photo-label">صورة الطبق</span>
+              <span class="item-photo-label" data-ar="صورة الطبق">Dish Photo</span>
             </div>
-            <div class="item-photo-badge">وجبات اللحم</div>
+            <div class="item-photo-badge" data-ar="وجبات اللحم">Meat Dishes</div>
           </div>
           <div class="item-body">
-            <h3 class="item-name">نفر لحم مطبق</h3>
-            <p class="item-desc">مطبق لحم يمني فاخر بعجينة هشة وحشوة اللحم والبصل والبهارات</p>
+            <h3 class="item-name" data-ar="نفر لحم مطبق">Lamb Matbaq (Full)</h3>
+            <p class="item-desc" data-ar="مطبق لحم يمني فاخر بعجينة هشة وحشوة اللحم والبصل والبهارات">Premium Yemeni lamb matbaq with crispy dough filled with lamb, onion and spices</p>
             <div class="item-footer">
-              <div class="item-price">490 <small>جنيه</small></div>
-              <button class="btn-add" data-id="meat-3" data-name="نفر لحم مطبق" data-price="490">
+              <div class="item-price">490 <small data-ar="جنيه">EGP</small></div>
+              <button class="btn-add" data-id="meat-3" data-name="Lamb Matbaq (Full)" data-price="490">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                <span class="btn-add-text">أضف للسلة</span>
+                <span class="btn-add-text" data-ar="أضف للسلة">Add to Cart</span>
               </button>
             </div>
           </div>
@@ -502,18 +507,18 @@
             <div class="item-photo-holder">
               <div class="item-photo-pattern"></div>
               <svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18.6 14.4c.8-.8 1.4-2 1.4-3.4 0-2.8-2.2-5-5-5-1.4 0-2.6.6-3.5 1.5"/><path d="M6.4 9.6C5.6 10.4 5 11.6 5 13c0 2.8 2.2 5 5 5 1.4 0 2.6-.6 3.5-1.5"/><line x1="2" y1="2" x2="22" y2="22"/></svg>
-              <span class="item-photo-label">صورة الطبق</span>
+              <span class="item-photo-label" data-ar="صورة الطبق">Dish Photo</span>
             </div>
-            <div class="item-photo-badge">وجبات اللحم</div>
+            <div class="item-photo-badge" data-ar="وجبات اللحم">Meat Dishes</div>
           </div>
           <div class="item-body">
-            <h3 class="item-name">ربع لحم مطبق</h3>
-            <p class="item-desc">مطبق لحم للوجبة الفردية بعجينة هشة وتوابل فاخرة</p>
+            <h3 class="item-name" data-ar="ربع لحم مطبق">Lamb Matbaq (Quarter)</h3>
+            <p class="item-desc" data-ar="مطبق لحم للوجبة الفردية بعجينة هشة وتوابل فاخرة">Lamb matbaq for a single serving with crispy dough and premium spices</p>
             <div class="item-footer">
-              <div class="item-price">140 <small>جنيه</small></div>
-              <button class="btn-add" data-id="meat-4" data-name="ربع لحم مطبق" data-price="140">
+              <div class="item-price">140 <small data-ar="جنيه">EGP</small></div>
+              <button class="btn-add" data-id="meat-4" data-name="Lamb Matbaq (Quarter)" data-price="140">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                <span class="btn-add-text">أضف للسلة</span>
+                <span class="btn-add-text" data-ar="أضف للسلة">Add to Cart</span>
               </button>
             </div>
           </div>
@@ -524,18 +529,18 @@
             <div class="item-photo-holder">
               <div class="item-photo-pattern"></div>
               <svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18.6 14.4c.8-.8 1.4-2 1.4-3.4 0-2.8-2.2-5-5-5-1.4 0-2.6.6-3.5 1.5"/><path d="M6.4 9.6C5.6 10.4 5 11.6 5 13c0 2.8 2.2 5 5 5 1.4 0 2.6-.6 3.5-1.5"/><line x1="2" y1="2" x2="22" y2="22"/></svg>
-              <span class="item-photo-label">صورة الطبق</span>
+              <span class="item-photo-label" data-ar="صورة الطبق">Dish Photo</span>
             </div>
-            <div class="item-photo-badge">وجبات اللحم</div>
+            <div class="item-photo-badge" data-ar="وجبات اللحم">Meat Dishes</div>
           </div>
           <div class="item-body">
-            <h3 class="item-name">نفر لحم زربيان</h3>
-            <p class="item-desc">زربيان لحم مطبوخ بأرز الزعفران والبهارات اليمنية الفاخرة</p>
+            <h3 class="item-name" data-ar="نفر لحم زربيان">Lamb Zarbiyaan (Full)</h3>
+            <p class="item-desc" data-ar="زربيان لحم مطبوخ بأرز الزعفران والبهارات اليمنية الفاخرة">Lamb zarbiyaan cooked with saffron rice and premium Yemeni spices</p>
             <div class="item-footer">
-              <div class="item-price">490 <small>جنيه</small></div>
-              <button class="btn-add" data-id="meat-5" data-name="نفر لحم زربيان" data-price="490">
+              <div class="item-price">490 <small data-ar="جنيه">EGP</small></div>
+              <button class="btn-add" data-id="meat-5" data-name="Lamb Zarbiyaan (Full)" data-price="490">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                <span class="btn-add-text">أضف للسلة</span>
+                <span class="btn-add-text" data-ar="أضف للسلة">Add to Cart</span>
               </button>
             </div>
           </div>
@@ -546,18 +551,18 @@
             <div class="item-photo-holder">
               <div class="item-photo-pattern"></div>
               <svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18.6 14.4c.8-.8 1.4-2 1.4-3.4 0-2.8-2.2-5-5-5-1.4 0-2.6.6-3.5 1.5"/><path d="M6.4 9.6C5.6 10.4 5 11.6 5 13c0 2.8 2.2 5 5 5 1.4 0 2.6-.6 3.5-1.5"/><line x1="2" y1="2" x2="22" y2="22"/></svg>
-              <span class="item-photo-label">صورة الطبق</span>
+              <span class="item-photo-label" data-ar="صورة الطبق">Dish Photo</span>
             </div>
-            <div class="item-photo-badge">وجبات اللحم</div>
+            <div class="item-photo-badge" data-ar="وجبات اللحم">Meat Dishes</div>
           </div>
           <div class="item-body">
-            <h3 class="item-name">ربع لحم زربيان</h3>
-            <p class="item-desc">زربيان لحم للوجبة الفردية</p>
+            <h3 class="item-name" data-ar="ربع لحم زربيان">Lamb Zarbiyaan (Quarter)</h3>
+            <p class="item-desc" data-ar="زربيان لحم للوجبة الفردية">Lamb zarbiyaan for a single serving</p>
             <div class="item-footer">
-              <div class="item-price">140 <small>جنيه</small></div>
-              <button class="btn-add" data-id="meat-6" data-name="ربع لحم زربيان" data-price="140">
+              <div class="item-price">140 <small data-ar="جنيه">EGP</small></div>
+              <button class="btn-add" data-id="meat-6" data-name="Lamb Zarbiyaan (Quarter)" data-price="140">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                <span class="btn-add-text">أضف للسلة</span>
+                <span class="btn-add-text" data-ar="أضف للسلة">Add to Cart</span>
               </button>
             </div>
           </div>
@@ -568,18 +573,18 @@
             <div class="item-photo-holder">
               <div class="item-photo-pattern"></div>
               <svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18.6 14.4c.8-.8 1.4-2 1.4-3.4 0-2.8-2.2-5-5-5-1.4 0-2.6.6-3.5 1.5"/><path d="M6.4 9.6C5.6 10.4 5 11.6 5 13c0 2.8 2.2 5 5 5 1.4 0 2.6-.6 3.5-1.5"/><line x1="2" y1="2" x2="22" y2="22"/></svg>
-              <span class="item-photo-label">صورة الطبق</span>
+              <span class="item-photo-label" data-ar="صورة الطبق">Dish Photo</span>
             </div>
-            <div class="item-photo-badge">وجبات اللحم</div>
+            <div class="item-photo-badge" data-ar="وجبات اللحم">Meat Dishes</div>
           </div>
           <div class="item-body">
-            <h3 class="item-name">كبسة لحم</h3>
-            <p class="item-desc">كبسة لحم خليجية بأرز الكبسة والتوابل الخليجية والمكسرات</p>
+            <h3 class="item-name" data-ar="كبسة لحم">Lamb Kabsa</h3>
+            <p class="item-desc" data-ar="كبسة لحم خليجية بأرز الكبسة والتوابل الخليجية والمكسرات">Gulf-style lamb kabsa with kabsa rice, Gulf spices and nuts</p>
             <div class="item-footer">
-              <div class="item-price">490 <small>جنيه</small></div>
-              <button class="btn-add" data-id="meat-7" data-name="كبسة لحم" data-price="490">
+              <div class="item-price">490 <small data-ar="جنيه">EGP</small></div>
+              <button class="btn-add" data-id="meat-7" data-name="Lamb Kabsa" data-price="490">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                <span class="btn-add-text">أضف للسلة</span>
+                <span class="btn-add-text" data-ar="أضف للسلة">Add to Cart</span>
               </button>
             </div>
           </div>
@@ -590,18 +595,18 @@
             <div class="item-photo-holder">
               <div class="item-photo-pattern"></div>
               <svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18.6 14.4c.8-.8 1.4-2 1.4-3.4 0-2.8-2.2-5-5-5-1.4 0-2.6.6-3.5 1.5"/><path d="M6.4 9.6C5.6 10.4 5 11.6 5 13c0 2.8 2.2 5 5 5 1.4 0 2.6-.6 3.5-1.5"/><line x1="2" y1="2" x2="22" y2="22"/></svg>
-              <span class="item-photo-label">صورة الطبق</span>
+              <span class="item-photo-label" data-ar="صورة الطبق">Dish Photo</span>
             </div>
-            <div class="item-photo-badge">وجبات اللحم</div>
+            <div class="item-photo-badge" data-ar="وجبات اللحم">Meat Dishes</div>
           </div>
           <div class="item-body">
-            <h3 class="item-name">هريس لحم</h3>
-            <p class="item-desc">هريس لحم يمني دسم محضّر بالقمح والبهارات الخاصة</p>
+            <h3 class="item-name" data-ar="هريس لحم">Lamb Harees</h3>
+            <p class="item-desc" data-ar="هريس لحم يمني دسم محضّر بالقمح والبهارات الخاصة">Rich Yemeni lamb harees made with wheat and special spices</p>
             <div class="item-footer">
-              <div class="item-price">150 <small>جنيه</small></div>
-              <button class="btn-add" data-id="meat-8" data-name="هريس لحم" data-price="150">
+              <div class="item-price">150 <small data-ar="جنيه">EGP</small></div>
+              <button class="btn-add" data-id="meat-8" data-name="Lamb Harees" data-price="150">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                <span class="btn-add-text">أضف للسلة</span>
+                <span class="btn-add-text" data-ar="أضف للسلة">Add to Cart</span>
               </button>
             </div>
           </div>
@@ -612,18 +617,18 @@
             <div class="item-photo-holder">
               <div class="item-photo-pattern"></div>
               <svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18.6 14.4c.8-.8 1.4-2 1.4-3.4 0-2.8-2.2-5-5-5-1.4 0-2.6.6-3.5 1.5"/><path d="M6.4 9.6C5.6 10.4 5 11.6 5 13c0 2.8 2.2 5 5 5 1.4 0 2.6-.6 3.5-1.5"/><line x1="2" y1="2" x2="22" y2="22"/></svg>
-              <span class="item-photo-label">صورة الطبق</span>
+              <span class="item-photo-label" data-ar="صورة الطبق">Dish Photo</span>
             </div>
-            <div class="item-photo-badge">وجبات اللحم</div>
+            <div class="item-photo-badge" data-ar="وجبات اللحم">Meat Dishes</div>
           </div>
           <div class="item-body">
-            <h3 class="item-name">فتة لحم</h3>
-            <p class="item-desc">فتة لحم يمنية بالخبز والمرق والتوابل المنزلية</p>
+            <h3 class="item-name" data-ar="فتة لحم">Lamb Fattah</h3>
+            <p class="item-desc" data-ar="فتة لحم يمنية بالخبز والمرق والتوابل المنزلية">Yemeni lamb fattah with bread, broth and homestyle spices</p>
             <div class="item-footer">
-              <div class="item-price">130 <small>جنيه</small></div>
-              <button class="btn-add" data-id="meat-9" data-name="فتة لحم" data-price="130">
+              <div class="item-price">130 <small data-ar="جنيه">EGP</small></div>
+              <button class="btn-add" data-id="meat-9" data-name="Lamb Fattah" data-price="130">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                <span class="btn-add-text">أضف للسلة</span>
+                <span class="btn-add-text" data-ar="أضف للسلة">Add to Cart</span>
               </button>
             </div>
           </div>
@@ -634,18 +639,18 @@
             <div class="item-photo-holder">
               <div class="item-photo-pattern"></div>
               <svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18.6 14.4c.8-.8 1.4-2 1.4-3.4 0-2.8-2.2-5-5-5-1.4 0-2.6.6-3.5 1.5"/><path d="M6.4 9.6C5.6 10.4 5 11.6 5 13c0 2.8 2.2 5 5 5 1.4 0 2.6-.6 3.5-1.5"/><line x1="2" y1="2" x2="22" y2="22"/></svg>
-              <span class="item-photo-label">صورة الطبق</span>
+              <span class="item-photo-label" data-ar="صورة الطبق">Dish Photo</span>
             </div>
-            <div class="item-photo-badge">وجبات اللحم</div>
+            <div class="item-photo-badge" data-ar="وجبات اللحم">Meat Dishes</div>
           </div>
           <div class="item-body">
-            <h3 class="item-name">مرق لحم مع خبز</h3>
-            <p class="item-desc">مرق لحم غني بالبهارات اليمنية يُقدّم مع خبز طازج</p>
+            <h3 class="item-name" data-ar="مرق لحم مع خبز">Lamb Broth with Bread</h3>
+            <p class="item-desc" data-ar="مرق لحم غني بالبهارات اليمنية يُقدّم مع خبز طازج">Rich lamb broth with Yemeni spices served with fresh bread</p>
             <div class="item-footer">
-              <div class="item-price">70 <small>جنيه</small></div>
-              <button class="btn-add" data-id="meat-10" data-name="مرق لحم مع خبز" data-price="70">
+              <div class="item-price">70 <small data-ar="جنيه">EGP</small></div>
+              <button class="btn-add" data-id="meat-10" data-name="Lamb Broth with Bread" data-price="70">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                <span class="btn-add-text">أضف للسلة</span>
+                <span class="btn-add-text" data-ar="أضف للسلة">Add to Cart</span>
               </button>
             </div>
           </div>
@@ -660,8 +665,8 @@
         <div class="menu-section-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
         </div>
-        <h2 class="menu-section-title">وجبات الدجاج</h2>
-        <span class="menu-section-count">10 أطباق</span>
+        <h2 class="menu-section-title" data-ar="وجبات الدجاج">Chicken Dishes</h2>
+        <span class="menu-section-count" data-ar="10 أطباق">10 Dishes</span>
       </div>
       <div class="menu-grid">
 
@@ -670,18 +675,41 @@
             <div class="item-photo-holder">
               <div class="item-photo-pattern"></div>
               <svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-              <span class="item-photo-label">صورة الطبق</span>
+              <span class="item-photo-label" data-ar="صورة الطبق">Dish Photo</span>
             </div>
-            <div class="item-photo-badge">وجبات الدجاج</div>
+            <div class="item-photo-badge" data-ar="وجبات الدجاج">Chicken Dishes</div>
           </div>
           <div class="item-body">
-            <h3 class="item-name">نفر دجاج مندي</h3>
-            <p class="item-desc">مندي دجاج يمني بالفحم والتوابل اليمنية – تقديم لشخصين</p>
+            <h3 class="item-name" data-ar="نفر دجاج مندي">Chicken Mandi (Full)</h3>
+            <p class="item-desc" data-ar="مندي دجاج يمني بالفحم والتوابل اليمنية – تقديم لشخصين">Yemeni charcoal chicken mandi with Yemeni spices — serves two</p>
             <div class="item-footer">
-              <div class="item-price">275 <small>جنيه</small></div>
-              <button class="btn-add" data-id="chk-1" data-name="نفر دجاج مندي" data-price="275">
+              <div class="item-price">275 <small data-ar="جنيه">EGP</small></div>
+              <button class="btn-add" data-id="chk-1" data-name="Chicken Mandi (Full)" data-price="275">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                <span class="btn-add-text">أضف للسلة</span>
+                <span class="btn-add-text" data-ar="أضف للسلة">Add to Cart</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="menu-item-card reveal">
+          <div class="item-photo">
+            <img src="photos/NEW PHOTOS/نفر عقدة دجاج.jpg" alt="ربع دجاج مندي">
+            <div class="item-photo-holder">
+              <div class="item-photo-pattern"></div>
+              <svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              <span class="item-photo-label" data-ar="صورة الطبق">Dish Photo</span>
+            </div>
+            <div class="item-photo-badge" data-ar="وجبات الدجاج">Chicken Dishes</div>
+          </div>
+          <div class="item-body">
+            <h3 class="item-name" data-ar="ربع دجاج مندي">Chicken Mandi (Quarter)</h3>
+            <p class="item-desc" data-ar="مندي دجاج للوجبة الفردية مع أرز ومرق">Chicken mandi for a single serving with rice and broth</p>
+            <div class="item-footer">
+              <div class="item-price">79 <small data-ar="جنيه">EGP</small></div>
+              <button class="btn-add" data-id="chk-2" data-name="Chicken Mandi (Quarter)" data-price="79">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                <span class="btn-add-text" data-ar="أضف للسلة">Add to Cart</span>
               </button>
             </div>
           </div>
@@ -692,18 +720,18 @@
             <div class="item-photo-holder">
               <div class="item-photo-pattern"></div>
               <svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-              <span class="item-photo-label">صورة الطبق</span>
+              <span class="item-photo-label" data-ar="صورة الطبق">Dish Photo</span>
             </div>
-            <div class="item-photo-badge">وجبات الدجاج</div>
+            <div class="item-photo-badge" data-ar="وجبات الدجاج">Chicken Dishes</div>
           </div>
           <div class="item-body">
-            <h3 class="item-name">ربع دجاج مندي</h3>
-            <p class="item-desc">مندي دجاج للوجبة الفردية مع أرز ومرق</p>
+            <h3 class="item-name" data-ar="نفر دجاج مطبق">Chicken Matbaq (Full)</h3>
+            <p class="item-desc" data-ar="مطبق دجاج بعجينة هشة وحشوة الدجاج والبصل والبهارات">Chicken matbaq with crispy dough filled with chicken, onion and spices</p>
             <div class="item-footer">
-              <div class="item-price">79 <small>جنيه</small></div>
-              <button class="btn-add" data-id="chk-2" data-name="ربع دجاج مندي" data-price="79">
+              <div class="item-price">290 <small data-ar="جنيه">EGP</small></div>
+              <button class="btn-add" data-id="chk-3" data-name="Chicken Matbaq (Full)" data-price="290">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                <span class="btn-add-text">أضف للسلة</span>
+                <span class="btn-add-text" data-ar="أضف للسلة">Add to Cart</span>
               </button>
             </div>
           </div>
@@ -714,18 +742,18 @@
             <div class="item-photo-holder">
               <div class="item-photo-pattern"></div>
               <svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-              <span class="item-photo-label">صورة الطبق</span>
+              <span class="item-photo-label" data-ar="صورة الطبق">Dish Photo</span>
             </div>
-            <div class="item-photo-badge">وجبات الدجاج</div>
+            <div class="item-photo-badge" data-ar="وجبات الدجاج">Chicken Dishes</div>
           </div>
           <div class="item-body">
-            <h3 class="item-name">نفر دجاج مطبق</h3>
-            <p class="item-desc">مطبق دجاج بعجينة هشة وحشوة الدجاج والبصل والبهارات</p>
+            <h3 class="item-name" data-ar="ربع دجاج مطبق">Chicken Matbaq (Quarter)</h3>
+            <p class="item-desc" data-ar="مطبق دجاج للوجبة الفردية">Chicken matbaq for a single serving</p>
             <div class="item-footer">
-              <div class="item-price">290 <small>جنيه</small></div>
-              <button class="btn-add" data-id="chk-3" data-name="نفر دجاج مطبق" data-price="290">
+              <div class="item-price">89 <small data-ar="جنيه">EGP</small></div>
+              <button class="btn-add" data-id="chk-4" data-name="Chicken Matbaq (Quarter)" data-price="89">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                <span class="btn-add-text">أضف للسلة</span>
+                <span class="btn-add-text" data-ar="أضف للسلة">Add to Cart</span>
               </button>
             </div>
           </div>
@@ -736,18 +764,18 @@
             <div class="item-photo-holder">
               <div class="item-photo-pattern"></div>
               <svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-              <span class="item-photo-label">صورة الطبق</span>
+              <span class="item-photo-label" data-ar="صورة الطبق">Dish Photo</span>
             </div>
-            <div class="item-photo-badge">وجبات الدجاج</div>
+            <div class="item-photo-badge" data-ar="وجبات الدجاج">Chicken Dishes</div>
           </div>
           <div class="item-body">
-            <h3 class="item-name">ربع دجاج مطبق</h3>
-            <p class="item-desc">مطبق دجاج للوجبة الفردية</p>
+            <h3 class="item-name" data-ar="نفر دجاج زربيان">Chicken Zarbiyaan (Full)</h3>
+            <p class="item-desc" data-ar="زربيان دجاج بأرز الزعفران والبهارات اليمنية للوجبة الكاملة">Chicken zarbiyaan with saffron rice and Yemeni spices — full meal</p>
             <div class="item-footer">
-              <div class="item-price">89 <small>جنيه</small></div>
-              <button class="btn-add" data-id="chk-4" data-name="ربع دجاج مطبق" data-price="89">
+              <div class="item-price">290 <small data-ar="جنيه">EGP</small></div>
+              <button class="btn-add" data-id="chk-5" data-name="Chicken Zarbiyaan (Full)" data-price="290">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                <span class="btn-add-text">أضف للسلة</span>
+                <span class="btn-add-text" data-ar="أضف للسلة">Add to Cart</span>
               </button>
             </div>
           </div>
@@ -758,18 +786,18 @@
             <div class="item-photo-holder">
               <div class="item-photo-pattern"></div>
               <svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-              <span class="item-photo-label">صورة الطبق</span>
+              <span class="item-photo-label" data-ar="صورة الطبق">Dish Photo</span>
             </div>
-            <div class="item-photo-badge">وجبات الدجاج</div>
+            <div class="item-photo-badge" data-ar="وجبات الدجاج">Chicken Dishes</div>
           </div>
           <div class="item-body">
-            <h3 class="item-name">نفر دجاج زربيان</h3>
-            <p class="item-desc">زربيان دجاج بأرز الزعفران والبهارات اليمنية للوجبة الكاملة</p>
+            <h3 class="item-name" data-ar="ربع دجاج زربيان">Chicken Zarbiyaan (Quarter)</h3>
+            <p class="item-desc" data-ar="زربيان دجاج للوجبة الفردية">Chicken zarbiyaan for a single serving</p>
             <div class="item-footer">
-              <div class="item-price">290 <small>جنيه</small></div>
-              <button class="btn-add" data-id="chk-5" data-name="نفر دجاج زربيان" data-price="290">
+              <div class="item-price">89 <small data-ar="جنيه">EGP</small></div>
+              <button class="btn-add" data-id="chk-6" data-name="Chicken Zarbiyaan (Quarter)" data-price="89">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                <span class="btn-add-text">أضف للسلة</span>
+                <span class="btn-add-text" data-ar="أضف للسلة">Add to Cart</span>
               </button>
             </div>
           </div>
@@ -780,18 +808,18 @@
             <div class="item-photo-holder">
               <div class="item-photo-pattern"></div>
               <svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-              <span class="item-photo-label">صورة الطبق</span>
+              <span class="item-photo-label" data-ar="صورة الطبق">Dish Photo</span>
             </div>
-            <div class="item-photo-badge">وجبات الدجاج</div>
+            <div class="item-photo-badge" data-ar="وجبات الدجاج">Chicken Dishes</div>
           </div>
           <div class="item-body">
-            <h3 class="item-name">ربع دجاج زربيان</h3>
-            <p class="item-desc">زربيان دجاج للوجبة الفردية</p>
+            <h3 class="item-name" data-ar="دجاج هريس">Chicken Harees</h3>
+            <p class="item-desc" data-ar="هريس دجاج يمني بالقمح والبهارات الخاصة">Yemeni chicken harees with wheat and special spices</p>
             <div class="item-footer">
-              <div class="item-price">89 <small>جنيه</small></div>
-              <button class="btn-add" data-id="chk-6" data-name="ربع دجاج زربيان" data-price="89">
+              <div class="item-price">120 <small data-ar="جنيه">EGP</small></div>
+              <button class="btn-add" data-id="chk-7" data-name="Chicken Harees" data-price="120">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                <span class="btn-add-text">أضف للسلة</span>
+                <span class="btn-add-text" data-ar="أضف للسلة">Add to Cart</span>
               </button>
             </div>
           </div>
@@ -802,18 +830,18 @@
             <div class="item-photo-holder">
               <div class="item-photo-pattern"></div>
               <svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-              <span class="item-photo-label">صورة الطبق</span>
+              <span class="item-photo-label" data-ar="صورة الطبق">Dish Photo</span>
             </div>
-            <div class="item-photo-badge">وجبات الدجاج</div>
+            <div class="item-photo-badge" data-ar="وجبات الدجاج">Chicken Dishes</div>
           </div>
           <div class="item-body">
-            <h3 class="item-name">دجاج هريس</h3>
-            <p class="item-desc">هريس دجاج يمني بالقمح والبهارات الخاصة</p>
+            <h3 class="item-name" data-ar="كبسة دجاج نصف">Chicken Kabsa (Half)</h3>
+            <p class="item-desc" data-ar="كبسة دجاج خليجية بالتوابل والمكسرات والزبيب — حجم نصف">Gulf-style chicken kabsa with spices, nuts and raisins — half size</p>
             <div class="item-footer">
-              <div class="item-price">120 <small>جنيه</small></div>
-              <button class="btn-add" data-id="chk-7" data-name="دجاج هريس" data-price="120">
+              <div class="item-price">249 <small data-ar="جنيه">EGP</small></div>
+              <button class="btn-add" data-id="chk-8a" data-name="Chicken Kabsa (Half)" data-price="249">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                <span class="btn-add-text">أضف للسلة</span>
+                <span class="btn-add-text" data-ar="أضف للسلة">Add to Cart</span>
               </button>
             </div>
           </div>
@@ -824,18 +852,18 @@
             <div class="item-photo-holder">
               <div class="item-photo-pattern"></div>
               <svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-              <span class="item-photo-label">صورة الطبق</span>
+              <span class="item-photo-label" data-ar="صورة الطبق">Dish Photo</span>
             </div>
-            <div class="item-photo-badge">وجبات الدجاج</div>
+            <div class="item-photo-badge" data-ar="وجبات الدجاج">Chicken Dishes</div>
           </div>
           <div class="item-body">
-            <h3 class="item-name">كبسة دجاج نصف</h3>
-            <p class="item-desc">كبسة دجاج خليجية بالتوابل والمكسرات والزبيب — حجم نصف</p>
+            <h3 class="item-name" data-ar="كبسة دجاج كاملة">Chicken Kabsa (Full)</h3>
+            <p class="item-desc" data-ar="كبسة دجاج خليجية بالتوابل والمكسرات والزبيب — دجاجة كاملة">Gulf-style chicken kabsa with spices, nuts and raisins — whole chicken</p>
             <div class="item-footer">
-              <div class="item-price">249 <small>جنيه</small></div>
-              <button class="btn-add" data-id="chk-8a" data-name="كبسة دجاج نصف" data-price="249">
+              <div class="item-price">449 <small data-ar="جنيه">EGP</small></div>
+              <button class="btn-add" data-id="chk-8b" data-name="Chicken Kabsa (Full)" data-price="449">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                <span class="btn-add-text">أضف للسلة</span>
+                <span class="btn-add-text" data-ar="أضف للسلة">Add to Cart</span>
               </button>
             </div>
           </div>
@@ -846,18 +874,18 @@
             <div class="item-photo-holder">
               <div class="item-photo-pattern"></div>
               <svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-              <span class="item-photo-label">صورة الطبق</span>
+              <span class="item-photo-label" data-ar="صورة الطبق">Dish Photo</span>
             </div>
-            <div class="item-photo-badge">وجبات الدجاج</div>
+            <div class="item-photo-badge" data-ar="وجبات الدجاج">Chicken Dishes</div>
           </div>
           <div class="item-body">
-            <h3 class="item-name">كبسة دجاج كاملة</h3>
-            <p class="item-desc">كبسة دجاج خليجية بالتوابل والمكسرات والزبيب — دجاجة كاملة</p>
+            <h3 class="item-name" data-ar="فتة دجاج">Chicken Fattah</h3>
+            <p class="item-desc" data-ar="فتة دجاج يمنية بالخبز والمرق الدسم والتوابل">Yemeni chicken fattah with bread, rich broth and spices</p>
             <div class="item-footer">
-              <div class="item-price">449 <small>جنيه</small></div>
-              <button class="btn-add" data-id="chk-8b" data-name="كبسة دجاج كاملة" data-price="449">
+              <div class="item-price">110 <small data-ar="جنيه">EGP</small></div>
+              <button class="btn-add" data-id="chk-9" data-name="Chicken Fattah" data-price="110">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                <span class="btn-add-text">أضف للسلة</span>
+                <span class="btn-add-text" data-ar="أضف للسلة">Add to Cart</span>
               </button>
             </div>
           </div>
@@ -868,40 +896,18 @@
             <div class="item-photo-holder">
               <div class="item-photo-pattern"></div>
               <svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-              <span class="item-photo-label">صورة الطبق</span>
+              <span class="item-photo-label" data-ar="صورة الطبق">Dish Photo</span>
             </div>
-            <div class="item-photo-badge">وجبات الدجاج</div>
+            <div class="item-photo-badge" data-ar="وجبات الدجاج">Chicken Dishes</div>
           </div>
           <div class="item-body">
-            <h3 class="item-name">فتة دجاج</h3>
-            <p class="item-desc">فتة دجاج يمنية بالخبز والمرق الدسم والتوابل</p>
+            <h3 class="item-name" data-ar="مرق دجاج مع خبز">Chicken Broth with Bread</h3>
+            <p class="item-desc" data-ar="مرق دجاج غني بالبهارات مع خبز طازج">Rich spiced chicken broth with fresh bread</p>
             <div class="item-footer">
-              <div class="item-price">110 <small>جنيه</small></div>
-              <button class="btn-add" data-id="chk-9" data-name="فتة دجاج" data-price="110">
+              <div class="item-price">60 <small data-ar="جنيه">EGP</small></div>
+              <button class="btn-add" data-id="chk-10" data-name="Chicken Broth with Bread" data-price="60">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                <span class="btn-add-text">أضف للسلة</span>
-              </button>
-            </div>
-          </div>
-        </article>
-
-        <article class="menu-item-card reveal">
-          <div class="item-photo">
-            <div class="item-photo-holder">
-              <div class="item-photo-pattern"></div>
-              <svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-              <span class="item-photo-label">صورة الطبق</span>
-            </div>
-            <div class="item-photo-badge">وجبات الدجاج</div>
-          </div>
-          <div class="item-body">
-            <h3 class="item-name">مرق دجاج مع خبز</h3>
-            <p class="item-desc">مرق دجاج غني بالبهارات مع خبز طازج</p>
-            <div class="item-footer">
-              <div class="item-price">60 <small>جنيه</small></div>
-              <button class="btn-add" data-id="chk-10" data-name="مرق دجاج مع خبز" data-price="60">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                <span class="btn-add-text">أضف للسلة</span>
+                <span class="btn-add-text" data-ar="أضف للسلة">Add to Cart</span>
               </button>
             </div>
           </div>
@@ -916,8 +922,8 @@
         <div class="menu-section-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L8.5 8.5 2 9.27l4.75 4.63L5.5 20 12 16.77 18.5 20l-1.25-6.1L22 9.27l-6.5-.77L12 2z"/></svg>
         </div>
-        <h2 class="menu-section-title">روكيت ولحم</h2>
-        <span class="menu-section-count">6 أطباق</span>
+        <h2 class="menu-section-title" data-ar="روكيت ولحم">Rocket &amp; Meat</h2>
+        <span class="menu-section-count" data-ar="6 أطباق">6 Dishes</span>
       </div>
       <div class="menu-grid">
 
@@ -926,18 +932,18 @@
             <div class="item-photo-holder">
               <div class="item-photo-pattern"></div>
               <svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L8.5 8.5 2 9.27l4.75 4.63L5.5 20 12 16.77 18.5 20l-1.25-6.1L22 9.27l-6.5-.77L12 2z"/></svg>
-              <span class="item-photo-label">صورة الطبق</span>
+              <span class="item-photo-label" data-ar="صورة الطبق">Dish Photo</span>
             </div>
-            <div class="item-photo-badge">روكيت ولحم</div>
+            <div class="item-photo-badge" data-ar="روكيت ولحم">Rocket &amp; Meat</div>
           </div>
           <div class="item-body">
-            <h3 class="item-name">روكيت لحم دجاج</h3>
-            <p class="item-desc">روكيت دجاج بالتوابل اليمنية والروكيت الطازج</p>
+            <h3 class="item-name" data-ar="روكيت لحم دجاج">Rocket &amp; Chicken</h3>
+            <p class="item-desc" data-ar="روكيت دجاج بالتوابل اليمنية والروكيت الطازج">Chicken with Yemeni spices and fresh rocket leaves</p>
             <div class="item-footer">
-              <div class="item-price">95 <small>جنيه</small></div>
-              <button class="btn-add" data-id="rkt-1" data-name="روكيت لحم دجاج" data-price="95">
+              <div class="item-price">95 <small data-ar="جنيه">EGP</small></div>
+              <button class="btn-add" data-id="rkt-1" data-name="Rocket &amp; Chicken" data-price="95">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                <span class="btn-add-text">أضف للسلة</span>
+                <span class="btn-add-text" data-ar="أضف للسلة">Add to Cart</span>
               </button>
             </div>
           </div>
@@ -948,18 +954,18 @@
             <div class="item-photo-holder">
               <div class="item-photo-pattern"></div>
               <svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L8.5 8.5 2 9.27l4.75 4.63L5.5 20 12 16.77 18.5 20l-1.25-6.1L22 9.27l-6.5-.77L12 2z"/></svg>
-              <span class="item-photo-label">صورة الطبق</span>
+              <span class="item-photo-label" data-ar="صورة الطبق">Dish Photo</span>
             </div>
-            <div class="item-photo-badge">روكيت ولحم</div>
+            <div class="item-photo-badge" data-ar="روكيت ولحم">Rocket &amp; Meat</div>
           </div>
           <div class="item-body">
-            <h3 class="item-name">روكيت لحم ضأن</h3>
-            <p class="item-desc">روكيت لحم ضأن بالتوابل اليمنية الأصيلة</p>
+            <h3 class="item-name" data-ar="روكيت لحم ضأن">Rocket &amp; Lamb</h3>
+            <p class="item-desc" data-ar="روكيت لحم ضأن بالتوابل اليمنية الأصيلة">Lamb with authentic Yemeni spices and rocket</p>
             <div class="item-footer">
-              <div class="item-price">155 <small>جنيه</small></div>
-              <button class="btn-add" data-id="rkt-2" data-name="روكيت لحم ضأن" data-price="155">
+              <div class="item-price">155 <small data-ar="جنيه">EGP</small></div>
+              <button class="btn-add" data-id="rkt-2" data-name="Rocket &amp; Lamb" data-price="155">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                <span class="btn-add-text">أضف للسلة</span>
+                <span class="btn-add-text" data-ar="أضف للسلة">Add to Cart</span>
               </button>
             </div>
           </div>
@@ -970,18 +976,18 @@
             <div class="item-photo-holder">
               <div class="item-photo-pattern"></div>
               <svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L8.5 8.5 2 9.27l4.75 4.63L5.5 20 12 16.77 18.5 20l-1.25-6.1L22 9.27l-6.5-.77L12 2z"/></svg>
-              <span class="item-photo-label">صورة الطبق</span>
+              <span class="item-photo-label" data-ar="صورة الطبق">Dish Photo</span>
             </div>
-            <div class="item-photo-badge">روكيت ولحم</div>
+            <div class="item-photo-badge" data-ar="روكيت ولحم">Rocket &amp; Meat</div>
           </div>
           <div class="item-body">
-            <h3 class="item-name">روكيت كبدة</h3>
-            <p class="item-desc">روكيت كبدة مشوية بالتوابل اليمنية الحارة</p>
+            <h3 class="item-name" data-ar="روكيت كبدة">Rocket &amp; Liver</h3>
+            <p class="item-desc" data-ar="روكيت كبدة مشوية بالتوابل اليمنية الحارة">Grilled liver with spicy Yemeni spices and rocket</p>
             <div class="item-footer">
-              <div class="item-price">95 <small>جنيه</small></div>
-              <button class="btn-add" data-id="rkt-3" data-name="روكيت كبدة" data-price="95">
+              <div class="item-price">95 <small data-ar="جنيه">EGP</small></div>
+              <button class="btn-add" data-id="rkt-3" data-name="Rocket &amp; Liver" data-price="95">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                <span class="btn-add-text">أضف للسلة</span>
+                <span class="btn-add-text" data-ar="أضف للسلة">Add to Cart</span>
               </button>
             </div>
           </div>
@@ -992,18 +998,18 @@
             <div class="item-photo-holder">
               <div class="item-photo-pattern"></div>
               <svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L8.5 8.5 2 9.27l4.75 4.63L5.5 20 12 16.77 18.5 20l-1.25-6.1L22 9.27l-6.5-.77L12 2z"/></svg>
-              <span class="item-photo-label">صورة الطبق</span>
+              <span class="item-photo-label" data-ar="صورة الطبق">Dish Photo</span>
             </div>
-            <div class="item-photo-badge">روكيت ولحم</div>
+            <div class="item-photo-badge" data-ar="روكيت ولحم">Rocket &amp; Meat</div>
           </div>
           <div class="item-body">
-            <h3 class="item-name">روكيت شاورما</h3>
-            <p class="item-desc">روكيت شاورما بالصوص والخضار الطازجة</p>
+            <h3 class="item-name" data-ar="روكيت شاورما">Rocket &amp; Shawarma</h3>
+            <p class="item-desc" data-ar="روكيت شاورما بالصوص والخضار الطازجة">Shawarma with sauce and fresh vegetables in rocket</p>
             <div class="item-footer">
-              <div class="item-price">95 <small>جنيه</small></div>
-              <button class="btn-add" data-id="rkt-4" data-name="روكيت شاورما" data-price="95">
+              <div class="item-price">95 <small data-ar="جنيه">EGP</small></div>
+              <button class="btn-add" data-id="rkt-4" data-name="Rocket &amp; Shawarma" data-price="95">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                <span class="btn-add-text">أضف للسلة</span>
+                <span class="btn-add-text" data-ar="أضف للسلة">Add to Cart</span>
               </button>
             </div>
           </div>
@@ -1014,18 +1020,18 @@
             <div class="item-photo-holder">
               <div class="item-photo-pattern"></div>
               <svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L8.5 8.5 2 9.27l4.75 4.63L5.5 20 12 16.77 18.5 20l-1.25-6.1L22 9.27l-6.5-.77L12 2z"/></svg>
-              <span class="item-photo-label">صورة الطبق</span>
+              <span class="item-photo-label" data-ar="صورة الطبق">Dish Photo</span>
             </div>
-            <div class="item-photo-badge">روكيت ولحم</div>
+            <div class="item-photo-badge" data-ar="روكيت ولحم">Rocket &amp; Meat</div>
           </div>
           <div class="item-body">
-            <h3 class="item-name">روكيت سجق</h3>
-            <p class="item-desc">روكيت سجق يمني بالخضار والصوص الحار</p>
+            <h3 class="item-name" data-ar="روكيت سجق">Rocket &amp; Sausage</h3>
+            <p class="item-desc" data-ar="روكيت سجق يمني بالخضار والصوص الحار">Yemeni sausage with vegetables and spicy sauce in rocket</p>
             <div class="item-footer">
-              <div class="item-price">90 <small>جنيه</small></div>
-              <button class="btn-add" data-id="rkt-5" data-name="روكيت سجق" data-price="90">
+              <div class="item-price">90 <small data-ar="جنيه">EGP</small></div>
+              <button class="btn-add" data-id="rkt-5" data-name="Rocket &amp; Sausage" data-price="90">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                <span class="btn-add-text">أضف للسلة</span>
+                <span class="btn-add-text" data-ar="أضف للسلة">Add to Cart</span>
               </button>
             </div>
           </div>
@@ -1036,18 +1042,18 @@
             <div class="item-photo-holder">
               <div class="item-photo-pattern"></div>
               <svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L8.5 8.5 2 9.27l4.75 4.63L5.5 20 12 16.77 18.5 20l-1.25-6.1L22 9.27l-6.5-.77L12 2z"/></svg>
-              <span class="item-photo-label">صورة الطبق</span>
+              <span class="item-photo-label" data-ar="صورة الطبق">Dish Photo</span>
             </div>
-            <div class="item-photo-badge">روكيت ولحم</div>
+            <div class="item-photo-badge" data-ar="روكيت ولحم">Rocket &amp; Meat</div>
           </div>
           <div class="item-body">
-            <h3 class="item-name">روكيت بيض</h3>
-            <p class="item-desc">روكيت بيض مسلوق بالخضار والصوص الطازج</p>
+            <h3 class="item-name" data-ar="روكيت بيض">Rocket &amp; Egg</h3>
+            <p class="item-desc" data-ar="روكيت بيض مسلوق بالخضار والصوص الطازج">Boiled egg with vegetables and fresh sauce in rocket</p>
             <div class="item-footer">
-              <div class="item-price">80 <small>جنيه</small></div>
-              <button class="btn-add" data-id="rkt-6" data-name="روكيت بيض" data-price="80">
+              <div class="item-price">80 <small data-ar="جنيه">EGP</small></div>
+              <button class="btn-add" data-id="rkt-6" data-name="Rocket &amp; Egg" data-price="80">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                <span class="btn-add-text">أضف للسلة</span>
+                <span class="btn-add-text" data-ar="أضف للسلة">Add to Cart</span>
               </button>
             </div>
           </div>
@@ -1062,8 +1068,8 @@
         <div class="menu-section-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/></svg>
         </div>
-        <h2 class="menu-section-title">خبز</h2>
-        <span class="menu-section-count">5 أنواع</span>
+        <h2 class="menu-section-title" data-ar="خبز">Bread</h2>
+        <span class="menu-section-count" data-ar="5 أنواع">5 Types</span>
       </div>
       <div class="menu-grid">
 
@@ -1072,18 +1078,18 @@
             <div class="item-photo-holder">
               <div class="item-photo-pattern"></div>
               <svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/></svg>
-              <span class="item-photo-label">صورة الطبق</span>
+              <span class="item-photo-label" data-ar="صورة الطبق">Dish Photo</span>
             </div>
-            <div class="item-photo-badge">خبز</div>
+            <div class="item-photo-badge" data-ar="خبز">Bread</div>
           </div>
           <div class="item-body">
-            <h3 class="item-name">خبز تنور</h3>
-            <p class="item-desc">خبز تنور يمني طازج محضّر في فرن التنور التقليدي</p>
+            <h3 class="item-name" data-ar="خبز تنور">Tandoor Bread</h3>
+            <p class="item-desc" data-ar="خبز تنور يمني طازج محضّر في فرن التنور التقليدي">Fresh Yemeni bread baked in a traditional clay oven</p>
             <div class="item-footer">
-              <div class="item-price">15 <small>جنيه</small></div>
-              <button class="btn-add" data-id="brd-1" data-name="خبز تنور" data-price="15">
+              <div class="item-price">15 <small data-ar="جنيه">EGP</small></div>
+              <button class="btn-add" data-id="brd-1" data-name="Tandoor Bread" data-price="15">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                <span class="btn-add-text">أضف للسلة</span>
+                <span class="btn-add-text" data-ar="أضف للسلة">Add to Cart</span>
               </button>
             </div>
           </div>
@@ -1094,18 +1100,18 @@
             <div class="item-photo-holder">
               <div class="item-photo-pattern"></div>
               <svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/></svg>
-              <span class="item-photo-label">صورة الطبق</span>
+              <span class="item-photo-label" data-ar="صورة الطبق">Dish Photo</span>
             </div>
-            <div class="item-photo-badge">خبز</div>
+            <div class="item-photo-badge" data-ar="خبز">Bread</div>
           </div>
           <div class="item-body">
-            <h3 class="item-name">خبز رقاق</h3>
-            <p class="item-desc">خبز رقاق يمني رفيع وهش يُقدّم ساخناً</p>
+            <h3 class="item-name" data-ar="خبز رقاق">Thin Flatbread (Raqaq)</h3>
+            <p class="item-desc" data-ar="خبز رقاق يمني رفيع وهش يُقدّم ساخناً">Thin and crispy Yemeni flatbread served hot</p>
             <div class="item-footer">
-              <div class="item-price">15 <small>جنيه</small></div>
-              <button class="btn-add" data-id="brd-2" data-name="خبز رقاق" data-price="15">
+              <div class="item-price">15 <small data-ar="جنيه">EGP</small></div>
+              <button class="btn-add" data-id="brd-2" data-name="Raqaq Flatbread" data-price="15">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                <span class="btn-add-text">أضف للسلة</span>
+                <span class="btn-add-text" data-ar="أضف للسلة">Add to Cart</span>
               </button>
             </div>
           </div>
@@ -1116,18 +1122,18 @@
             <div class="item-photo-holder">
               <div class="item-photo-pattern"></div>
               <svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/></svg>
-              <span class="item-photo-label">صورة الطبق</span>
+              <span class="item-photo-label" data-ar="صورة الطبق">Dish Photo</span>
             </div>
-            <div class="item-photo-badge">خبز</div>
+            <div class="item-photo-badge" data-ar="خبز">Bread</div>
           </div>
           <div class="item-body">
-            <h3 class="item-name">خبز لحوح</h3>
-            <p class="item-desc">لحوح يمني إسفنجي تقليدي مثالي مع المرق</p>
+            <h3 class="item-name" data-ar="خبز لحوح">Lahoh (Sponge Bread)</h3>
+            <p class="item-desc" data-ar="لحوح يمني إسفنجي تقليدي مثالي مع المرق">Traditional Yemeni sponge bread — perfect with broth</p>
             <div class="item-footer">
-              <div class="item-price">20 <small>جنيه</small></div>
-              <button class="btn-add" data-id="brd-3" data-name="خبز لحوح" data-price="20">
+              <div class="item-price">20 <small data-ar="جنيه">EGP</small></div>
+              <button class="btn-add" data-id="brd-3" data-name="Lahoh Sponge Bread" data-price="20">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                <span class="btn-add-text">أضف للسلة</span>
+                <span class="btn-add-text" data-ar="أضف للسلة">Add to Cart</span>
               </button>
             </div>
           </div>
@@ -1138,18 +1144,18 @@
             <div class="item-photo-holder">
               <div class="item-photo-pattern"></div>
               <svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/></svg>
-              <span class="item-photo-label">صورة الطبق</span>
+              <span class="item-photo-label" data-ar="صورة الطبق">Dish Photo</span>
             </div>
-            <div class="item-photo-badge">خبز</div>
+            <div class="item-photo-badge" data-ar="خبز">Bread</div>
           </div>
           <div class="item-body">
-            <h3 class="item-name">خبز صاج</h3>
-            <p class="item-desc">خبز صاج رفيع مُعدّ على الصاج الساخن</p>
+            <h3 class="item-name" data-ar="خبز صاج">Saj Bread</h3>
+            <p class="item-desc" data-ar="خبز صاج رفيع مُعدّ على الصاج الساخن">Thin bread made on a hot saj griddle</p>
             <div class="item-footer">
-              <div class="item-price">20 <small>جنيه</small></div>
-              <button class="btn-add" data-id="brd-4" data-name="خبز صاج" data-price="20">
+              <div class="item-price">20 <small data-ar="جنيه">EGP</small></div>
+              <button class="btn-add" data-id="brd-4" data-name="Saj Bread" data-price="20">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                <span class="btn-add-text">أضف للسلة</span>
+                <span class="btn-add-text" data-ar="أضف للسلة">Add to Cart</span>
               </button>
             </div>
           </div>
@@ -1160,18 +1166,18 @@
             <div class="item-photo-holder">
               <div class="item-photo-pattern"></div>
               <svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/></svg>
-              <span class="item-photo-label">صورة الطبق</span>
+              <span class="item-photo-label" data-ar="صورة الطبق">Dish Photo</span>
             </div>
-            <div class="item-photo-badge">خبز</div>
+            <div class="item-photo-badge" data-ar="خبز">Bread</div>
           </div>
           <div class="item-body">
-            <h3 class="item-name">كشنة بالعسل</h3>
-            <p class="item-desc">كشنة يمنية بالعسل الطبيعي والسمن البلدي</p>
+            <h3 class="item-name" data-ar="كشنة بالعسل">Kashna with Honey</h3>
+            <p class="item-desc" data-ar="كشنة يمنية بالعسل الطبيعي والسمن البلدي">Yemeni kashna with natural honey and ghee</p>
             <div class="item-footer">
-              <div class="item-price">45 <small>جنيه</small></div>
-              <button class="btn-add" data-id="brd-5" data-name="كشنة بالعسل" data-price="45">
+              <div class="item-price">45 <small data-ar="جنيه">EGP</small></div>
+              <button class="btn-add" data-id="brd-5" data-name="Kashna with Honey" data-price="45">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                <span class="btn-add-text">أضف للسلة</span>
+                <span class="btn-add-text" data-ar="أضف للسلة">Add to Cart</span>
               </button>
             </div>
           </div>
@@ -1186,28 +1192,47 @@
         <div class="menu-section-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21a9 9 0 1 1 0-18 9 9 0 0 1 0 18z"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
         </div>
-        <h2 class="menu-section-title">حلويات يمنية</h2>
-        <span class="menu-section-count">8 أصناف</span>
+        <h2 class="menu-section-title" data-ar="حلويات يمنية">Yemeni Sweets</h2>
+        <span class="menu-section-count" data-ar="9 أصناف">9 Items</span>
       </div>
       <div class="menu-grid">
 
         <article class="menu-item-card reveal">
           <div class="item-photo">
+            <img src="photos/NEW PHOTOS/معصوب قشطة وعسل.jpg" alt="معصوب قشطة وعسل">
             <div class="item-photo-holder">
               <div class="item-photo-pattern"></div>
               <svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21a9 9 0 1 1 0-18 9 9 0 0 1 0 18z"/></svg>
-              <span class="item-photo-label">صورة الحلوى</span>
+              <span class="item-photo-label" data-ar="صورة الحلوى">Dessert Photo</span>
             </div>
-            <div class="item-photo-badge">حلويات</div>
+            <div class="item-photo-badge" data-ar="حلويات">Sweets</div>
           </div>
           <div class="item-body">
-            <h3 class="item-name">بنت الصحن</h3>
-            <p class="item-desc">بنت الصحن اليمنية الأصيلة بالعسل الطبيعي والسمن البلدي</p>
+            <h3 class="item-name" data-ar="معصوب قشطة وعسل">Ma'soob with Cream &amp; Honey</h3>
+            <p class="item-desc" data-ar="معصوب يمني بالقشطة الطازجة والعسل الطبيعي — حلوى الطاقة الأصيلة">Yemeni ma'soob with fresh cream and natural honey — authentic energy dessert</p>
             <div class="item-footer">
-              <div class="item-price">60 <small>جنيه</small></div>
-              <button class="btn-add" data-id="swt-1" data-name="بنت الصحن" data-price="60">
+              <div class="item-price">131 <small data-ar="جنيه">EGP</small></div>
+              <button class="btn-add" data-id="swt-0" data-name="Ma'soob with Cream &amp; Honey" data-price="131"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg><span class="btn-add-text" data-ar="أضف للسلة">Add to Cart</span></button>
+            </div>
+          </div>
+        </article>
+        <article class="menu-item-card reveal">
+          <div class="item-photo">
+            <div class="item-photo-holder">
+              <div class="item-photo-pattern"></div>
+              <svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21a9 9 0 1 1 0-18 9 9 0 0 1 0 18z"/></svg>
+              <span class="item-photo-label" data-ar="صورة الحلوى">Dessert Photo</span>
+            </div>
+            <div class="item-photo-badge" data-ar="حلويات">Sweets</div>
+          </div>
+          <div class="item-body">
+            <h3 class="item-name" data-ar="بنت الصحن">Bint Al-Sahn</h3>
+            <p class="item-desc" data-ar="بنت الصحن اليمنية الأصيلة بالعسل الطبيعي والسمن البلدي">Authentic Yemeni Bint Al-Sahn with natural honey and ghee</p>
+            <div class="item-footer">
+              <div class="item-price">60 <small data-ar="جنيه">EGP</small></div>
+              <button class="btn-add" data-id="swt-1" data-name="Bint Al-Sahn" data-price="60">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                <span class="btn-add-text">أضف للسلة</span>
+                <span class="btn-add-text" data-ar="أضف للسلة">Add to Cart</span>
               </button>
             </div>
           </div>
@@ -1218,18 +1243,18 @@
             <div class="item-photo-holder">
               <div class="item-photo-pattern"></div>
               <svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21a9 9 0 1 1 0-18 9 9 0 0 1 0 18z"/></svg>
-              <span class="item-photo-label">صورة الحلوى</span>
+              <span class="item-photo-label" data-ar="صورة الحلوى">Dessert Photo</span>
             </div>
-            <div class="item-photo-badge">حلويات</div>
+            <div class="item-photo-badge" data-ar="حلويات">Sweets</div>
           </div>
           <div class="item-body">
-            <h3 class="item-name">حلبة</h3>
-            <p class="item-desc">حلبة يمنية تقليدية بالحلبة والعسل والسمن – مذاق فريد</p>
+            <h3 class="item-name" data-ar="حلبة">Hulba (Fenugreek Sweet)</h3>
+            <p class="item-desc" data-ar="حلبة يمنية تقليدية بالحلبة والعسل والسمن – مذاق فريد">Traditional Yemeni hulba with fenugreek, honey and ghee — unique flavor</p>
             <div class="item-footer">
-              <div class="item-price">45 <small>جنيه</small></div>
-              <button class="btn-add" data-id="swt-2" data-name="حلبة" data-price="45">
+              <div class="item-price">45 <small data-ar="جنيه">EGP</small></div>
+              <button class="btn-add" data-id="swt-2" data-name="Hulba" data-price="45">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                <span class="btn-add-text">أضف للسلة</span>
+                <span class="btn-add-text" data-ar="أضف للسلة">Add to Cart</span>
               </button>
             </div>
           </div>
@@ -1240,18 +1265,18 @@
             <div class="item-photo-holder">
               <div class="item-photo-pattern"></div>
               <svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21a9 9 0 1 1 0-18 9 9 0 0 1 0 18z"/></svg>
-              <span class="item-photo-label">صورة الحلوى</span>
+              <span class="item-photo-label" data-ar="صورة الحلوى">Dessert Photo</span>
             </div>
-            <div class="item-photo-badge">حلويات</div>
+            <div class="item-photo-badge" data-ar="حلويات">Sweets</div>
           </div>
           <div class="item-body">
-            <h3 class="item-name">عسل نحل طبيعي</h3>
-            <p class="item-desc">عسل نحل يمني طبيعي 100% يُقدّم مع الخبز الطازج</p>
+            <h3 class="item-name" data-ar="عسل نحل طبيعي">Natural Yemeni Honey</h3>
+            <p class="item-desc" data-ar="عسل نحل يمني طبيعي 100% يُقدّم مع الخبز الطازج">100% natural Yemeni honey served with fresh bread</p>
             <div class="item-footer">
-              <div class="item-price-flex">السعر حسب الحجم</div>
+              <div class="item-price-flex" data-ar="السعر حسب الحجم">Price by size</div>
               <a href="tel:01212002005" class="btn-inquire">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.36 2 2 0 0 1 3.62 1.17h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.13 6.13l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                اتصل للسعر
+                Call for Price
               </a>
             </div>
           </div>
@@ -1262,18 +1287,18 @@
             <div class="item-photo-holder">
               <div class="item-photo-pattern"></div>
               <svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21a9 9 0 1 1 0-18 9 9 0 0 1 0 18z"/></svg>
-              <span class="item-photo-label">صورة الحلوى</span>
+              <span class="item-photo-label" data-ar="صورة الحلوى">Dessert Photo</span>
             </div>
-            <div class="item-photo-badge">حلويات</div>
+            <div class="item-photo-badge" data-ar="حلويات">Sweets</div>
           </div>
           <div class="item-body">
-            <h3 class="item-name">زلابية</h3>
-            <p class="item-desc">زلابية يمنية مقرمشة بالعسل أو القطر</p>
+            <h3 class="item-name" data-ar="زلابية">Zalabiya (Fritters)</h3>
+            <p class="item-desc" data-ar="زلابية يمنية مقرمشة بالعسل أو القطر">Crispy Yemeni fritters with honey or syrup</p>
             <div class="item-footer">
-              <div class="item-price">35 <small>جنيه</small></div>
-              <button class="btn-add" data-id="swt-4" data-name="زلابية" data-price="35">
+              <div class="item-price">35 <small data-ar="جنيه">EGP</small></div>
+              <button class="btn-add" data-id="swt-4" data-name="Zalabiya" data-price="35">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                <span class="btn-add-text">أضف للسلة</span>
+                <span class="btn-add-text" data-ar="أضف للسلة">Add to Cart</span>
               </button>
             </div>
           </div>
@@ -1284,18 +1309,18 @@
             <div class="item-photo-holder">
               <div class="item-photo-pattern"></div>
               <svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21a9 9 0 1 1 0-18 9 9 0 0 1 0 18z"/></svg>
-              <span class="item-photo-label">صورة الحلوى</span>
+              <span class="item-photo-label" data-ar="صورة الحلوى">Dessert Photo</span>
             </div>
-            <div class="item-photo-badge">حلويات</div>
+            <div class="item-photo-badge" data-ar="حلويات">Sweets</div>
           </div>
           <div class="item-body">
-            <h3 class="item-name">لقيمات</h3>
-            <p class="item-desc">لقيمات خليجية ذهبية مع العسل والسمسم</p>
+            <h3 class="item-name" data-ar="لقيمات">Luqaimat (Honey Dumplings)</h3>
+            <p class="item-desc" data-ar="لقيمات خليجية ذهبية مع العسل والسمسم">Golden Gulf-style dumplings with honey and sesame</p>
             <div class="item-footer">
-              <div class="item-price">35 <small>جنيه</small></div>
-              <button class="btn-add" data-id="swt-5" data-name="لقيمات" data-price="35">
+              <div class="item-price">35 <small data-ar="جنيه">EGP</small></div>
+              <button class="btn-add" data-id="swt-5" data-name="Luqaimat" data-price="35">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                <span class="btn-add-text">أضف للسلة</span>
+                <span class="btn-add-text" data-ar="أضف للسلة">Add to Cart</span>
               </button>
             </div>
           </div>
@@ -1306,18 +1331,18 @@
             <div class="item-photo-holder">
               <div class="item-photo-pattern"></div>
               <svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21a9 9 0 1 1 0-18 9 9 0 0 1 0 18z"/></svg>
-              <span class="item-photo-label">صورة الحلوى</span>
+              <span class="item-photo-label" data-ar="صورة الحلوى">Dessert Photo</span>
             </div>
-            <div class="item-photo-badge">حلويات</div>
+            <div class="item-photo-badge" data-ar="حلويات">Sweets</div>
           </div>
           <div class="item-body">
-            <h3 class="item-name">مدفونة</h3>
-            <p class="item-desc">مدفونة يمنية بالموز والتمر والعسل وكريمة الشانتيه</p>
+            <h3 class="item-name" data-ar="مدفونة">Madfuna (Buried Dessert)</h3>
+            <p class="item-desc" data-ar="مدفونة يمنية بالموز والتمر والعسل وكريمة الشانتيه">Yemeni madfuna with banana, dates, honey and whipped cream</p>
             <div class="item-footer">
-              <div class="item-price">55 <small>جنيه</small></div>
-              <button class="btn-add" data-id="swt-6" data-name="مدفونة" data-price="55">
+              <div class="item-price">55 <small data-ar="جنيه">EGP</small></div>
+              <button class="btn-add" data-id="swt-6" data-name="Madfuna" data-price="55">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                <span class="btn-add-text">أضف للسلة</span>
+                <span class="btn-add-text" data-ar="أضف للسلة">Add to Cart</span>
               </button>
             </div>
           </div>
@@ -1328,18 +1353,18 @@
             <div class="item-photo-holder">
               <div class="item-photo-pattern"></div>
               <svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21a9 9 0 1 1 0-18 9 9 0 0 1 0 18z"/></svg>
-              <span class="item-photo-label">صورة الحلوى</span>
+              <span class="item-photo-label" data-ar="صورة الحلوى">Dessert Photo</span>
             </div>
-            <div class="item-photo-badge">حلويات</div>
+            <div class="item-photo-badge" data-ar="حلويات">Sweets</div>
           </div>
           <div class="item-body">
-            <h3 class="item-name">عصيدة</h3>
-            <p class="item-desc">عصيدة يمنية بالسمن والعسل – طبق تقليدي دافئ</p>
+            <h3 class="item-name" data-ar="عصيدة">Asida (Yemeni Porridge)</h3>
+            <p class="item-desc" data-ar="عصيدة يمنية بالسمن والعسل – طبق تقليدي دافئ">Yemeni asida with ghee and honey — warm traditional dish</p>
             <div class="item-footer">
-              <div class="item-price">40 <small>جنيه</small></div>
-              <button class="btn-add" data-id="swt-7" data-name="عصيدة" data-price="40">
+              <div class="item-price">40 <small data-ar="جنيه">EGP</small></div>
+              <button class="btn-add" data-id="swt-7" data-name="Asida" data-price="40">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                <span class="btn-add-text">أضف للسلة</span>
+                <span class="btn-add-text" data-ar="أضف للسلة">Add to Cart</span>
               </button>
             </div>
           </div>
@@ -1350,18 +1375,18 @@
             <div class="item-photo-holder">
               <div class="item-photo-pattern"></div>
               <svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21a9 9 0 1 1 0-18 9 9 0 0 1 0 18z"/></svg>
-              <span class="item-photo-label">صورة الحلوى</span>
+              <span class="item-photo-label" data-ar="صورة الحلوى">Dessert Photo</span>
             </div>
-            <div class="item-photo-badge">حلويات</div>
+            <div class="item-photo-badge" data-ar="حلويات">Sweets</div>
           </div>
           <div class="item-body">
-            <h3 class="item-name">أم علي</h3>
-            <p class="item-desc">أم علي بالمكسرات والزبيب والحليب والكريمة</p>
+            <h3 class="item-name" data-ar="أم علي">Om Ali (Bread Pudding)</h3>
+            <p class="item-desc" data-ar="أم علي بالمكسرات والزبيب والحليب والكريمة">Om Ali bread pudding with nuts, raisins, milk and cream</p>
             <div class="item-footer">
-              <div class="item-price">50 <small>جنيه</small></div>
-              <button class="btn-add" data-id="swt-8" data-name="أم علي" data-price="50">
+              <div class="item-price">50 <small data-ar="جنيه">EGP</small></div>
+              <button class="btn-add" data-id="swt-8" data-name="Om Ali" data-price="50">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                <span class="btn-add-text">أضف للسلة</span>
+                <span class="btn-add-text" data-ar="أضف للسلة">Add to Cart</span>
               </button>
             </div>
           </div>
@@ -1376,33 +1401,63 @@
         <div class="menu-section-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V12"/><path d="M5 12H2a10 10 0 0 0 20 0h-3"/><circle cx="12" cy="5" r="3"/></svg>
         </div>
-        <h2 class="menu-section-title">سلطات وشوربة</h2>
-        <span class="menu-section-count">6 أصناف</span>
+        <h2 class="menu-section-title" data-ar="سلطات وشوربة">Salads &amp; Soup</h2>
+        <span class="menu-section-count" data-ar="8 أصناف">8 Items</span>
       </div>
       <div class="menu-grid">
         <article class="menu-item-card reveal">
-          <div class="item-photo"><div class="item-photo-holder"><div class="item-photo-pattern"></div><svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V12"/><path d="M5 12H2a10 10 0 0 0 20 0h-3"/><circle cx="12" cy="5" r="3"/></svg><span class="item-photo-label">سلطات وشوربة</span></div><div class="item-photo-badge">سلطات</div></div>
-          <div class="item-body"><div class="item-name">سلطة خضراء</div><div class="item-desc">سلطة خضراء طازجة بالخيار والطماطم والبقدونس</div><div class="item-footer"><div class="item-price">35 <small>جنيه</small></div><button class="btn-add" data-id="sal-1" data-name="سلطة خضراء" data-price="35"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg><span class="btn-add-text">أضف للسلة</span></button></div></div>
+          <div class="item-photo"><div class="item-photo-holder"><div class="item-photo-pattern"></div><svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V12"/><path d="M5 12H2a10 10 0 0 0 20 0h-3"/><circle cx="12" cy="5" r="3"/></svg><span class="item-photo-label" data-ar="سلطات وشوربة">Salads &amp; Soup</span></div><div class="item-photo-badge" data-ar="سلطات">Salads</div></div>
+          <div class="item-body"><div class="item-name" data-ar="سلطة خضراء">Green Salad</div><div class="item-desc" data-ar="سلطة خضراء طازجة بالخيار والطماطم والبقدونس">Fresh green salad with cucumber, tomato and parsley</div><div class="item-footer"><div class="item-price">35 <small data-ar="جنيه">EGP</small></div><button class="btn-add" data-id="sal-1" data-name="Green Salad" data-price="35"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg><span class="btn-add-text" data-ar="أضف للسلة">Add to Cart</span></button></div></div>
         </article>
         <article class="menu-item-card reveal">
-          <div class="item-photo"><div class="item-photo-holder"><div class="item-photo-pattern"></div><svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V12"/><path d="M5 12H2a10 10 0 0 0 20 0h-3"/><circle cx="12" cy="5" r="3"/></svg><span class="item-photo-label">سلطات وشوربة</span></div><div class="item-photo-badge">سلطات</div></div>
-          <div class="item-body"><div class="item-name">سلطة فتوش</div><div class="item-desc">فتوش بالخضار والخبز المحمص والدبس</div><div class="item-footer"><div class="item-price">40 <small>جنيه</small></div><button class="btn-add" data-id="sal-2" data-name="سلطة فتوش" data-price="40"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg><span class="btn-add-text">أضف للسلة</span></button></div></div>
+          <div class="item-photo"><div class="item-photo-holder"><div class="item-photo-pattern"></div><svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V12"/><path d="M5 12H2a10 10 0 0 0 20 0h-3"/><circle cx="12" cy="5" r="3"/></svg><span class="item-photo-label" data-ar="سلطات وشوربة">Salads &amp; Soup</span></div><div class="item-photo-badge" data-ar="سلطات">Salads</div></div>
+          <div class="item-body"><div class="item-name" data-ar="سلطة فتوش">Fattoush Salad</div><div class="item-desc" data-ar="فتوش بالخضار والخبز المحمص والدبس">Fattoush with vegetables, toasted bread and pomegranate molasses</div><div class="item-footer"><div class="item-price">40 <small data-ar="جنيه">EGP</small></div><button class="btn-add" data-id="sal-2" data-name="Fattoush Salad" data-price="40"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg><span class="btn-add-text" data-ar="أضف للسلة">Add to Cart</span></button></div></div>
         </article>
         <article class="menu-item-card reveal">
-          <div class="item-photo"><div class="item-photo-holder"><div class="item-photo-pattern"></div><svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V12"/><path d="M5 12H2a10 10 0 0 0 20 0h-3"/><circle cx="12" cy="5" r="3"/></svg><span class="item-photo-label">سلطات وشوربة</span></div><div class="item-photo-badge">سلطات</div></div>
-          <div class="item-body"><div class="item-name">سلطة تبولة</div><div class="item-desc">تبولة بالبقدونس والطماطم والبرغل والليمون</div><div class="item-footer"><div class="item-price">40 <small>جنيه</small></div><button class="btn-add" data-id="sal-3" data-name="سلطة تبولة" data-price="40"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg><span class="btn-add-text">أضف للسلة</span></button></div></div>
+          <div class="item-photo"><div class="item-photo-holder"><div class="item-photo-pattern"></div><svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V12"/><path d="M5 12H2a10 10 0 0 0 20 0h-3"/><circle cx="12" cy="5" r="3"/></svg><span class="item-photo-label" data-ar="سلطات وشوربة">Salads &amp; Soup</span></div><div class="item-photo-badge" data-ar="سلطات">Salads</div></div>
+          <div class="item-body"><div class="item-name" data-ar="سلطة تبولة">Tabbouleh Salad</div><div class="item-desc" data-ar="تبولة بالبقدونس والطماطم والبرغل والليمون">Tabbouleh with parsley, tomato, bulgur and lemon</div><div class="item-footer"><div class="item-price">40 <small data-ar="جنيه">EGP</small></div><button class="btn-add" data-id="sal-3" data-name="Tabbouleh Salad" data-price="40"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg><span class="btn-add-text" data-ar="أضف للسلة">Add to Cart</span></button></div></div>
         </article>
         <article class="menu-item-card reveal">
-          <div class="item-photo"><div class="item-photo-holder"><div class="item-photo-pattern"></div><svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V12"/><path d="M5 12H2a10 10 0 0 0 20 0h-3"/><circle cx="12" cy="5" r="3"/></svg><span class="item-photo-label">سلطات وشوربة</span></div><div class="item-photo-badge">شوربة</div></div>
-          <div class="item-body"><div class="item-name">شوربة عدس</div><div class="item-desc">شوربة عدس يمنية بالكمون والبصل المقلي</div><div class="item-footer"><div class="item-price">35 <small>جنيه</small></div><button class="btn-add" data-id="sal-4" data-name="شوربة عدس" data-price="35"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg><span class="btn-add-text">أضف للسلة</span></button></div></div>
+          <div class="item-photo"><div class="item-photo-holder"><div class="item-photo-pattern"></div><svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V12"/><path d="M5 12H2a10 10 0 0 0 20 0h-3"/><circle cx="12" cy="5" r="3"/></svg><span class="item-photo-label" data-ar="سلطات وشوربة">Salads &amp; Soup</span></div><div class="item-photo-badge" data-ar="شوربة">Soup</div></div>
+          <div class="item-body"><div class="item-name" data-ar="شوربة عدس">Lentil Soup</div><div class="item-desc" data-ar="شوربة عدس يمنية بالكمون والبصل المقلي">Yemeni lentil soup with cumin and fried onion</div><div class="item-footer"><div class="item-price">35 <small data-ar="جنيه">EGP</small></div><button class="btn-add" data-id="sal-4" data-name="Lentil Soup" data-price="35"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg><span class="btn-add-text" data-ar="أضف للسلة">Add to Cart</span></button></div></div>
         </article>
         <article class="menu-item-card reveal">
-          <div class="item-photo"><div class="item-photo-holder"><div class="item-photo-pattern"></div><svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V12"/><path d="M5 12H2a10 10 0 0 0 20 0h-3"/><circle cx="12" cy="5" r="3"/></svg><span class="item-photo-label">سلطات وشوربة</span></div><div class="item-photo-badge">شوربة</div></div>
-          <div class="item-body"><div class="item-name">شوربة خضار</div><div class="item-desc">شوربة خضار طازجة بالبهارات اليمنية</div><div class="item-footer"><div class="item-price">35 <small>جنيه</small></div><button class="btn-add" data-id="sal-5" data-name="شوربة خضار" data-price="35"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg><span class="btn-add-text">أضف للسلة</span></button></div></div>
+          <div class="item-photo"><div class="item-photo-holder"><div class="item-photo-pattern"></div><svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V12"/><path d="M5 12H2a10 10 0 0 0 20 0h-3"/><circle cx="12" cy="5" r="3"/></svg><span class="item-photo-label" data-ar="سلطات وشوربة">Salads &amp; Soup</span></div><div class="item-photo-badge" data-ar="شوربة">Soup</div></div>
+          <div class="item-body"><div class="item-name" data-ar="شوربة خضار">Vegetable Soup</div><div class="item-desc" data-ar="شوربة خضار طازجة بالبهارات اليمنية">Fresh vegetable soup with Yemeni spices</div><div class="item-footer"><div class="item-price">35 <small data-ar="جنيه">EGP</small></div><button class="btn-add" data-id="sal-5" data-name="Vegetable Soup" data-price="35"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg><span class="btn-add-text" data-ar="أضف للسلة">Add to Cart</span></button></div></div>
         </article>
         <article class="menu-item-card reveal">
-          <div class="item-photo"><div class="item-photo-holder"><div class="item-photo-pattern"></div><svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V12"/><path d="M5 12H2a10 10 0 0 0 20 0h-3"/><circle cx="12" cy="5" r="3"/></svg><span class="item-photo-label">سلطات وشوربة</span></div><div class="item-photo-badge">مقبلات</div></div>
-          <div class="item-body"><div class="item-name">حمص بالطحينة</div><div class="item-desc">حمص ناعم بالطحينة والليمون وزيت الزيتون</div><div class="item-footer"><div class="item-price">40 <small>جنيه</small></div><button class="btn-add" data-id="sal-6" data-name="حمص بالطحينة" data-price="40"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg><span class="btn-add-text">أضف للسلة</span></button></div></div>
+          <div class="item-photo"><div class="item-photo-holder"><div class="item-photo-pattern"></div><svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V12"/><path d="M5 12H2a10 10 0 0 0 20 0h-3"/><circle cx="12" cy="5" r="3"/></svg><span class="item-photo-label" data-ar="سلطات وشوربة">Salads &amp; Soup</span></div><div class="item-photo-badge" data-ar="مقبلات">Appetizers</div></div>
+          <div class="item-body"><div class="item-name" data-ar="حمص بالطحينة">Hummus with Tahini</div><div class="item-desc" data-ar="حمص ناعم بالطحينة والليمون وزيت الزيتون">Smooth hummus with tahini, lemon and olive oil</div><div class="item-footer"><div class="item-price">40 <small data-ar="جنيه">EGP</small></div><button class="btn-add" data-id="sal-6" data-name="Hummus with Tahini" data-price="40"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg><span class="btn-add-text" data-ar="أضف للسلة">Add to Cart</span></button></div></div>
+        </article>
+        <article class="menu-item-card reveal">
+          <div class="item-photo">
+            <img src="photos/NEW PHOTOS/قلابة تونة.jpg" alt="قلابة تونة">
+            <div class="item-photo-holder"><div class="item-photo-pattern"></div><svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V12"/><path d="M5 12H2a10 10 0 0 0 20 0h-3"/><circle cx="12" cy="5" r="3"/></svg><span class="item-photo-label" data-ar="صورة الطبق">Dish Photo</span></div>
+            <div class="item-photo-badge" data-ar="مأكولات بحرية">Seafood</div>
+          </div>
+          <div class="item-body">
+            <h3 class="item-name" data-ar="قلابة تونة">Tuna Qalaba</h3>
+            <p class="item-desc" data-ar="قلابة تونة يمنية بالبصل والطماطم والتوابل الأصيلة">Yemeni tuna qalaba with onions, tomatoes and authentic spices</p>
+            <div class="item-footer">
+              <div class="item-price">75 <small data-ar="جنيه">EGP</small></div>
+              <button class="btn-add" data-id="sal-7" data-name="Tuna Qalaba" data-price="75"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg><span class="btn-add-text" data-ar="أضف للسلة">Add to Cart</span></button>
+            </div>
+          </div>
+        </article>
+        <article class="menu-item-card reveal">
+          <div class="item-photo">
+            <img src="photos/NEW PHOTOS/نفر فاصوليا حمراء.jpg" alt="نفر فاصوليا حمراء">
+            <div class="item-photo-holder"><div class="item-photo-pattern"></div><svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V12"/><path d="M5 12H2a10 10 0 0 0 20 0h-3"/><circle cx="12" cy="5" r="3"/></svg><span class="item-photo-label" data-ar="صورة الطبق">Dish Photo</span></div>
+            <div class="item-photo-badge" data-ar="يمني">Yemeni</div>
+          </div>
+          <div class="item-body">
+            <h3 class="item-name" data-ar="نفر فاصوليا حمراء">Red Bean Bowl</h3>
+            <p class="item-desc" data-ar="فاصوليا حمراء يمنية مطبوخة بالبهارات والطماطم — وجبة فردية">Yemeni red beans cooked with spices and tomatoes — single serving</p>
+            <div class="item-footer">
+              <div class="item-price">60 <small data-ar="جنيه">EGP</small></div>
+              <button class="btn-add" data-id="sal-8" data-name="Red Bean Bowl" data-price="60"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg><span class="btn-add-text" data-ar="أضف للسلة">Add to Cart</span></button>
+            </div>
+          </div>
         </article>
       </div>
     </section>
@@ -1413,49 +1468,49 @@
         <div class="menu-section-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V8z"/><line x1="6" y1="2" x2="6" y2="4"/><line x1="10" y1="2" x2="10" y2="4"/><line x1="14" y1="2" x2="14" y2="4"/></svg>
         </div>
-        <h2 class="menu-section-title">مشروبات ساخنة</h2>
-        <span class="menu-section-count">8 أصناف</span>
+        <h2 class="menu-section-title" data-ar="مشروبات ساخنة">Hot Drinks</h2>
+        <span class="menu-section-count" data-ar="8 أصناف">8 Items</span>
       </div>
       <div class="menu-grid">
 
         <article class="menu-item-card reveal">
-          <div class="item-photo"><div class="item-photo-holder"><div class="item-photo-pattern"></div><svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V8z"/><line x1="6" y1="2" x2="6" y2="4"/><line x1="10" y1="2" x2="10" y2="4"/><line x1="14" y1="2" x2="14" y2="4"/></svg><span class="item-photo-label">مشروبات ساخنة</span></div><div class="item-photo-badge">ساخن</div></div>
-          <div class="item-body"><div class="item-name">شاي كرك يمني</div><div class="item-desc">شاي كرك بالهيل والزنجبيل والحليب</div><div class="item-footer"><div class="item-price">25 <small>جنيه</small></div><button class="btn-add" data-id="hot-1" data-name="شاي كرك يمني" data-price="25"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg><span class="btn-add-text">أضف للسلة</span></button></div></div>
+          <div class="item-photo"><div class="item-photo-holder"><div class="item-photo-pattern"></div><svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V8z"/><line x1="6" y1="2" x2="6" y2="4"/><line x1="10" y1="2" x2="10" y2="4"/><line x1="14" y1="2" x2="14" y2="4"/></svg><span class="item-photo-label" data-ar="مشروبات ساخنة">Hot Drinks</span></div><div class="item-photo-badge" data-ar="ساخن">Hot</div></div>
+          <div class="item-body"><div class="item-name" data-ar="شاي كرك يمني">Yemeni Karak Tea</div><div class="item-desc" data-ar="شاي كرك بالهيل والزنجبيل والحليب">Karak tea with cardamom, ginger and milk</div><div class="item-footer"><div class="item-price">25 <small data-ar="جنيه">EGP</small></div><button class="btn-add" data-id="hot-1" data-name="Yemeni Karak Tea" data-price="25"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg><span class="btn-add-text" data-ar="أضف للسلة">Add to Cart</span></button></div></div>
         </article>
 
         <article class="menu-item-card reveal">
-          <div class="item-photo"><div class="item-photo-holder"><div class="item-photo-pattern"></div><svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V8z"/><line x1="6" y1="2" x2="6" y2="4"/><line x1="10" y1="2" x2="10" y2="4"/><line x1="14" y1="2" x2="14" y2="4"/></svg><span class="item-photo-label">مشروبات ساخنة</span></div><div class="item-photo-badge">يمني</div></div>
-          <div class="item-body"><div class="item-name">قهوة يمنية</div><div class="item-desc">قهوة يمنية أصيلة بالهيل والزنجبيل</div><div class="item-footer"><div class="item-price">30 <small>جنيه</small></div><button class="btn-add" data-id="hot-2" data-name="قهوة يمنية" data-price="30"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg><span class="btn-add-text">أضف للسلة</span></button></div></div>
+          <div class="item-photo"><div class="item-photo-holder"><div class="item-photo-pattern"></div><svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V8z"/><line x1="6" y1="2" x2="6" y2="4"/><line x1="10" y1="2" x2="10" y2="4"/><line x1="14" y1="2" x2="14" y2="4"/></svg><span class="item-photo-label" data-ar="مشروبات ساخنة">Hot Drinks</span></div><div class="item-photo-badge" data-ar="يمني">Yemeni</div></div>
+          <div class="item-body"><div class="item-name" data-ar="قهوة يمنية">Yemeni Coffee</div><div class="item-desc" data-ar="قهوة يمنية أصيلة بالهيل والزنجبيل">Authentic Yemeni coffee with cardamom and ginger</div><div class="item-footer"><div class="item-price">30 <small data-ar="جنيه">EGP</small></div><button class="btn-add" data-id="hot-2" data-name="Yemeni Coffee" data-price="30"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg><span class="btn-add-text" data-ar="أضف للسلة">Add to Cart</span></button></div></div>
         </article>
 
         <article class="menu-item-card reveal">
-          <div class="item-photo"><div class="item-photo-holder"><div class="item-photo-pattern"></div><svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V8z"/><line x1="6" y1="2" x2="6" y2="4"/><line x1="10" y1="2" x2="10" y2="4"/><line x1="14" y1="2" x2="14" y2="4"/></svg><span class="item-photo-label">مشروبات ساخنة</span></div><div class="item-photo-badge">أصيل</div></div>
-          <div class="item-body"><div class="item-name">قشر قهوة (قشر)</div><div class="item-desc">قشر يمني أصيل بالهيل والزنجبيل</div><div class="item-footer"><div class="item-price">30 <small>جنيه</small></div><button class="btn-add" data-id="hot-3" data-name="قشر قهوة" data-price="30"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg><span class="btn-add-text">أضف للسلة</span></button></div></div>
+          <div class="item-photo"><div class="item-photo-holder"><div class="item-photo-pattern"></div><svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V8z"/><line x1="6" y1="2" x2="6" y2="4"/><line x1="10" y1="2" x2="10" y2="4"/><line x1="14" y1="2" x2="14" y2="4"/></svg><span class="item-photo-label" data-ar="مشروبات ساخنة">Hot Drinks</span></div><div class="item-photo-badge" data-ar="أصيل">Authentic</div></div>
+          <div class="item-body"><div class="item-name" data-ar="قشر قهوة (قشر)">Qishr (Coffee Husk Tea)</div><div class="item-desc" data-ar="قشر يمني أصيل بالهيل والزنجبيل">Authentic Yemeni qishr with cardamom and ginger</div><div class="item-footer"><div class="item-price">30 <small data-ar="جنيه">EGP</small></div><button class="btn-add" data-id="hot-3" data-name="Qishr Coffee Husk Tea" data-price="30"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg><span class="btn-add-text" data-ar="أضف للسلة">Add to Cart</span></button></div></div>
         </article>
 
         <article class="menu-item-card reveal">
-          <div class="item-photo"><div class="item-photo-holder"><div class="item-photo-pattern"></div><svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V8z"/><line x1="6" y1="2" x2="6" y2="4"/><line x1="10" y1="2" x2="10" y2="4"/><line x1="14" y1="2" x2="14" y2="4"/></svg><span class="item-photo-label">مشروبات ساخنة</span></div><div class="item-photo-badge">منعش</div></div>
-          <div class="item-body"><div class="item-name">شاي بالنعناع</div><div class="item-desc">شاي أخضر بالنعناع الطازج</div><div class="item-footer"><div class="item-price">20 <small>جنيه</small></div><button class="btn-add" data-id="hot-4" data-name="شاي بالنعناع" data-price="20"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg><span class="btn-add-text">أضف للسلة</span></button></div></div>
+          <div class="item-photo"><div class="item-photo-holder"><div class="item-photo-pattern"></div><svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V8z"/><line x1="6" y1="2" x2="6" y2="4"/><line x1="10" y1="2" x2="10" y2="4"/><line x1="14" y1="2" x2="14" y2="4"/></svg><span class="item-photo-label" data-ar="مشروبات ساخنة">Hot Drinks</span></div><div class="item-photo-badge" data-ar="منعش">Refreshing</div></div>
+          <div class="item-body"><div class="item-name" data-ar="شاي بالنعناع">Mint Tea</div><div class="item-desc" data-ar="شاي أخضر بالنعناع الطازج">Green tea with fresh mint</div><div class="item-footer"><div class="item-price">20 <small data-ar="جنيه">EGP</small></div><button class="btn-add" data-id="hot-4" data-name="Mint Tea" data-price="20"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg><span class="btn-add-text" data-ar="أضف للسلة">Add to Cart</span></button></div></div>
         </article>
 
         <article class="menu-item-card reveal">
-          <div class="item-photo"><div class="item-photo-holder"><div class="item-photo-pattern"></div><svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V8z"/><line x1="6" y1="2" x2="6" y2="4"/><line x1="10" y1="2" x2="10" y2="4"/><line x1="14" y1="2" x2="14" y2="4"/></svg><span class="item-photo-label">مشروبات ساخنة</span></div><div class="item-photo-badge">ساخن</div></div>
-          <div class="item-body"><div class="item-name">شاي بالحليب</div><div class="item-desc">شاي أحمر بالحليب الطازج</div><div class="item-footer"><div class="item-price">20 <small>جنيه</small></div><button class="btn-add" data-id="hot-5" data-name="شاي بالحليب" data-price="20"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg><span class="btn-add-text">أضف للسلة</span></button></div></div>
+          <div class="item-photo"><div class="item-photo-holder"><div class="item-photo-pattern"></div><svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V8z"/><line x1="6" y1="2" x2="6" y2="4"/><line x1="10" y1="2" x2="10" y2="4"/><line x1="14" y1="2" x2="14" y2="4"/></svg><span class="item-photo-label" data-ar="مشروبات ساخنة">Hot Drinks</span></div><div class="item-photo-badge" data-ar="ساخن">Hot</div></div>
+          <div class="item-body"><div class="item-name" data-ar="شاي بالحليب">Milk Tea</div><div class="item-desc" data-ar="شاي أحمر بالحليب الطازج">Black tea with fresh milk</div><div class="item-footer"><div class="item-price">20 <small data-ar="جنيه">EGP</small></div><button class="btn-add" data-id="hot-5" data-name="Milk Tea" data-price="20"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg><span class="btn-add-text" data-ar="أضف للسلة">Add to Cart</span></button></div></div>
         </article>
 
         <article class="menu-item-card reveal">
-          <div class="item-photo"><div class="item-photo-holder"><div class="item-photo-pattern"></div><svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V8z"/><line x1="6" y1="2" x2="6" y2="4"/><line x1="10" y1="2" x2="10" y2="4"/><line x1="14" y1="2" x2="14" y2="4"/></svg><span class="item-photo-label">مشروبات ساخنة</span></div><div class="item-photo-badge">عسل</div></div>
-          <div class="item-body"><div class="item-name">حليب بالعسل</div><div class="item-desc">حليب دافئ بالعسل الطبيعي اليمني</div><div class="item-footer"><div class="item-price">30 <small>جنيه</small></div><button class="btn-add" data-id="hot-6" data-name="حليب بالعسل" data-price="30"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg><span class="btn-add-text">أضف للسلة</span></button></div></div>
+          <div class="item-photo"><div class="item-photo-holder"><div class="item-photo-pattern"></div><svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V8z"/><line x1="6" y1="2" x2="6" y2="4"/><line x1="10" y1="2" x2="10" y2="4"/><line x1="14" y1="2" x2="14" y2="4"/></svg><span class="item-photo-label" data-ar="مشروبات ساخنة">Hot Drinks</span></div><div class="item-photo-badge" data-ar="عسل">Honey</div></div>
+          <div class="item-body"><div class="item-name" data-ar="حليب بالعسل">Honey Milk</div><div class="item-desc" data-ar="حليب دافئ بالعسل الطبيعي اليمني">Warm milk with natural Yemeni honey</div><div class="item-footer"><div class="item-price">30 <small data-ar="جنيه">EGP</small></div><button class="btn-add" data-id="hot-6" data-name="Honey Milk" data-price="30"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg><span class="btn-add-text" data-ar="أضف للسلة">Add to Cart</span></button></div></div>
         </article>
 
         <article class="menu-item-card reveal">
-          <div class="item-photo"><div class="item-photo-holder"><div class="item-photo-pattern"></div><svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V8z"/><line x1="6" y1="2" x2="6" y2="4"/><line x1="10" y1="2" x2="10" y2="4"/><line x1="14" y1="2" x2="14" y2="4"/></svg><span class="item-photo-label">مشروبات ساخنة</span></div><div class="item-photo-badge">شوكولاتة</div></div>
-          <div class="item-body"><div class="item-name">كاكاو</div><div class="item-desc">كاكاو ساخن بالحليب والشوكولاتة</div><div class="item-footer"><div class="item-price">30 <small>جنيه</small></div><button class="btn-add" data-id="hot-7" data-name="كاكاو" data-price="30"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg><span class="btn-add-text">أضف للسلة</span></button></div></div>
+          <div class="item-photo"><div class="item-photo-holder"><div class="item-photo-pattern"></div><svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V8z"/><line x1="6" y1="2" x2="6" y2="4"/><line x1="10" y1="2" x2="10" y2="4"/><line x1="14" y1="2" x2="14" y2="4"/></svg><span class="item-photo-label" data-ar="مشروبات ساخنة">Hot Drinks</span></div><div class="item-photo-badge" data-ar="شوكولاتة">Chocolate</div></div>
+          <div class="item-body"><div class="item-name" data-ar="كاكاو">Hot Cocoa</div><div class="item-desc" data-ar="كاكاو ساخن بالحليب والشوكولاتة">Hot cocoa with milk and chocolate</div><div class="item-footer"><div class="item-price">30 <small data-ar="جنيه">EGP</small></div><button class="btn-add" data-id="hot-7" data-name="Hot Cocoa" data-price="30"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg><span class="btn-add-text" data-ar="أضف للسلة">Add to Cart</span></button></div></div>
         </article>
 
         <article class="menu-item-card reveal">
-          <div class="item-photo"><div class="item-photo-holder"><div class="item-photo-pattern"></div><svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V8z"/><line x1="6" y1="2" x2="6" y2="4"/><line x1="10" y1="2" x2="10" y2="4"/><line x1="14" y1="2" x2="14" y2="4"/></svg><span class="item-photo-label">مشروبات ساخنة</span></div><div class="item-photo-badge">يمني</div></div>
-          <div class="item-body"><div class="item-name">أنيسون</div><div class="item-desc">شاي أنيسون بالهيل</div><div class="item-footer"><div class="item-price">20 <small>جنيه</small></div><button class="btn-add" data-id="hot-8" data-name="أنيسون" data-price="20"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg><span class="btn-add-text">أضف للسلة</span></button></div></div>
+          <div class="item-photo"><div class="item-photo-holder"><div class="item-photo-pattern"></div><svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V8z"/><line x1="6" y1="2" x2="6" y2="4"/><line x1="10" y1="2" x2="10" y2="4"/><line x1="14" y1="2" x2="14" y2="4"/></svg><span class="item-photo-label" data-ar="مشروبات ساخنة">Hot Drinks</span></div><div class="item-photo-badge" data-ar="يمني">Yemeni</div></div>
+          <div class="item-body"><div class="item-name" data-ar="أنيسون">Anise Tea</div><div class="item-desc" data-ar="شاي أنيسون بالهيل">Anise tea with cardamom</div><div class="item-footer"><div class="item-price">20 <small data-ar="جنيه">EGP</small></div><button class="btn-add" data-id="hot-8" data-name="Anise Tea" data-price="20"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg><span class="btn-add-text" data-ar="أضف للسلة">Add to Cart</span></button></div></div>
         </article>
 
       </div>
@@ -1467,49 +1522,49 @@
         <div class="menu-section-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="2" x2="8" y2="4"/><line x1="16" y1="2" x2="16" y2="4"/><path d="M3 10h18"/><path d="M3 6h18v16H3z"/></svg>
         </div>
-        <h2 class="menu-section-title">عصائر طازجة</h2>
-        <span class="menu-section-count">8 أصناف</span>
+        <h2 class="menu-section-title" data-ar="عصائر طازجة">Fresh Juices</h2>
+        <span class="menu-section-count" data-ar="8 أصناف">8 Items</span>
       </div>
       <div class="menu-grid">
 
         <article class="menu-item-card reveal">
-          <div class="item-photo"><div class="item-photo-holder"><div class="item-photo-pattern"></div><svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="2" x2="8" y2="4"/><line x1="16" y1="2" x2="16" y2="4"/><path d="M3 10h18"/><path d="M3 6h18v16H3z"/></svg><span class="item-photo-label">عصائر طازجة</span></div><div class="item-photo-badge">برتقال</div></div>
-          <div class="item-body"><div class="item-name">عصير برتقال</div><div class="item-desc">عصير برتقال طازج 100%</div><div class="item-footer"><div class="item-price">40 <small>جنيه</small></div><button class="btn-add" data-id="jus-1" data-name="عصير برتقال" data-price="40"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg><span class="btn-add-text">أضف للسلة</span></button></div></div>
+          <div class="item-photo"><div class="item-photo-holder"><div class="item-photo-pattern"></div><svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="2" x2="8" y2="4"/><line x1="16" y1="2" x2="16" y2="4"/><path d="M3 10h18"/><path d="M3 6h18v16H3z"/></svg><span class="item-photo-label" data-ar="عصائر طازجة">Fresh Juices</span></div><div class="item-photo-badge" data-ar="برتقال">Orange</div></div>
+          <div class="item-body"><div class="item-name" data-ar="عصير برتقال">Orange Juice</div><div class="item-desc" data-ar="عصير برتقال طازج 100%">100% fresh orange juice</div><div class="item-footer"><div class="item-price">40 <small data-ar="جنيه">EGP</small></div><button class="btn-add" data-id="jus-1" data-name="Orange Juice" data-price="40"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg><span class="btn-add-text" data-ar="أضف للسلة">Add to Cart</span></button></div></div>
         </article>
 
         <article class="menu-item-card reveal">
-          <div class="item-photo"><div class="item-photo-holder"><div class="item-photo-pattern"></div><svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="2" x2="8" y2="4"/><line x1="16" y1="2" x2="16" y2="4"/><path d="M3 10h18"/><path d="M3 6h18v16H3z"/></svg><span class="item-photo-label">عصائر طازجة</span></div><div class="item-photo-badge">مانجو</div></div>
-          <div class="item-body"><div class="item-name">عصير مانجو</div><div class="item-desc">عصير مانجو طازج كريمي</div><div class="item-footer"><div class="item-price">45 <small>جنيه</small></div><button class="btn-add" data-id="jus-2" data-name="عصير مانجو" data-price="45"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg><span class="btn-add-text">أضف للسلة</span></button></div></div>
+          <div class="item-photo"><div class="item-photo-holder"><div class="item-photo-pattern"></div><svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="2" x2="8" y2="4"/><line x1="16" y1="2" x2="16" y2="4"/><path d="M3 10h18"/><path d="M3 6h18v16H3z"/></svg><span class="item-photo-label" data-ar="عصائر طازجة">Fresh Juices</span></div><div class="item-photo-badge" data-ar="مانجو">Mango</div></div>
+          <div class="item-body"><div class="item-name" data-ar="عصير مانجو">Mango Juice</div><div class="item-desc" data-ar="عصير مانجو طازج كريمي">Fresh creamy mango juice</div><div class="item-footer"><div class="item-price">45 <small data-ar="جنيه">EGP</small></div><button class="btn-add" data-id="jus-2" data-name="Mango Juice" data-price="45"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg><span class="btn-add-text" data-ar="أضف للسلة">Add to Cart</span></button></div></div>
         </article>
 
         <article class="menu-item-card reveal">
-          <div class="item-photo"><div class="item-photo-holder"><div class="item-photo-pattern"></div><svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="2" x2="8" y2="4"/><line x1="16" y1="2" x2="16" y2="4"/><path d="M3 10h18"/><path d="M3 6h18v16H3z"/></svg><span class="item-photo-label">عصائر طازجة</span></div><div class="item-photo-badge">قصب</div></div>
-          <div class="item-body"><div class="item-name">عصير قصب</div><div class="item-desc">عصير قصب طازج بالليمون والنعناع</div><div class="item-footer"><div class="item-price">35 <small>جنيه</small></div><button class="btn-add" data-id="jus-3" data-name="عصير قصب" data-price="35"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg><span class="btn-add-text">أضف للسلة</span></button></div></div>
+          <div class="item-photo"><div class="item-photo-holder"><div class="item-photo-pattern"></div><svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="2" x2="8" y2="4"/><line x1="16" y1="2" x2="16" y2="4"/><path d="M3 10h18"/><path d="M3 6h18v16H3z"/></svg><span class="item-photo-label" data-ar="عصائر طازجة">Fresh Juices</span></div><div class="item-photo-badge" data-ar="قصب">Sugarcane</div></div>
+          <div class="item-body"><div class="item-name" data-ar="عصير قصب">Sugarcane Juice</div><div class="item-desc" data-ar="عصير قصب طازج بالليمون والنعناع">Fresh sugarcane juice with lemon and mint</div><div class="item-footer"><div class="item-price">35 <small data-ar="جنيه">EGP</small></div><button class="btn-add" data-id="jus-3" data-name="Sugarcane Juice" data-price="35"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg><span class="btn-add-text" data-ar="أضف للسلة">Add to Cart</span></button></div></div>
         </article>
 
         <article class="menu-item-card reveal">
-          <div class="item-photo"><div class="item-photo-holder"><div class="item-photo-pattern"></div><svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="2" x2="8" y2="4"/><line x1="16" y1="2" x2="16" y2="4"/><path d="M3 10h18"/><path d="M3 6h18v16H3z"/></svg><span class="item-photo-label">عصائر طازجة</span></div><div class="item-photo-badge">تفاح</div></div>
-          <div class="item-body"><div class="item-name">عصير تفاح</div><div class="item-desc">عصير تفاح طازج بارد</div><div class="item-footer"><div class="item-price">40 <small>جنيه</small></div><button class="btn-add" data-id="jus-4" data-name="عصير تفاح" data-price="40"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg><span class="btn-add-text">أضف للسلة</span></button></div></div>
+          <div class="item-photo"><div class="item-photo-holder"><div class="item-photo-pattern"></div><svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="2" x2="8" y2="4"/><line x1="16" y1="2" x2="16" y2="4"/><path d="M3 10h18"/><path d="M3 6h18v16H3z"/></svg><span class="item-photo-label" data-ar="عصائر طازجة">Fresh Juices</span></div><div class="item-photo-badge" data-ar="تفاح">Apple</div></div>
+          <div class="item-body"><div class="item-name" data-ar="عصير تفاح">Apple Juice</div><div class="item-desc" data-ar="عصير تفاح طازج بارد">Fresh cold apple juice</div><div class="item-footer"><div class="item-price">40 <small data-ar="جنيه">EGP</small></div><button class="btn-add" data-id="jus-4" data-name="Apple Juice" data-price="40"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg><span class="btn-add-text" data-ar="أضف للسلة">Add to Cart</span></button></div></div>
         </article>
 
         <article class="menu-item-card reveal">
-          <div class="item-photo"><div class="item-photo-holder"><div class="item-photo-pattern"></div><svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="2" x2="8" y2="4"/><line x1="16" y1="2" x2="16" y2="4"/><path d="M3 10h18"/><path d="M3 6h18v16H3z"/></svg><span class="item-photo-label">عصائر طازجة</span></div><div class="item-photo-badge">موز</div></div>
-          <div class="item-body"><div class="item-name">عصير موز</div><div class="item-desc">عصير موز بالحليب والعسل</div><div class="item-footer"><div class="item-price">40 <small>جنيه</small></div><button class="btn-add" data-id="jus-5" data-name="عصير موز" data-price="40"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg><span class="btn-add-text">أضف للسلة</span></button></div></div>
+          <div class="item-photo"><div class="item-photo-holder"><div class="item-photo-pattern"></div><svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="2" x2="8" y2="4"/><line x1="16" y1="2" x2="16" y2="4"/><path d="M3 10h18"/><path d="M3 6h18v16H3z"/></svg><span class="item-photo-label" data-ar="عصائر طازجة">Fresh Juices</span></div><div class="item-photo-badge" data-ar="موز">Banana</div></div>
+          <div class="item-body"><div class="item-name" data-ar="عصير موز">Banana Shake</div><div class="item-desc" data-ar="عصير موز بالحليب والعسل">Banana shake with milk and honey</div><div class="item-footer"><div class="item-price">40 <small data-ar="جنيه">EGP</small></div><button class="btn-add" data-id="jus-5" data-name="Banana Shake" data-price="40"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg><span class="btn-add-text" data-ar="أضف للسلة">Add to Cart</span></button></div></div>
         </article>
 
         <article class="menu-item-card reveal">
-          <div class="item-photo"><div class="item-photo-holder"><div class="item-photo-pattern"></div><svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="2" x2="8" y2="4"/><line x1="16" y1="2" x2="16" y2="4"/><path d="M3 10h18"/><path d="M3 6h18v16H3z"/></svg><span class="item-photo-label">عصائر طازجة</span></div><div class="item-photo-badge">فراولة</div></div>
-          <div class="item-body"><div class="item-name">عصير فراولة</div><div class="item-desc">عصير فراولة طازجة بالحليب</div><div class="item-footer"><div class="item-price">45 <small>جنيه</small></div><button class="btn-add" data-id="jus-6" data-name="عصير فراولة" data-price="45"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg><span class="btn-add-text">أضف للسلة</span></button></div></div>
+          <div class="item-photo"><div class="item-photo-holder"><div class="item-photo-pattern"></div><svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="2" x2="8" y2="4"/><line x1="16" y1="2" x2="16" y2="4"/><path d="M3 10h18"/><path d="M3 6h18v16H3z"/></svg><span class="item-photo-label" data-ar="عصائر طازجة">Fresh Juices</span></div><div class="item-photo-badge" data-ar="فراولة">Strawberry</div></div>
+          <div class="item-body"><div class="item-name" data-ar="عصير فراولة">Strawberry Shake</div><div class="item-desc" data-ar="عصير فراولة طازجة بالحليب">Fresh strawberry shake with milk</div><div class="item-footer"><div class="item-price">45 <small data-ar="جنيه">EGP</small></div><button class="btn-add" data-id="jus-6" data-name="Strawberry Shake" data-price="45"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg><span class="btn-add-text" data-ar="أضف للسلة">Add to Cart</span></button></div></div>
         </article>
 
         <article class="menu-item-card reveal">
-          <div class="item-photo"><div class="item-photo-holder"><div class="item-photo-pattern"></div><svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="2" x2="8" y2="4"/><line x1="16" y1="2" x2="16" y2="4"/><path d="M3 10h18"/><path d="M3 6h18v16H3z"/></svg><span class="item-photo-label">عصائر طازجة</span></div><div class="item-photo-badge">ليمون</div></div>
-          <div class="item-body"><div class="item-name">ليمون بالنعناع</div><div class="item-desc">عصير ليمون بالنعناع الطازج</div><div class="item-footer"><div class="item-price">35 <small>جنيه</small></div><button class="btn-add" data-id="jus-7" data-name="ليمون بالنعناع" data-price="35"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg><span class="btn-add-text">أضف للسلة</span></button></div></div>
+          <div class="item-photo"><div class="item-photo-holder"><div class="item-photo-pattern"></div><svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="2" x2="8" y2="4"/><line x1="16" y1="2" x2="16" y2="4"/><path d="M3 10h18"/><path d="M3 6h18v16H3z"/></svg><span class="item-photo-label" data-ar="عصائر طازجة">Fresh Juices</span></div><div class="item-photo-badge" data-ar="ليمون">Lemon</div></div>
+          <div class="item-body"><div class="item-name" data-ar="ليمون بالنعناع">Lemonade with Mint</div><div class="item-desc" data-ar="عصير ليمون بالنعناع الطازج">Lemon juice with fresh mint</div><div class="item-footer"><div class="item-price">35 <small data-ar="جنيه">EGP</small></div><button class="btn-add" data-id="jus-7" data-name="Lemonade with Mint" data-price="35"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg><span class="btn-add-text" data-ar="أضف للسلة">Add to Cart</span></button></div></div>
         </article>
 
         <article class="menu-item-card reveal">
-          <div class="item-photo"><div class="item-photo-holder"><div class="item-photo-pattern"></div><svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="2" x2="8" y2="4"/><line x1="16" y1="2" x2="16" y2="4"/><path d="M3 10h18"/><path d="M3 6h18v16H3z"/></svg><span class="item-photo-label">عصائر طازجة</span></div><div class="item-photo-badge">جوافة</div></div>
-          <div class="item-body"><div class="item-name">عصير جوافة</div><div class="item-desc">عصير جوافة طازجة كريمي</div><div class="item-footer"><div class="item-price">40 <small>جنيه</small></div><button class="btn-add" data-id="jus-8" data-name="عصير جوافة" data-price="40"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg><span class="btn-add-text">أضف للسلة</span></button></div></div>
+          <div class="item-photo"><div class="item-photo-holder"><div class="item-photo-pattern"></div><svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="2" x2="8" y2="4"/><line x1="16" y1="2" x2="16" y2="4"/><path d="M3 10h18"/><path d="M3 6h18v16H3z"/></svg><span class="item-photo-label" data-ar="عصائر طازجة">Fresh Juices</span></div><div class="item-photo-badge" data-ar="جوافة">Guava</div></div>
+          <div class="item-body"><div class="item-name" data-ar="عصير جوافة">Guava Juice</div><div class="item-desc" data-ar="عصير جوافة طازجة كريمي">Fresh creamy guava juice</div><div class="item-footer"><div class="item-price">40 <small data-ar="جنيه">EGP</small></div><button class="btn-add" data-id="jus-8" data-name="Guava Juice" data-price="40"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg><span class="btn-add-text" data-ar="أضف للسلة">Add to Cart</span></button></div></div>
         </article>
 
       </div>
@@ -1521,39 +1576,39 @@
         <div class="menu-section-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13 16 8 11 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
         </div>
-        <h2 class="menu-section-title">كوكتيل</h2>
-        <span class="menu-section-count">6 أصناف</span>
+        <h2 class="menu-section-title" data-ar="كوكتيل">Cocktails</h2>
+        <span class="menu-section-count" data-ar="6 أصناف">6 Items</span>
       </div>
       <div class="menu-grid">
 
         <article class="menu-item-card reveal">
-          <div class="item-photo"><div class="item-photo-holder"><div class="item-photo-pattern"></div><svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13 16 8 11 2 17"/><polyline points="16 7 22 7 22 13"/></svg><span class="item-photo-label">كوكتيل</span></div><div class="item-photo-badge">مشكل</div></div>
-          <div class="item-body"><div class="item-name">كوكتيل فواكه مشكلة</div><div class="item-desc">خليط من الفواكه الطازجة بالآيس كريم</div><div class="item-footer"><div class="item-price">60 <small>جنيه</small></div><button class="btn-add" data-id="coc-1" data-name="كوكتيل فواكه مشكلة" data-price="60"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg><span class="btn-add-text">أضف للسلة</span></button></div></div>
+          <div class="item-photo"><div class="item-photo-holder"><div class="item-photo-pattern"></div><svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13 16 8 11 2 17"/><polyline points="16 7 22 7 22 13"/></svg><span class="item-photo-label" data-ar="كوكتيل">Cocktails</span></div><div class="item-photo-badge" data-ar="مشكل">Mixed</div></div>
+          <div class="item-body"><div class="item-name" data-ar="كوكتيل فواكه مشكلة">Mixed Fruit Cocktail</div><div class="item-desc" data-ar="خليط من الفواكه الطازجة بالآيس كريم">Mixed fresh fruits with ice cream</div><div class="item-footer"><div class="item-price">60 <small data-ar="جنيه">EGP</small></div><button class="btn-add" data-id="coc-1" data-name="Mixed Fruit Cocktail" data-price="60"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg><span class="btn-add-text" data-ar="أضف للسلة">Add to Cart</span></button></div></div>
         </article>
 
         <article class="menu-item-card reveal">
-          <div class="item-photo"><div class="item-photo-holder"><div class="item-photo-pattern"></div><svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13 16 8 11 2 17"/><polyline points="16 7 22 7 22 13"/></svg><span class="item-photo-label">كوكتيل</span></div><div class="item-photo-badge">مانجو موز</div></div>
-          <div class="item-body"><div class="item-name">كوكتيل مانجو موز</div><div class="item-desc">مانجو وموز طازجين بالحليب والعسل</div><div class="item-footer"><div class="item-price">65 <small>جنيه</small></div><button class="btn-add" data-id="coc-2" data-name="كوكتيل مانجو موز" data-price="65"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg><span class="btn-add-text">أضف للسلة</span></button></div></div>
+          <div class="item-photo"><div class="item-photo-holder"><div class="item-photo-pattern"></div><svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13 16 8 11 2 17"/><polyline points="16 7 22 7 22 13"/></svg><span class="item-photo-label" data-ar="كوكتيل">Cocktails</span></div><div class="item-photo-badge" data-ar="مانجو موز">Mango Banana</div></div>
+          <div class="item-body"><div class="item-name" data-ar="كوكتيل مانجو موز">Mango Banana Cocktail</div><div class="item-desc" data-ar="مانجو وموز طازجين بالحليب والعسل">Fresh mango and banana with milk and honey</div><div class="item-footer"><div class="item-price">65 <small data-ar="جنيه">EGP</small></div><button class="btn-add" data-id="coc-2" data-name="Mango Banana Cocktail" data-price="65"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg><span class="btn-add-text" data-ar="أضف للسلة">Add to Cart</span></button></div></div>
         </article>
 
         <article class="menu-item-card reveal">
-          <div class="item-photo"><div class="item-photo-holder"><div class="item-photo-pattern"></div><svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13 16 8 11 2 17"/><polyline points="16 7 22 7 22 13"/></svg><span class="item-photo-label">كوكتيل</span></div><div class="item-photo-badge">فراولة</div></div>
-          <div class="item-body"><div class="item-name">كوكتيل فراولة موز</div><div class="item-desc">فراولة وموز بالحليب والآيس كريم</div><div class="item-footer"><div class="item-price">65 <small>جنيه</small></div><button class="btn-add" data-id="coc-3" data-name="كوكتيل فراولة موز" data-price="65"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg><span class="btn-add-text">أضف للسلة</span></button></div></div>
+          <div class="item-photo"><div class="item-photo-holder"><div class="item-photo-pattern"></div><svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13 16 8 11 2 17"/><polyline points="16 7 22 7 22 13"/></svg><span class="item-photo-label" data-ar="كوكتيل">Cocktails</span></div><div class="item-photo-badge" data-ar="فراولة">Strawberry</div></div>
+          <div class="item-body"><div class="item-name" data-ar="كوكتيل فراولة موز">Strawberry Banana Cocktail</div><div class="item-desc" data-ar="فراولة وموز بالحليب والآيس كريم">Strawberry and banana with milk and ice cream</div><div class="item-footer"><div class="item-price">65 <small data-ar="جنيه">EGP</small></div><button class="btn-add" data-id="coc-3" data-name="Strawberry Banana Cocktail" data-price="65"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg><span class="btn-add-text" data-ar="أضف للسلة">Add to Cart</span></button></div></div>
         </article>
 
         <article class="menu-item-card reveal">
-          <div class="item-photo"><div class="item-photo-holder"><div class="item-photo-pattern"></div><svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13 16 8 11 2 17"/><polyline points="16 7 22 7 22 13"/></svg><span class="item-photo-label">كوكتيل</span></div><div class="item-photo-badge">أفوكادو</div></div>
-          <div class="item-body"><div class="item-name">كوكتيل أفوكادو</div><div class="item-desc">أفوكادو بالحليب والعسل الطبيعي</div><div class="item-footer"><div class="item-price">70 <small>جنيه</small></div><button class="btn-add" data-id="coc-4" data-name="كوكتيل أفوكادو" data-price="70"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg><span class="btn-add-text">أضف للسلة</span></button></div></div>
+          <div class="item-photo"><div class="item-photo-holder"><div class="item-photo-pattern"></div><svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13 16 8 11 2 17"/><polyline points="16 7 22 7 22 13"/></svg><span class="item-photo-label" data-ar="كوكتيل">Cocktails</span></div><div class="item-photo-badge" data-ar="أفوكادو">Avocado</div></div>
+          <div class="item-body"><div class="item-name" data-ar="كوكتيل أفوكادو">Avocado Cocktail</div><div class="item-desc" data-ar="أفوكادو بالحليب والعسل الطبيعي">Avocado with milk and natural honey</div><div class="item-footer"><div class="item-price">70 <small data-ar="جنيه">EGP</small></div><button class="btn-add" data-id="coc-4" data-name="Avocado Cocktail" data-price="70"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg><span class="btn-add-text" data-ar="أضف للسلة">Add to Cart</span></button></div></div>
         </article>
 
         <article class="menu-item-card reveal">
-          <div class="item-photo"><div class="item-photo-holder"><div class="item-photo-pattern"></div><svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13 16 8 11 2 17"/><polyline points="16 7 22 7 22 13"/></svg><span class="item-photo-label">كوكتيل</span></div><div class="item-photo-badge">خوخ</div></div>
-          <div class="item-body"><div class="item-name">كوكتيل خوخ</div><div class="item-desc">خوخ طازج بالحليب والكريمة</div><div class="item-footer"><div class="item-price">60 <small>جنيه</small></div><button class="btn-add" data-id="coc-5" data-name="كوكتيل خوخ" data-price="60"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg><span class="btn-add-text">أضف للسلة</span></button></div></div>
+          <div class="item-photo"><div class="item-photo-holder"><div class="item-photo-pattern"></div><svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13 16 8 11 2 17"/><polyline points="16 7 22 7 22 13"/></svg><span class="item-photo-label" data-ar="كوكتيل">Cocktails</span></div><div class="item-photo-badge" data-ar="خوخ">Peach</div></div>
+          <div class="item-body"><div class="item-name" data-ar="كوكتيل خوخ">Peach Cocktail</div><div class="item-desc" data-ar="خوخ طازج بالحليب والكريمة">Fresh peach with milk and cream</div><div class="item-footer"><div class="item-price">60 <small data-ar="جنيه">EGP</small></div><button class="btn-add" data-id="coc-5" data-name="Peach Cocktail" data-price="60"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg><span class="btn-add-text" data-ar="أضف للسلة">Add to Cart</span></button></div></div>
         </article>
 
         <article class="menu-item-card reveal">
-          <div class="item-photo"><div class="item-photo-holder"><div class="item-photo-pattern"></div><svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13 16 8 11 2 17"/><polyline points="16 7 22 7 22 13"/></svg><span class="item-photo-label">كوكتيل</span></div><div class="item-photo-badge">سموذي</div></div>
-          <div class="item-body"><div class="item-name">سموذي خضار وفواكه</div><div class="item-desc">سموذي صحي بخضار وفواكه مشكلة</div><div class="item-footer"><div class="item-price">65 <small>جنيه</small></div><button class="btn-add" data-id="coc-6" data-name="سموذي خضار وفواكه" data-price="65"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg><span class="btn-add-text">أضف للسلة</span></button></div></div>
+          <div class="item-photo"><div class="item-photo-holder"><div class="item-photo-pattern"></div><svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13 16 8 11 2 17"/><polyline points="16 7 22 7 22 13"/></svg><span class="item-photo-label" data-ar="كوكتيل">Cocktails</span></div><div class="item-photo-badge" data-ar="سموذي">Smoothie</div></div>
+          <div class="item-body"><div class="item-name" data-ar="سموذي خضار وفواكه">Veggie &amp; Fruit Smoothie</div><div class="item-desc" data-ar="سموذي صحي بخضار وفواكه مشكلة">Healthy smoothie with mixed vegetables and fruits</div><div class="item-footer"><div class="item-price">65 <small data-ar="جنيه">EGP</small></div><button class="btn-add" data-id="coc-6" data-name="Veggie Fruit Smoothie" data-price="65"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg><span class="btn-add-text" data-ar="أضف للسلة">Add to Cart</span></button></div></div>
         </article>
 
       </div>
@@ -1565,34 +1620,34 @@
         <div class="menu-section-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/></svg>
         </div>
-        <h2 class="menu-section-title">مشروبات غازية ومياه</h2>
-        <span class="menu-section-count">5 أصناف</span>
+        <h2 class="menu-section-title" data-ar="مشروبات غازية ومياه">Soft Drinks &amp; Water</h2>
+        <span class="menu-section-count" data-ar="5 أصناف">5 Items</span>
       </div>
       <div class="menu-grid">
 
         <article class="menu-item-card reveal">
-          <div class="item-photo"><div class="item-photo-holder"><div class="item-photo-pattern"></div><svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/></svg><span class="item-photo-label">مشروبات غازية</span></div><div class="item-photo-badge">بيبسي</div></div>
-          <div class="item-body"><div class="item-name">بيبسي / ببسي دايت</div><div class="item-desc">علبة 330 مل</div><div class="item-footer"><div class="item-price">20 <small>جنيه</small></div><button class="btn-add" data-id="sft-1" data-name="بيبسي" data-price="20"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg><span class="btn-add-text">أضف للسلة</span></button></div></div>
+          <div class="item-photo"><div class="item-photo-holder"><div class="item-photo-pattern"></div><svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/></svg><span class="item-photo-label" data-ar="مشروبات غازية">Soft Drinks</span></div><div class="item-photo-badge">Pepsi</div></div>
+          <div class="item-body"><div class="item-name" data-ar="بيبسي / ببسي دايت">Pepsi / Pepsi Diet</div><div class="item-desc" data-ar="علبة 330 مل">330ml can</div><div class="item-footer"><div class="item-price">20 <small data-ar="جنيه">EGP</small></div><button class="btn-add" data-id="sft-1" data-name="Pepsi" data-price="20"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg><span class="btn-add-text" data-ar="أضف للسلة">Add to Cart</span></button></div></div>
         </article>
 
         <article class="menu-item-card reveal">
-          <div class="item-photo"><div class="item-photo-holder"><div class="item-photo-pattern"></div><svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/></svg><span class="item-photo-label">مشروبات غازية</span></div><div class="item-photo-badge">سفن أب</div></div>
-          <div class="item-body"><div class="item-name">سفن أب / ميرندا</div><div class="item-desc">علبة 330 مل</div><div class="item-footer"><div class="item-price">20 <small>جنيه</small></div><button class="btn-add" data-id="sft-2" data-name="سفن أب / ميرندا" data-price="20"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg><span class="btn-add-text">أضف للسلة</span></button></div></div>
+          <div class="item-photo"><div class="item-photo-holder"><div class="item-photo-pattern"></div><svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/></svg><span class="item-photo-label" data-ar="مشروبات غازية">Soft Drinks</span></div><div class="item-photo-badge">7UP</div></div>
+          <div class="item-body"><div class="item-name" data-ar="سفن أب / ميرندا">7UP / Miranda</div><div class="item-desc" data-ar="علبة 330 مل">330ml can</div><div class="item-footer"><div class="item-price">20 <small data-ar="جنيه">EGP</small></div><button class="btn-add" data-id="sft-2" data-name="7UP / Miranda" data-price="20"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg><span class="btn-add-text" data-ar="أضف للسلة">Add to Cart</span></button></div></div>
         </article>
 
         <article class="menu-item-card reveal">
-          <div class="item-photo"><div class="item-photo-holder"><div class="item-photo-pattern"></div><svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/></svg><span class="item-photo-label">مشروبات غازية</span></div><div class="item-photo-badge">مياه</div></div>
-          <div class="item-body"><div class="item-name">مياه معدنية</div><div class="item-desc">زجاجة 500 مل</div><div class="item-footer"><div class="item-price">10 <small>جنيه</small></div><button class="btn-add" data-id="sft-3" data-name="مياه معدنية" data-price="10"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg><span class="btn-add-text">أضف للسلة</span></button></div></div>
+          <div class="item-photo"><div class="item-photo-holder"><div class="item-photo-pattern"></div><svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/></svg><span class="item-photo-label" data-ar="مشروبات غازية">Soft Drinks</span></div><div class="item-photo-badge" data-ar="مياه">Water</div></div>
+          <div class="item-body"><div class="item-name" data-ar="مياه معدنية">Mineral Water</div><div class="item-desc" data-ar="زجاجة 500 مل">500ml bottle</div><div class="item-footer"><div class="item-price">10 <small data-ar="جنيه">EGP</small></div><button class="btn-add" data-id="sft-3" data-name="Mineral Water" data-price="10"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg><span class="btn-add-text" data-ar="أضف للسلة">Add to Cart</span></button></div></div>
         </article>
 
         <article class="menu-item-card reveal">
-          <div class="item-photo"><div class="item-photo-holder"><div class="item-photo-pattern"></div><svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/></svg><span class="item-photo-label">مشروبات غازية</span></div><div class="item-photo-badge">غازية</div></div>
-          <div class="item-body"><div class="item-name">مياه غازية</div><div class="item-desc">مياه غازية مثلجة</div><div class="item-footer"><div class="item-price">15 <small>جنيه</small></div><button class="btn-add" data-id="sft-4" data-name="مياه غازية" data-price="15"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg><span class="btn-add-text">أضف للسلة</span></button></div></div>
+          <div class="item-photo"><div class="item-photo-holder"><div class="item-photo-pattern"></div><svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/></svg><span class="item-photo-label" data-ar="مشروبات غازية">Soft Drinks</span></div><div class="item-photo-badge" data-ar="غازية">Sparkling</div></div>
+          <div class="item-body"><div class="item-name" data-ar="مياه غازية">Sparkling Water</div><div class="item-desc" data-ar="مياه غازية مثلجة">Iced sparkling water</div><div class="item-footer"><div class="item-price">15 <small data-ar="جنيه">EGP</small></div><button class="btn-add" data-id="sft-4" data-name="Sparkling Water" data-price="15"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg><span class="btn-add-text" data-ar="أضف للسلة">Add to Cart</span></button></div></div>
         </article>
 
         <article class="menu-item-card reveal">
-          <div class="item-photo"><div class="item-photo-holder"><div class="item-photo-pattern"></div><svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/></svg><span class="item-photo-label">مشروبات غازية</span></div><div class="item-photo-badge">طاقة</div></div>
-          <div class="item-body"><div class="item-name">ريد بول / باور هورس</div><div class="item-desc">مشروب طاقة</div><div class="item-footer"><div class="item-price">35 <small>جنيه</small></div><button class="btn-add" data-id="sft-5" data-name="ريد بول" data-price="35"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg><span class="btn-add-text">أضف للسلة</span></button></div></div>
+          <div class="item-photo"><div class="item-photo-holder"><div class="item-photo-pattern"></div><svg class="item-photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/></svg><span class="item-photo-label" data-ar="مشروبات غازية">Soft Drinks</span></div><div class="item-photo-badge" data-ar="طاقة">Energy</div></div>
+          <div class="item-body"><div class="item-name" data-ar="ريد بول / باور هورس">Red Bull / Power Horse</div><div class="item-desc" data-ar="مشروب طاقة">Energy drink</div><div class="item-footer"><div class="item-price">35 <small data-ar="جنيه">EGP</small></div><button class="btn-add" data-id="sft-5" data-name="Red Bull" data-price="35"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg><span class="btn-add-text" data-ar="أضف للسلة">Add to Cart</span></button></div></div>
         </article>
 
       </div>
@@ -1607,9 +1662,9 @@
     <div>
       <a href="index.html" class="logo" style="margin-bottom:14px;display:inline-flex;">
         <img class="logo-img" src="photos/شعار.jpg" alt="أهل اليمن">
-        <div class="logo-text"><span class="logo-name">أهل اليمن</span><span class="logo-tagline">أصل الطعم اليمني في مصر</span></div>
+        <div class="logo-text"><span class="logo-name" data-ar="أهل اليمن">Bab AlYemen</span><span class="logo-tagline" data-ar="أصل الطعم اليمني في مصر">Authentic Yemeni Taste in Egypt</span></div>
       </a>
-      <p class="footer-tagline">معلمين المندي والمشويات والطواجن — مطعم يمني أصيل في قلب الجيزة.</p>
+      <p class="footer-tagline" data-ar="معلمين المندي والمشويات والطواجن — مطعم يمني أصيل في قلب الجيزة.">Masters of Mandi, Grills & Stews — Authentic Yemeni restaurant in the heart of Giza.</p>
       <div class="footer-social-row">
         <a href="https://www.facebook.com/ahlelyemeneg/" target="_blank" rel="noopener" class="footer-social-ico" aria-label="فيسبوك">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
@@ -1623,27 +1678,27 @@
       </div>
     </div>
     <div>
-      <h3 class="footer-col-title">روابط سريعة</h3>
+      <h3 class="footer-col-title" data-ar="روابط سريعة">Quick Links</h3>
       <ul class="footer-links">
-        <li><a href="index.html">الرئيسية</a></li>
-        <li><a href="menu.html">قائمة الطعام</a></li>
-        <li><a href="branches.html">فروعنا</a></li>
-        <li><a href="index.html#about">من نحن</a></li>
-        <li><a href="index.html#reviews">التقييمات</a></li>
+        <li><a href="index.html" data-ar="الرئيسية">Home</a></li>
+        <li><a href="menu.html" data-ar="قائمة الطعام">Food Menu</a></li>
+        <li><a href="index.html#about" data-ar="من نحن">About Us</a></li>
+        <li><a href="index.html#reviews" data-ar="التقييمات">Reviews</a></li>
+        <li><a href="index.html#branches" data-ar="فرعنا">Our Branch</a></li>
       </ul>
     </div>
     <div>
-      <h3 class="footer-col-title">تخصصنا</h3>
+      <h3 class="footer-col-title" data-ar="تخصصنا">Our Specialties</h3>
       <ul class="footer-links">
-        <li><a href="menu.html#sec-meat">مندي اللحم</a></li>
-        <li><a href="menu.html#sec-chicken">مندي الدجاج</a></li>
-        <li><a href="menu.html#sec-sweets">بنت الصحن</a></li>
-        <li><a href="menu.html#sec-hotdrinks">شاي عدني</a></li>
-        <li><a href="menu.html#sec-cocktails">كوكتيل أهل اليمن</a></li>
+        <li><a href="menu.html#sec-meat" data-ar="مندي اللحم">Meat Mandi</a></li>
+        <li><a href="menu.html#sec-chicken" data-ar="مندي الدجاج">Chicken Mandi</a></li>
+        <li><a href="menu.html#sec-sweets" data-ar="بنت الصحن">Bint Al-Sahn</a></li>
+        <li><a href="menu.html#sec-hotdrinks" data-ar="شاي عدني">Adeni Tea</a></li>
+        <li><a href="menu.html#sec-cocktails" data-ar="كوكتيل أهل اليمن">Bab AlYemen Cocktail</a></li>
       </ul>
     </div>
     <div>
-      <h3 class="footer-col-title">تواصل معنا</h3>
+      <h3 class="footer-col-title" data-ar="تواصل معنا">Contact Us</h3>
       <div class="footer-contact">
         <div class="footer-contact-row">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.09a16 16 0 006 6l1.45-1.45a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
@@ -1651,17 +1706,13 @@
         </div>
         <div class="footer-contact-row">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          <span>63 شارع الدقى، الدقي، الجيزة</span>
-        </div>
-        <div class="footer-contact-row">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          <span>يومياً — يغلق 3 صباحاً</span>
+          <span data-ar="63 شارع الدقى، الدقي، الجيزة">63 Al-Dokki St., Al-Dokki, Giza</span>
         </div>
       </div>
     </div>
   </div>
   <div class="container">
-    <div class="footer-bottom">© 2025 مطعم أهل اليمن · جميع الحقوق محفوظة · أصل الطعم اليمني في مصر</div>
+    <div class="footer-bottom" data-ar="© 2025 مطعم أهل اليمن · جميع الحقوق محفوظة · أصل الطعم اليمني في مصر">© 2025 Bab AlYemen Restaurant · All Rights Reserved · Authentic Yemeni Taste in Egypt</div>
   </div>
 </footer>
 
@@ -1671,7 +1722,7 @@
   <div class="cart-head">
     <div class="cart-head-title">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
-      سلة الطلب
+      <span data-ar="سلة الطلب">Your Cart</span>
       <span class="cart-head-count" id="cartHeadCount">0</span>
     </div>
     <button class="cart-close" onclick="closeCart()" aria-label="إغلاق">
@@ -1683,19 +1734,19 @@
       <div class="cart-empty-ico">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
       </div>
-      <h3>سلتك فارغة</h3>
-      <p>أضف أطباقك المفضلة من القائمة</p>
+      <h3 data-ar="سلتك فارغة">Your cart is empty</h3>
+      <p data-ar="أضف أطباقك المفضلة من القائمة">Add your favourite dishes from the menu</p>
     </div>
     <div class="cart-items-list" id="cartItemsList"></div>
   </div>
   <div class="cart-footer" id="cartFooter" hidden>
     <div class="cart-total-row">
-      <span class="cart-total-label">الإجمالي</span>
-      <span class="cart-total-amount" id="cartTotalAmt">0.00 جنيه</span>
+      <span class="cart-total-label" data-ar="الإجمالي">Total</span>
+      <span class="cart-total-amount" id="cartTotalAmt">0.00 EGP</span>
     </div>
     <button class="cart-checkout-btn" onclick="openCheckout()">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
-      إتمام الطلب
+      <span data-ar="إتمام الطلب">Checkout</span>
     </button>
   </div>
 </aside>
@@ -1706,56 +1757,56 @@
   <div class="checkout-head">
     <div class="checkout-title">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
-      تأكيد الطلب
+      <span data-ar="تأكيد الطلب">Confirm Order</span>
     </div>
     <button class="checkout-close" onclick="closeCheckout()" aria-label="إغلاق">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
     </button>
   </div>
   <div class="checkout-body">
-    <div class="checkout-section-title">بياناتك</div>
+    <div class="checkout-section-title" data-ar="بياناتك">Your Details</div>
     <div class="co-fields">
       <div class="co-field">
-        <label>الاسم <span class="req">*</span></label>
-        <input class="co-input" type="text" id="orderName" placeholder="اسمك الكريم">
-        <p class="field-error" id="errName">الاسم مطلوب</p>
+        <label><span data-ar="الاسم">Name</span> <span class="req">*</span></label>
+        <input class="co-input" type="text" id="orderName" placeholder="Your full name" data-ar-placeholder="اسمك الكريم">
+        <p class="field-error" id="errName" data-ar="الاسم مطلوب">Name is required</p>
       </div>
       <div class="co-field">
-        <label>رقم هاتفك <span class="req">*</span></label>
+        <label><span data-ar="رقم هاتفك">Phone Number</span> <span class="req">*</span></label>
         <input class="co-input" type="tel" id="orderPhone" placeholder="01xxxxxxxxx" dir="ltr">
-        <p class="field-error" id="errPhone">رقم الهاتف مطلوب</p>
+        <p class="field-error" id="errPhone" data-ar="رقم الهاتف مطلوب">Phone number is required</p>
       </div>
       <div class="co-field">
-        <label>عنوانك بالتفصيل <span class="req">*</span></label>
-        <textarea class="co-input" id="orderAddress" rows="2" placeholder="اسم الشارع، رقم العمارة، الدور، الشقة..."></textarea>
-        <p class="field-error" id="errAddress">العنوان مطلوب</p>
+        <label><span data-ar="عنوانك بالتفصيل">Detailed Address</span> <span class="req">*</span></label>
+        <textarea class="co-input" id="orderAddress" rows="2" placeholder="Street name, building no., floor, apartment..." data-ar-placeholder="اسم الشارع، رقم العمارة، الدور، الشقة..."></textarea>
+        <p class="field-error" id="errAddress" data-ar="العنوان مطلوب">Address is required</p>
       </div>
       <div class="co-field">
-        <label>ملاحظات <span class="opt">(اختياري)</span></label>
-        <textarea class="co-input" id="orderNotes" rows="2" placeholder="توابل أكتر، بدون حار..."></textarea>
+        <label><span data-ar="ملاحظات">Notes</span> <span class="opt" data-ar="(اختياري)">(Optional)</span></label>
+        <textarea class="co-input" id="orderNotes" rows="2" placeholder="Extra spice, no chili..." data-ar-placeholder="توابل أكتر، بدون حار..."></textarea>
       </div>
     </div>
-    <div class="checkout-section-title">ملخص الطلب</div>
+    <div class="checkout-section-title" data-ar="ملخص الطلب">Order Summary</div>
     <div class="co-order-summary" id="checkoutItems"></div>
     <div class="co-total-box">
       <div class="co-total-row">
-        <span class="co-total-label">إجمالي الأصناف</span>
-        <span class="co-total-val" id="checkoutTotal">0.00 جنيه</span>
+        <span class="co-total-label" data-ar="إجمالي الأصناف">Items Total</span>
+        <span class="co-total-val" id="checkoutTotal">0.00 EGP</span>
       </div>
       <div class="co-total-row">
-        <span class="co-total-label">رسوم التوصيل</span>
-        <span class="co-total-note">تُحدد عند التواصل</span>
+        <span class="co-total-label" data-ar="رسوم التوصيل">Delivery Fee</span>
+        <span class="co-total-note" data-ar="تُحدد عند التواصل">Confirmed upon contact</span>
       </div>
     </div>
     <div class="co-telegram-note">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13"/><path d="M22 2L15 22 11 13 2 9l20-7z"/></svg>
-      سيتم إرسال طلبك فوراً إلى المطعم
+      <span data-ar="سيتم إرسال طلبك فوراً إلى المطعم">Your order will be sent directly to the restaurant</span>
     </div>
   </div>
   <div class="checkout-foot">
     <button class="checkout-submit" onclick="submitOrder()">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><path d="M22 2L11 13"/><path d="M22 2L15 22 11 13 2 9l20-7z"/></svg>
-      أرسل الطلب
+      <span data-ar="أرسل الطلب">Send Order</span>
     </button>
   </div>
 </div>
@@ -1765,7 +1816,7 @@
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="width:18px;height:18px;color:var(--gold);flex-shrink:0;">
     <polyline points="20 6 9 17 4 12"/>
   </svg>
-  <span>تمت إضافة <strong class="toast-name"></strong> إلى السلة</span>
+  <span data-ar="تمت إضافة">Added</span> <strong class="toast-name"></strong> <span data-ar="للسلة">to cart</span>
 </div>
 
 <!-- Floating cart (mobile) -->
@@ -1776,6 +1827,19 @@
   </svg>
   <span class="cart-badge" id="cartBadgeFloat">0</span>
 </button>
+
+<!-- ORDER SUCCESS OVERLAY -->
+<div class="order-success-overlay" id="orderSuccessOverlay">
+  <div class="order-success-card">
+    <div class="order-success-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="20 6 9 17 4 12"/></svg>
+    </div>
+    <h3 class="order-success-title" data-ar="تم إرسال طلبك بنجاح!">Order Sent Successfully!</h3>
+    <p class="order-success-msg" data-ar="سيتواصل معك المطعم قريباً على رقم الهاتف المُدخل">The restaurant will contact you shortly on your phone number</p>
+    <div class="order-success-num" id="orderSuccessNum"></div>
+    <button class="order-success-btn" onclick="closeOrderSuccess()" data-ar="حسناً">OK</button>
+  </div>
+</div>
 
 <script src="js/main.js"></script>
 </body>

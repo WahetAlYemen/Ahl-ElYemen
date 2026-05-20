@@ -4,10 +4,9 @@
    Features: Cart · Telegram Checkout · UI
    ═══════════════════════════════════════════ */
 
-/* ── Telegram config — fill these in ──────── */
-const TELEGRAM_TOKEN   = '8884932305:AAERyDJcWsR6YxJlwrwjbFR3a-cip1BN67o';
-const TELEGRAM_CHAT_ID = '-1003706660014';
-/* ─────────────────────────────────────────── */
+/* ── Worker URL — replace with your deployed Cloudflare Worker URL ── */
+const WORKER_URL = 'https://ahl-elyemen.sharif-alsahbool.workers.dev';
+/* ─────────────────────────────────────────────────────────────────── */
 
 const WA_NUMBER   = '201212002005';
 const STORAGE_KEY = 'ahlYemenCart';
@@ -22,18 +21,19 @@ class Cart {
   }
 
   /* Public API */
-  add(id, name, price) {
+  add(id, name, price, nameAr = '') {
     price = parseFloat(price);
     if (isNaN(price) || price <= 0) return;
     const existing = this.items.find(i => i.id === id);
     if (existing) {
       existing.qty++;
+      if (!existing.nameAr && nameAr) existing.nameAr = nameAr;
     } else {
-      this.items.push({ id, name, price, qty: 1 });
+      this.items.push({ id, name, nameAr, price, qty: 1 });
     }
     this._persist();
     this._refresh();
-    this._toastAdded(name);
+    this._toastAdded(name, nameAr);
     this._popBadge();
   }
 
@@ -59,10 +59,10 @@ class Cart {
 
   /* Internals */
   _load() {
-    try { this.items = JSON.parse(localStorage.getItem(STORAGE_KEY)) || []; }
+    try { this.items = JSON.parse(sessionStorage.getItem(STORAGE_KEY)) || []; }
     catch { this.items = []; }
   }
-  _persist() { localStorage.setItem(STORAGE_KEY, JSON.stringify(this.items)); }
+  _persist() { sessionStorage.setItem(STORAGE_KEY, JSON.stringify(this.items)); }
 
   _refresh() {
     this._updateBadges();
@@ -89,11 +89,12 @@ class Cart {
     });
   }
 
-  _toastAdded(name) {
+  _toastAdded(name, nameAr = '') {
     const t = document.getElementById('cartToast');
     if (!t) return;
     const nm = t.querySelector('.toast-name');
-    if (nm) nm.textContent = name;
+    const isAr = document.documentElement.dir === 'rtl';
+    if (nm) nm.textContent = (isAr && nameAr) ? nameAr : name;
     t.classList.add('show');
     clearTimeout(t._tid);
     t._tid = setTimeout(() => t.classList.remove('show'), 2200);
@@ -128,11 +129,13 @@ class Cart {
     if (totalEl) totalEl.textContent = this._fmtPrice(this.getTotal());
 
     const isAr = document.documentElement.dir === 'rtl';
-    list.innerHTML = this.items.map(item => `
+    list.innerHTML = this.items.map(item => {
+      const displayName = (isAr && item.nameAr) ? item.nameAr : item.name;
+      return `
       <div class="cart-item">
         <div class="cart-item-thumb"><div class="cart-item-ph"></div></div>
         <div class="cart-item-info">
-          <p class="cart-item-name">${this._esc(item.name)}</p>
+          <p class="cart-item-name">${this._esc(displayName)}</p>
           <p class="cart-item-sub">${this._fmtPrice(item.price)} / ${isAr ? 'قطعة' : 'each'}</p>
           <p class="cart-item-price">${this._fmtPrice(item.price * item.qty)}</p>
         </div>
@@ -149,19 +152,22 @@ class Cart {
           </button>
         </div>
       </div>
-    `).join('');
+    `}).join('');
   }
 
   _renderCheckout() {
     const itemsEl = document.getElementById('checkoutItems');
     const totalEl = document.getElementById('checkoutTotal');
     if (!itemsEl) return;
-    itemsEl.innerHTML = this.items.map(i => `
+    const isAr = document.documentElement.dir === 'rtl';
+    itemsEl.innerHTML = this.items.map(i => {
+      const displayName = (isAr && i.nameAr) ? i.nameAr : i.name;
+      return `
       <div class="co-order-item">
-        <span class="co-order-item-name">${this._esc(i.name)} × ${i.qty}</span>
+        <span class="co-order-item-name">${this._esc(displayName)} × ${i.qty}</span>
         <span class="co-order-item-price">${this._fmtPrice(i.price * i.qty)}</span>
       </div>
-    `).join('');
+    `}).join('');
     if (totalEl) totalEl.textContent = this._fmtPrice(this.getTotal());
   }
 }
@@ -201,7 +207,26 @@ function closeCheckout() {
 }
 
 /* ───────────────────────────────────────────
-   TELEGRAM ORDER SUBMIT
+   ORDER SUCCESS OVERLAY
+─────────────────────────────────────────── */
+function showOrderSuccess(orderNum) {
+  const overlay = document.getElementById('orderSuccessOverlay');
+  const numEl   = document.getElementById('orderSuccessNum');
+  if (!overlay) return;
+  const isAr = document.documentElement.dir === 'rtl';
+  if (numEl) numEl.textContent = (isAr ? 'رقم الطلب: #' : 'Order #') + orderNum;
+  overlay.classList.add('show');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeOrderSuccess() {
+  document.getElementById('orderSuccessOverlay')?.classList.remove('show');
+  document.body.style.overflow = '';
+}
+window.closeOrderSuccess = closeOrderSuccess;
+
+/* ───────────────────────────────────────────
+   ORDER SUBMIT — via Cloudflare Worker
 ─────────────────────────────────────────── */
 async function submitOrder() {
   const nameEl    = document.getElementById('orderName');
@@ -209,6 +234,7 @@ async function submitOrder() {
   const addressEl = document.getElementById('orderAddress');
   const notesEl   = document.getElementById('orderNotes');
   const submitBtn = document.getElementById('checkoutSubmit');
+  const isAr      = document.documentElement.dir === 'rtl';
 
   const name    = nameEl?.value.trim()    || '';
   const phone   = phoneEl?.value.trim()   || '';
@@ -228,36 +254,26 @@ async function submitOrder() {
   });
   if (!valid) return;
 
-  /* Escape HTML special chars in user input */
-  const esc = s => String(s)
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;');
-
-  /* Build Telegram message */
-  const orderNum = Date.now().toString().slice(-6);
-  const lines = [
-    '🍽️ <b>طلب جديد — مطعم أهل اليمن</b>',
-    '━━━━━━━━━━━━━━━━━━━',
-    `📋 <b>رقم الطلب:</b> #${orderNum}`,
-    '',
-  ];
-  if (name)  lines.push(`👤 <b>الاسم:</b> ${esc(name)}`);
-  lines.push(`📞 <b>الهاتف:</b> <code>${esc(phone)}</code>`);
-  lines.push(`📍 <b>العنوان:</b> ${esc(address)}`);
-  if (notes) lines.push(`📝 <b>ملاحظات:</b> ${esc(notes)}`);
-  lines.push('', '🛒 <b>الطلبات:</b>');
-  window.cart.items.forEach(i => {
-    lines.push(`  • ${esc(i.name)} × ${i.qty}  —  ${(i.price * i.qty).toFixed(2)} جنيه`);
-  });
-  lines.push('━━━━━━━━━━━━━━━━━━━');
-  lines.push(`💰 <b>الإجمالي: ${window.cart.getTotal().toFixed(2)} جنيه</b>`);
+  /* Build payload */
+  const payload = {
+    orderNum: Date.now().toString().slice(-6),
+    name,
+    phone,
+    address,
+    notes,
+    items: window.cart.items.map(i => ({
+      name:   i.name,
+      nameAr: i.nameAr || '',
+      price:  i.price,
+      qty:    i.qty,
+    })),
+    total: window.cart.getTotal().toFixed(2),
+  };
 
   /* Loading state */
   const origHtml = submitBtn?.innerHTML;
   if (submitBtn) {
     submitBtn.disabled = true;
-    const isAr = document.documentElement.dir === 'rtl';
     submitBtn.innerHTML = `<span style="display:inline-flex;align-items:center;gap:8px;">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="animation:tgSpin 0.8s linear infinite">
         <path d="M21 12a9 9 0 1 1-6.219-8.56"/>
@@ -265,55 +281,28 @@ async function submitOrder() {
   }
 
   try {
-    const res = await fetch(
-      `https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`,
-      {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          chat_id:    TELEGRAM_CHAT_ID,
-          text:       lines.join('\n'),
-          parse_mode: 'HTML'
-        })
-      }
-    );
-    const data = await res.json();
-    if (!data.ok) throw new Error(data.description || 'Telegram API error');
+    const res  = await fetch(WORKER_URL, {
+      method:  'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body:    JSON.stringify(payload),
+    });
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok || !data.ok) throw new Error(data.error || `HTTP ${res.status}`);
 
-    /* Success feedback */
-    if (submitBtn) {
-      submitBtn.disabled = false;
-      submitBtn.style.cssText =
-        'background:#16a34a;box-shadow:0 4px 20px rgba(22,163,74,0.4);';
-      submitBtn.innerHTML = `<span style="display:inline-flex;align-items:center;gap:8px;">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
-          <polyline points="20 6 9 17 4 12"/>
-        </svg>${isAr ? 'تم الإرسال! سيتواصل معك المطعم قريباً' : 'Order Sent! The restaurant will contact you soon'}</span>`;
-    }
-
-    /* Clear and close after 2.5 s */
-    setTimeout(() => {
-      closeCheckout();
-      window.cart.clear();
-      if (nameEl)    nameEl.value    = '';
-      if (phoneEl)   phoneEl.value   = '';
-      if (addressEl) addressEl.value = '';
-      if (notesEl)   notesEl.value   = '';
-      if (submitBtn) {
-        submitBtn.style.cssText = '';
-        submitBtn.innerHTML = origHtml;
-      }
-    }, 2500);
+    /* Close checkout, clear form & cart, show success overlay */
+    closeCheckout();
+    window.cart.clear();
+    if (nameEl)    nameEl.value    = '';
+    if (phoneEl)   phoneEl.value   = '';
+    if (addressEl) addressEl.value = '';
+    if (notesEl)   notesEl.value   = '';
+    if (submitBtn) { submitBtn.disabled = false; submitBtn.style.cssText = ''; submitBtn.innerHTML = origHtml; }
+    showOrderSuccess(payload.orderNum);
 
   } catch (err) {
-    console.error('Telegram order error:', err);
-    if (submitBtn) {
-      submitBtn.disabled = false;
-      submitBtn.style.cssText = '';
-      submitBtn.innerHTML = origHtml;
-    }
-    const isAr2 = document.documentElement.dir === 'rtl';
-    alert(isAr2
+    console.error('Order error:', err);
+    if (submitBtn) { submitBtn.disabled = false; submitBtn.style.cssText = ''; submitBtn.innerHTML = origHtml; }
+    alert(isAr
       ? '⚠️ لم يتم إرسال الطلب.\nيرجى المحاولة مرة أخرى أو الاتصال بنا: 012 12002005'
       : '⚠️ Order could not be sent.\nPlease try again or call us: 012 12002005'
     );
@@ -371,7 +360,10 @@ function initAddButtons() {
     if (!btn) return;
     const { id, name, price } = btn.dataset;
     if (!id || !name || !price) return;
-    window.cart.add(id, name, price);
+    const card   = btn.closest('article');
+    const nameEl = card?.querySelector('.item-name[data-ar], .dish-name[data-ar]');
+    const nameAr = nameEl?.dataset?.ar || '';
+    window.cart.add(id, name, price, nameAr);
     /* Visual feedback */
     btn.classList.add('added');
     const txt = btn.querySelector('.btn-add-text');
@@ -498,6 +490,66 @@ function initVideos() {
 }
 
 /* ───────────────────────────────────────────
+   CART MIGRATION — fill nameAr for old items
+─────────────────────────────────────────── */
+function migrateCartNames() {
+  let changed = false;
+  window.cart.items.forEach(item => {
+    if (item.nameAr) return;
+    const btn = document.querySelector(`.btn-add[data-id="${item.id}"]`);
+    if (!btn) return;
+    const card   = btn.closest('article');
+    const nameEl = card?.querySelector('.item-name[data-ar], .dish-name[data-ar]');
+    const nameAr = nameEl?.dataset?.ar || '';
+    if (nameAr) { item.nameAr = nameAr; changed = true; }
+  });
+  if (changed) { window.cart._persist(); window.cart._refresh(); }
+}
+
+/* ───────────────────────────────────────────
+   BRANCH PHOTO SLIDESHOW
+─────────────────────────────────────────── */
+function initSlideshow() {
+  const track = document.getElementById('slideshowTrack');
+  const dotsEl = document.getElementById('slideshowDots');
+  const prev  = document.getElementById('ssPrev');
+  const next  = document.getElementById('ssNext');
+  if (!track) return;
+
+  const slides = track.querySelectorAll('img');
+  const dots   = dotsEl ? dotsEl.querySelectorAll('.ss-dot') : [];
+  let current  = 0;
+  let timer    = null;
+
+  function goTo(idx) {
+    current = (idx + slides.length) % slides.length;
+    track.style.transform = `translateX(-${current * 100}%)`;
+    dots.forEach((d, i) => d.classList.toggle('active', i === current));
+  }
+
+  function start() {
+    timer = setInterval(() => goTo(current + 1), 4000);
+  }
+
+  function stop() {
+    clearInterval(timer);
+  }
+
+  prev?.addEventListener('click', () => { stop(); goTo(current - 1); start(); });
+  next?.addEventListener('click', () => { stop(); goTo(current + 1); start(); });
+
+  dots.forEach((d, i) => {
+    d.addEventListener('click', () => { stop(); goTo(i); start(); });
+  });
+
+  track.closest('.branch-slideshow')?.addEventListener('mouseenter', stop);
+  track.closest('.branch-slideshow')?.addEventListener('mouseleave', start);
+
+  goTo(0);
+  start();
+}
+
+/* ───────────────────────────────────────────
    LANGUAGE TOGGLE
 ─────────────────────────────────────────── */
 function toggleLanguage() {
@@ -523,9 +575,10 @@ function setLanguage(lang) {
     el.placeholder = lang === 'ar' ? el.dataset.arPlaceholder : el.dataset.enPlaceholder;
   });
 
-  /* Update toggle button label */
-  const lbl = document.getElementById('langLabel');
-  if (lbl) lbl.textContent = lang === 'ar' ? 'English' : 'عربي';
+  /* Update toggle button labels (header + mobile drawer) */
+  document.querySelectorAll('.lang-lbl').forEach(el => {
+    el.textContent = lang === 'ar' ? 'English' : 'عربي';
+  });
 
   /* Re-render cart to apply new currency/language */
   window.cart?._refresh();
@@ -536,13 +589,15 @@ function setLanguage(lang) {
 /* ───────────────────────────────────────────
    EXPOSE GLOBALS & INIT
 ─────────────────────────────────────────── */
-window.cart           = new Cart();
-window.openCart       = openCart;
-window.closeCart      = closeCart;
-window.openCheckout   = openCheckout;
-window.closeCheckout  = closeCheckout;
-window.submitOrder    = submitOrder;
-window.toggleLanguage = toggleLanguage;
+window.cart              = new Cart();
+window.openCart          = openCart;
+window.closeCart         = closeCart;
+window.openCheckout      = openCheckout;
+window.closeCheckout     = closeCheckout;
+window.submitOrder       = submitOrder;
+window.toggleLanguage    = toggleLanguage;
+window.showOrderSuccess  = showOrderSuccess;
+window.closeOrderSuccess = closeOrderSuccess;
 
 document.addEventListener('DOMContentLoaded', () => {
   /* Restore saved language preference — default is Arabic */
@@ -554,12 +609,14 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileNav();
   initReveal();
   initAddButtons();
+  migrateCartNames();
   initCatFilter();
   initMenuTabs();
   initVideoCtrl();
   initVideos();
   initScrollProgress();
   initFormValidation();
+  initSlideshow();
 
   /* Cart overlay close */
   document.getElementById('cartOverlay')?.addEventListener('click', closeCart);

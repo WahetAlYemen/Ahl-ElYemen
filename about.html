@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>من نحن | مطعم أهل اليمن</title>
+  <meta name="description" content="تعرف على مطعم أهل اليمن — قصتنا، قيمنا، وفريق إدارتنا في قلب الدقي، الجيزة.">
+  <link rel="icon" type="image/jpeg" href="photos/شعار.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ── About Page Specific ── */
+    .about-hero {
+      background: linear-gradient(135deg, var(--navy-dark) 0%, #1a2b54 60%, var(--navy) 100%);
+      padding: 120px 0 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .about-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: repeating-linear-gradient(60deg, transparent, transparent 40px,
+        rgba(201,168,76,0.03) 40px, rgba(201,168,76,0.03) 41px);
+    }
+    .about-hero-label {
+      display: inline-block;
+      background: rgba(201,168,76,0.12);
+      border: 1px solid rgba(201,168,76,0.3);
+      color: var(--gold);
+      font-size: 0.78rem; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; padding: 6px 18px;
+      border-radius: var(--r-full); margin-bottom: 20px;
+    }
+    .about-hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      color: var(--white); margin-bottom: 16px; position: relative;
+    }
+    .about-hero h1 span { color: var(--gold); }
+    .about-hero p {
+      font-size: 1.05rem; color: rgba(255,255,255,0.65);
+      max-width: 520px; margin: 0 auto; position: relative;
+    }
+
+    /* ── Story Section ── */
+    .about-story-section { padding: var(--sp-24) 0; background: var(--cream); }
+    .about-story-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;
+    }
+    .about-story-photos {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+    }
+    .story-photo-slot {
+      background: var(--navy-dark);
+      border-radius: var(--r-xl); overflow: hidden;
+      aspect-ratio: 4/3; position: relative;
+      display: flex; align-items: center; justify-content: center;
+      border: 2px dashed rgba(201,168,76,0.2);
+      transition: var(--t);
+    }
+    .story-photo-slot:first-child {
+      grid-column: 1 / -1; aspect-ratio: 16/9;
+    }
+    .story-photo-slot img {
+      position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+    }
+    .story-photo-placeholder {
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+      color: rgba(201,168,76,0.35); z-index: 1;
+    }
+    .story-photo-placeholder svg { width: 32px; height: 32px; }
+    .story-photo-placeholder span { font-size: 0.7rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; }
+    .about-story-content { display: flex; flex-direction: column; gap: 20px; }
+    .about-story-content .section-label { text-align: right; }
+    .about-story-content .section-title { text-align: right; font-size: clamp(1.6rem, 3vw, 2.2rem); }
+    .about-story-content p {
+      font-size: 0.97rem; line-height: 1.85; color: var(--text-muted);
+    }
+
+    /* ── Values ── */
+    .about-values-section { padding: var(--sp-24) 0; background: var(--navy-dark); }
+    .about-values-section .section-title { color: var(--white); }
+    .about-values-section .section-label { color: var(--gold); }
+    .values-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px;
+    }
+    .value-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(201,168,76,0.15);
+      border-radius: var(--r-xl); padding: 32px 24px;
+      text-align: center; transition: var(--t);
+    }
+    .value-card:hover {
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(201,168,76,0.35); transform: translateY(-4px);
+    }
+    .value-ico {
+      width: 60px; height: 60px; border-radius: 50%;
+      background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.2);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 20px; color: var(--gold);
+    }
+    .value-ico svg { width: 26px; height: 26px; }
+    .value-title { font-size: 1.1rem; font-weight: 800; color: var(--white); margin-bottom: 10px; }
+    .value-desc { font-size: 0.87rem; color: rgba(255,255,255,0.55); line-height: 1.7; }
+
+    /* ── Team / Management ── */
+    .about-team-section { padding: var(--sp-24) 0; background: var(--cream); }
+    .team-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 28px; margin-top: 48px;
+    }
+    .team-card {
+      background: var(--white);
+      border: 1px solid var(--border-2);
+      border-radius: var(--r-xl); overflow: hidden;
+      box-shadow: var(--shadow-sm); transition: var(--t);
+      text-align: center;
+    }
+    .team-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-4px); }
+    .team-photo {
+      width: 100%; aspect-ratio: 3/4; position: relative;
+      background: linear-gradient(135deg, var(--navy-dark), #1a2b54);
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden;
+    }
+    .team-photo img {
+      position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+    }
+    .team-photo-ph {
+      display: flex; flex-direction: column; align-items: center; gap: 10px;
+      color: rgba(201,168,76,0.45);
+    }
+    .team-photo-ph svg { width: 44px; height: 44px; }
+    .team-photo-ph span { font-size: 0.68rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; }
+    .team-info { padding: 18px 14px 20px; }
+    .team-name {
+      font-size: 1rem; font-weight: 800; color: var(--navy);
+      margin-bottom: 4px;
+    }
+    .team-role {
+      font-size: 0.78rem; color: var(--gold); font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    /* ── Gallery ── */
+    .about-gallery-section { padding: var(--sp-24) 0; background: var(--navy-dark); }
+    .about-gallery-section .section-title { color: var(--white); }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: auto auto;
+      gap: 10px; margin-top: 36px;
+    }
+    .gallery-slot {
+      background: rgba(255,255,255,0.04);
+      border: 2px dashed rgba(201,168,76,0.2);
+      border-radius: var(--r-lg); overflow: hidden;
+      position: relative; aspect-ratio: 1/1;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .gallery-slot:first-child {
+      grid-column: 1 / 3; grid-row: 1 / 3; aspect-ratio: auto;
+    }
+    .gallery-slot img {
+      position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+    }
+    .gallery-ph {
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+      color: rgba(201,168,76,0.3);
+    }
+    .gallery-ph svg { width: 28px; height: 28px; }
+    .gallery-ph span { font-size: 0.65rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .about-story-grid { grid-template-columns: 1fr; }
+      .about-story-photos { order: -1; }
+      .about-story-content .section-label,
+      .about-story-content .section-title { text-align: center; }
+      .values-grid { grid-template-columns: 1fr; }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .gallery-slot:first-child { grid-column: 1 / -1; grid-row: auto; }
+    }
+    @media (max-width: 600px) {
+      .team-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════
+     HEADER
+══════════════════════════════════════ -->
+<header class="header" id="mainHeader">
+  <div class="container header-inner">
+    <a href="index.html" class="logo">
+      <img class="logo-img" src="photos/شعار.jpg" alt="Ahl Al-Yemen Restaurant">
+      <div class="logo-text">
+        <span class="logo-name" data-ar="أهل اليمن">Ahl Al-Yemen</span>
+        <span class="logo-tagline" data-ar="أصل الطعم اليمني في مصر">Authentic Yemeni Taste in Egypt</span>
+      </div>
+    </a>
+
+    <nav class="nav">
+      <a href="index.html" data-ar="الرئيسية">Home</a>
+      <a href="menu.html" data-ar="قائمة الطعام">Menu</a>
+      <a href="about.html" class="active" data-ar="من نحن">About Us</a>
+      <a href="contact.html" data-ar="تواصل معنا">Contact Us</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="lang-toggle" id="langToggle" onclick="toggleLanguage()" aria-label="Switch language">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+        <span id="langLabel" class="lang-lbl">English</span>
+      </button>
+      <a href="tel:+201212002005" class="header-phone">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.09a16 16 0 006 6l1.45-1.45a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+        012 12002005
+      </a>
+      <button class="btn-cart" onclick="openCart()" aria-label="Order Cart">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
+        <span data-ar="سلة الطلب">Order Cart</span>
+        <span class="cart-badge" hidden>0</span>
+      </button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile overlay + drawer -->
+<div class="mobile-overlay" id="mobileOverlay"></div>
+<aside class="mobile-drawer" id="mobileDrawer">
+  <div class="mobile-drawer-head">
+    <a href="index.html" class="logo">
+      <img class="logo-img" src="photos/شعار.jpg" alt="أهل اليمن" style="width:38px;height:38px;">
+      <div class="logo-text"><span class="logo-name" data-ar="أهل اليمن">Ahl Al-Yemen</span></div>
+    </a>
+    <button class="mobile-drawer-close" id="mobileClose" aria-label="Close">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <nav class="mobile-drawer-nav">
+    <a href="index.html" data-ar="الرئيسية">Home</a>
+    <a href="menu.html" data-ar="قائمة الطعام">Menu</a>
+    <a href="about.html" class="active" data-ar="من نحن">About Us</a>
+    <a href="contact.html" data-ar="تواصل معنا">Contact Us</a>
+  </nav>
+  <div class="mobile-drawer-foot">
+    <button class="btn btn-gold" onclick="openCart();document.getElementById('mobileDrawer').classList.remove('open');" style="width:100%;justify-content:center;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
+      <span data-ar="سلة الطلب">Order Cart</span> <span class="cart-badge" hidden>0</span>
+    </button>
+    <a href="tel:+201212002005" class="btn btn-navy" style="width:100%;justify-content:center;direction:ltr;">012 12002005</a>
+    <button class="lang-toggle" onclick="toggleLanguage()" style="width:100%;justify-content:center;" aria-label="Switch language">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+      <span class="lang-lbl">English</span>
+    </button>
+  </div>
+</aside>
+
+<!-- ══════════════════════════════════════
+     HERO
+══════════════════════════════════════ -->
+<section class="about-hero">
+  <div class="container" style="position:relative;z-index:1;">
+    <div class="about-hero-label" data-ar="مطعم أهل اليمن">Ahl Al-Yemen Restaurant</div>
+    <h1><span data-ar="من ">About </span><span data-ar="نحن">Us</span></h1>
+    <p data-ar="قصتنا مع الأصالة اليمنية — من مطبخنا إلى قلبك">Our journey with Yemeni authenticity — from our kitchen to your heart</p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     STORY
+══════════════════════════════════════ -->
+<section class="about-story-section">
+  <div class="container">
+    <div class="about-story-grid">
+
+      <!-- Photos -->
+      <div class="about-story-photos reveal">
+        <div class="story-photo-slot">
+          <!-- Main large photo — replace src when available -->
+          <div class="story-photo-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            <span data-ar="صورة المطعم">Restaurant Photo</span>
+          </div>
+        </div>
+        <div class="story-photo-slot">
+          <div class="story-photo-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            <span data-ar="صورة المطعم">Restaurant Photo</span>
+          </div>
+        </div>
+        <div class="story-photo-slot">
+          <div class="story-photo-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            <span data-ar="صورة المطعم">Restaurant Photo</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Story Text -->
+      <div class="about-story-content reveal">
+        <div class="section-label" data-ar="قصتنا">Our Story</div>
+        <h2 class="section-title" data-ar="أهل اليمن .. أهلك وناسك">Ahl Al-Yemen... Your Family</h2>
+        <p data-ar="مطعم أهل اليمن هو وجهتك الأولى لتذوق أصيل الطعم اليمني في قلب مصر. نقدم لك أشهى المندي والمشويات والطواجن المحضّرة بأجود الخامات وأعرق التوابل اليمنية.">
+          Ahl Al-Yemen Restaurant is your first destination for authentic Yemeni cuisine in the heart of Egypt. We serve the finest Mandi, grills and stews prepared with the best ingredients and the most authentic Yemeni spices.
+        </p>
+        <p data-ar="وُلد المطعم من شغف حقيقي بالمطبخ اليمني الأصيل، ورغبة صادقة في نقل نكهات اليمن إلى مائدة كل عائلة مصرية. طاقمنا من الطهاة المختصين يضمن لك تجربة لا تُنسى في كل زيارة.">
+          The restaurant was born from a genuine passion for authentic Yemeni cuisine and a sincere desire to bring the flavors of Yemen to every Egyptian family's table. Our team of specialized chefs ensures an unforgettable experience with every visit.
+        </p>
+        <p data-ar="سواء كنت تبحث عن وجبة عائلية دافئة أو تجربة طعام فريدة، نرحب بك في مطعم يجمعك بأهلك وناسك.">
+          Whether you're looking for a warm family meal or a unique dining experience, we welcome you to a restaurant that brings you together with your people.
+        </p>
+        <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:28px;">
+          <a href="menu.html" class="btn btn-gold" data-ar="شوف القائمة">View Menu</a>
+          <a href="contact.html" class="btn btn-navy" data-ar="تواصل معنا">Contact Us</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     VALUES
+══════════════════════════════════════ -->
+<section class="about-values-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label" data-ar="قيمنا">Our Values</div>
+      <h2 class="section-title" data-ar="ما يجعلنا مميزين">What Makes Us Special</h2>
+    </div>
+    <div class="values-grid">
+      <div class="value-card reveal">
+        <div class="value-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+        </div>
+        <div class="value-title" data-ar="الأصالة">Authenticity</div>
+        <div class="value-desc" data-ar="وصفات يمنية أصيلة توارثناها جيلاً بعد جيل — لا مساومة على الطعم الأصلي">Authentic Yemeni recipes passed down generation to generation — no compromise on original flavor</div>
+      </div>
+      <div class="value-card reveal reveal-delay-1">
+        <div class="value-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        </div>
+        <div class="value-title" data-ar="الجودة">Quality</div>
+        <div class="value-desc" data-ar="أجود الخامات الطازجة وأرقى التوابل — لأن مائدتك تستحق الأفضل دائماً">The finest fresh ingredients and premium spices — because your table always deserves the best</div>
+      </div>
+      <div class="value-card reveal reveal-delay-2">
+        <div class="value-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <div class="value-title" data-ar="الضيافة">Hospitality</div>
+        <div class="value-desc" data-ar="كل ضيف عندنا هو واحد من أهلنا — نستقبلك بصدر رحب وخدمة تليق بك">Every guest is family to us — we welcome you with open arms and service worthy of you</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     MANAGEMENT TEAM
+══════════════════════════════════════ -->
+<section class="about-team-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label" data-ar="فريق الإدارة">Management Team</div>
+      <h2 class="section-title" data-ar="وجوه وراء النجاح">The Faces Behind the Success</h2>
+      <p class="section-sub" data-ar="الأشخاص الذين يبذلون كل جهدهم ليصلك أفضل تجربة طعام يمنية في مصر">The people who give their all to deliver the best Yemeni dining experience in Egypt</p>
+    </div>
+    <div class="team-grid">
+
+      <!-- ── Team Member 1 ── -->
+      <div class="team-card reveal">
+        <div class="team-photo">
+          <!-- Replace with: <img src="photos/team/manager1.jpg" alt="..."> -->
+          <div class="team-photo-ph">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <span data-ar="صورة الإدارة">Photo</span>
+          </div>
+        </div>
+        <div class="team-info">
+          <div class="team-name" data-ar="الاسم">Name</div>
+          <div class="team-role" data-ar="المنصب">Position</div>
+        </div>
+      </div>
+
+      <!-- ── Team Member 2 ── -->
+      <div class="team-card reveal reveal-delay-1">
+        <div class="team-photo">
+          <div class="team-photo-ph">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <span data-ar="صورة الإدارة">Photo</span>
+          </div>
+        </div>
+        <div class="team-info">
+          <div class="team-name" data-ar="الاسم">Name</div>
+          <div class="team-role" data-ar="المنصب">Position</div>
+        </div>
+      </div>
+
+      <!-- ── Team Member 3 ── -->
+      <div class="team-card reveal reveal-delay-2">
+        <div class="team-photo">
+          <div class="team-photo-ph">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <span data-ar="صورة الإدارة">Photo</span>
+          </div>
+        </div>
+        <div class="team-info">
+          <div class="team-name" data-ar="الاسم">Name</div>
+          <div class="team-role" data-ar="المنصب">Position</div>
+        </div>
+      </div>
+
+      <!-- ── Team Member 4 ── -->
+      <div class="team-card reveal">
+        <div class="team-photo">
+          <div class="team-photo-ph">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <span data-ar="صورة الإدارة">Photo</span>
+          </div>
+        </div>
+        <div class="team-info">
+          <div class="team-name" data-ar="الاسم">Name</div>
+          <div class="team-role" data-ar="المنصب">Position</div>
+        </div>
+      </div>
+
+      <!-- ── Team Member 5 ── -->
+      <div class="team-card reveal reveal-delay-1">
+        <div class="team-photo">
+          <div class="team-photo-ph">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <span data-ar="صورة الإدارة">Photo</span>
+          </div>
+        </div>
+        <div class="team-info">
+          <div class="team-name" data-ar="الاسم">Name</div>
+          <div class="team-role" data-ar="المنصب">Position</div>
+        </div>
+      </div>
+
+      <!-- ── Team Member 6 ── -->
+      <div class="team-card reveal reveal-delay-2">
+        <div class="team-photo">
+          <div class="team-photo-ph">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <span data-ar="صورة الإدارة">Photo</span>
+          </div>
+        </div>
+        <div class="team-info">
+          <div class="team-name" data-ar="الاسم">Name</div>
+          <div class="team-role" data-ar="المنصب">Position</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     PHOTO GALLERY
+══════════════════════════════════════ -->
+<section class="about-gallery-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label" style="color:var(--gold)" data-ar="من داخل المطعم">Inside the Restaurant</div>
+      <h2 class="section-title" data-ar="معرض الصور">Photo Gallery</h2>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-slot">
+        <div class="gallery-ph">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          <span data-ar="صورة">Photo</span>
+        </div>
+      </div>
+      <div class="gallery-slot">
+        <div class="gallery-ph">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          <span data-ar="صورة">Photo</span>
+        </div>
+      </div>
+      <div class="gallery-slot">
+        <div class="gallery-ph">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          <span data-ar="صورة">Photo</span>
+        </div>
+      </div>
+      <div class="gallery-slot">
+        <div class="gallery-ph">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          <span data-ar="صورة">Photo</span>
+        </div>
+      </div>
+      <div class="gallery-slot">
+        <div class="gallery-ph">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          <span data-ar="صورة">Photo</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     FOOTER
+══════════════════════════════════════ -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <div>
+      <a href="index.html" class="logo" style="margin-bottom:16px;display:inline-flex;">
+        <img class="logo-img" src="photos/شعار.jpg" alt="Ahl Al-Yemen">
+        <div class="logo-text">
+          <span class="logo-name" data-ar="أهل اليمن">Ahl Al-Yemen</span>
+          <span class="logo-tagline" data-ar="أصل الطعم اليمني في مصر">Authentic Yemeni Taste in Egypt</span>
+        </div>
+      </a>
+      <p class="footer-tagline" data-ar="معلمين المندي والمشويات والطواجن في قلب الدقي، الجيزة">Masters of Mandi, Grills &amp; Stews in the heart of Dokki, Giza</p>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/ahlelyemeneg/" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/ahlelyemen_eg/" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+        <a href="https://wa.me/201212002005" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div>
+      <h3 class="footer-col-title" data-ar="روابط سريعة">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="index.html" data-ar="الرئيسية">Home</a></li>
+        <li><a href="menu.html" data-ar="قائمة الطعام">Food Menu</a></li>
+        <li><a href="about.html" data-ar="من نحن">About Us</a></li>
+        <li><a href="contact.html" data-ar="تواصل معنا">Contact Us</a></li>
+        <li><a href="index.html#reviews" data-ar="التقييمات">Reviews</a></li>
+        <li><a href="index.html#branches" data-ar="فرعنا">Our Branch</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-col-title" data-ar="تواصل معنا">Contact Us</h3>
+      <div class="footer-contact">
+        <div class="footer-contact-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.09a16 16 0 006 6l1.45-1.45a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+          <span dir="ltr">012 12002005</span>
+        </div>
+        <div class="footer-contact-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span data-ar="63 شارع الدقى، الدقي، الجيزة">63 Dokki St., Dokki, Giza</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="footer-bottom" data-ar="© 2025 مطعم أهل اليمن · جميع الحقوق محفوظة · أصل الطعم اليمني في مصر">© 2025 Ahl Al-Yemen Restaurant · All Rights Reserved · Authentic Yemeni Taste in Egypt</div>
+  </div>
+</footer>
+
+<!-- FLOATING CART BUTTON -->
+<button class="float-cart" onclick="openCart()" aria-label="Order Cart">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
+  <span class="cart-badge" hidden>0</span>
+</button>
+
+<!-- CART DRAWER -->
+<div class="cart-overlay" id="cartOverlay"></div>
+<aside class="cart-drawer" id="cartDrawer" role="dialog" aria-label="Order Cart">
+  <div class="cart-head">
+    <div class="cart-head-title">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
+      <span data-ar="سلة الطلب">Order Cart</span>
+      <span class="cart-head-count" id="cartHeadCount">0</span>
+    </div>
+    <button class="cart-close" onclick="closeCart()" aria-label="Close">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <div class="cart-empty" id="cartEmpty">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
+    <h3 data-ar="السلة فارغة">Cart is empty</h3>
+    <p data-ar="أضف أطباقك المفضلة من القائمة">Add your favourite dishes from the menu</p>
+  </div>
+  <ul class="cart-items-list" id="cartItemsList"></ul>
+  <div class="cart-footer" id="cartFooter" hidden>
+    <div class="cart-total-row">
+      <span data-ar="الإجمالي">Total</span>
+      <span class="cart-total-val" id="cartTotal">0 EGP</span>
+    </div>
+    <button class="btn btn-gold" style="width:100%;justify-content:center;" onclick="openCheckout()">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      <span data-ar="إتمام الطلب">Checkout</span>
+    </button>
+  </div>
+</aside>
+
+<!-- CHECKOUT MODAL -->
+<div class="checkout-overlay" id="checkoutOverlay"></div>
+<div class="checkout-modal" id="checkoutModal" role="dialog">
+  <div class="checkout-head">
+    <h2 data-ar="تفاصيل الطلب">Order Details</h2>
+    <button class="cart-close" onclick="closeCheckout()" aria-label="Close">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <div class="checkout-body">
+    <div class="checkout-field">
+      <label><span data-ar="الاسم">Name</span></label>
+      <input type="text" id="orderName" data-ar-placeholder="اسمك الكريم" placeholder="Your name" autocomplete="name">
+      <span class="field-error" id="errName" data-ar="من فضلك أدخل اسمك">Please enter your name</span>
+    </div>
+    <div class="checkout-field">
+      <label><span data-ar="رقم الهاتف">Phone Number</span></label>
+      <input type="tel" id="orderPhone" data-ar-placeholder="رقم هاتفك" placeholder="Your phone number" autocomplete="tel" dir="ltr">
+      <span class="field-error" id="errPhone" data-ar="من فضلك أدخل رقم هاتف صحيح">Please enter a valid phone number</span>
+    </div>
+    <div class="checkout-field">
+      <label><span data-ar="العنوان">Address</span></label>
+      <input type="text" id="orderAddress" data-ar-placeholder="عنوان التوصيل" placeholder="Delivery address" autocomplete="street-address">
+      <span class="field-error" id="errAddress" data-ar="من فضلك أدخل عنوانك">Please enter your address</span>
+    </div>
+    <div class="checkout-field">
+      <label><span data-ar="ملاحظات">Notes</span> <span style="opacity:.5;font-size:.8em;" data-ar="(اختياري)">(optional)</span></label>
+      <textarea id="orderNotes" rows="3" data-ar-placeholder="أي ملاحظات خاصة..." placeholder="Any special notes..."></textarea>
+    </div>
+    <div class="checkout-summary" id="checkoutSummary"></div>
+    <p class="checkout-note">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248l-6.6 9.504a1 1 0 01-1.48.193l-3.508-2.807a1 1 0 011.252-1.562l2.704 2.164 5.892-8.488a1 1 0 011.74.996z"/></svg>
+      <span data-ar="سيتم إرسال طلبك عبر تيليجرام وسنتواصل معك خلال دقائق">Your order will be sent via Telegram and we'll contact you within minutes</span>
+    </p>
+  </div>
+  <div class="checkout-foot">
+    <button class="btn btn-gold" style="width:100%;justify-content:center;font-size:1rem;padding:14px;" onclick="submitOrder()">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+      <span data-ar="إرسال الطلب">Send Order</span>
+    </button>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+  <span data-ar="تمت إضافة">Added</span> <strong class="toast-name"></strong> <span data-ar="للسلة">to cart</span>
+</div>
+
+<!-- SCROLL PROGRESS -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- ORDER SUCCESS OVERLAY -->
+<div class="order-success-overlay" id="orderSuccessOverlay">
+  <div class="order-success-card">
+    <div class="order-success-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="20 6 9 17 4 12"/></svg>
+    </div>
+    <h3 class="order-success-title" data-ar="تم إرسال طلبك بنجاح!">Order Sent Successfully!</h3>
+    <p class="order-success-msg" data-ar="سيتواصل معك المطعم قريباً على رقم الهاتف المُدخل">The restaurant will contact you shortly on your phone number</p>
+    <div class="order-success-num" id="orderSuccessNum"></div>
+    <button class="order-success-btn" onclick="closeOrderSuccess()" data-ar="حسناً">OK</button>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

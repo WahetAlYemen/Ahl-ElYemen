@@ -215,13 +215,14 @@
     <nav class="nav">
       <a href="index.html" data-ar="الرئيسية">Home</a>
       <a href="menu.html" data-ar="قائمة الطعام">Menu</a>
+      <a href="about.html" data-ar="من نحن">About Us</a>
       <a href="branches.html" class="active" data-ar="فروعنا">Our Branches</a>
       <a href="contact.html" data-ar="تواصل معنا">Contact Us</a>
     </nav>
     <div class="header-actions">
       <button class="lang-toggle" id="langToggle" onclick="toggleLanguage()" aria-label="Switch language">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
-        <span id="langLabel">English</span>
+        <span id="langLabel" class="lang-lbl">English</span>
       </button>
       <a href="tel:+201212002005" class="header-phone">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.09a16 16 0 006 6l1.45-1.45a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
@@ -254,6 +255,7 @@
   <nav class="mobile-drawer-nav">
     <a href="index.html" data-ar="الرئيسية">Home</a>
     <a href="menu.html" data-ar="قائمة الطعام">Menu</a>
+    <a href="about.html" data-ar="من نحن">About Us</a>
     <a href="branches.html" class="active" data-ar="فروعنا">Our Branches</a>
     <a href="contact.html" data-ar="تواصل معنا">Contact Us</a>
   </nav>
@@ -263,14 +265,18 @@
       <span data-ar="سلة الطلب">Order Cart</span> <span class="cart-badge" hidden>0</span>
     </button>
     <a href="tel:+201212002005" class="btn btn-navy" style="width:100%;justify-content:center;direction:ltr;">012 12002005</a>
+    <button class="lang-toggle" onclick="toggleLanguage()" style="width:100%;justify-content:center;" aria-label="Switch language">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+      <span class="lang-lbl">English</span>
+    </button>
   </div>
 </aside>
 
 <!-- ═══════════════════ HERO ═══════════════════ -->
 <section class="branches-hero">
   <div class="container branches-hero-content">
-    <h1>فروعنا</h1>
-    <p>نخدمك في أكثر من موقع — وسنصلك قريباً في أماكن أكثر</p>
+    <h1 data-ar="فروعنا">Our Branches</h1>
+    <p data-ar="نخدمك في أكثر من موقع — وسنصلك قريباً في أماكن أكثر">Serving you across multiple locations — more branches coming soon</p>
   </div>
 </section>
 
@@ -312,33 +318,29 @@
           ></iframe>
         </div>
         <div class="branch-body">
-          <h2 class="branch-name">فرع الدقي</h2>
+          <h2 class="branch-name" data-ar="فرع الدقي">Al-Dokki Branch</h2>
           <div class="branch-area">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            الدقي – الجيزة
+            <span data-ar="الدقي – الجيزة">Al-Dokki – Giza</span>
           </div>
           <ul class="branch-info-list">
             <li class="branch-info-item">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              <span>63 شارع الدقى، الدقي، الجيزة</span>
+              <span data-ar="63 شارع الدقى، الدقي، الجيزة">63 Al-Dokki St., Al-Dokki, Giza</span>
             </li>
             <li class="branch-info-item">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.36 2 2 0 0 1 3.62 1.17h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.13 6.13l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
               <span><a href="tel:01212002005" style="color:var(--navy);font-weight:700;">012 12002005</a></span>
             </li>
-            <li class="branch-info-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              <span>مفتوح يومياً — يُغلق الساعة 3:00 صباحاً</span>
-            </li>
           </ul>
           <div class="branch-actions">
             <a href="tel:01212002005" class="btn-gold">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:15px;height:15px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.36 2 2 0 0 1 3.62 1.17h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.13 6.13l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              اتصل الآن
+              <span data-ar="اتصل الآن">Call Now</span>
             </a>
             <a href="https://maps.app.goo.gl/UrzkGZxTTeP987tWA" target="_blank" rel="noopener" class="btn-navy">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:15px;height:15px;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              الخريطة
+              <span data-ar="الخريطة">Map</span>
             </a>
           </div>
         </div>
@@ -350,28 +352,28 @@
           <div class="branch-map-placeholder">
             <div class="branch-map-pattern"></div>
             <svg class="branch-map-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            <span class="branch-map-label">موقع قريباً</span>
+            <span class="branch-map-label" data-ar="موقع قريباً">Location TBA</span>
           </div>
           <div class="branch-coming-banner">
-            <span class="branch-coming-badge">قريباً</span>
+            <span class="branch-coming-badge" data-ar="قريباً">Coming Soon</span>
           </div>
         </div>
         <div class="branch-body">
-          <h2 class="branch-name">فرع جديد</h2>
+          <h2 class="branch-name" data-ar="فرع جديد">New Branch</h2>
           <div class="branch-area">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            يُحدَّد قريباً
+            <span data-ar="يُحدَّد قريباً">To Be Announced</span>
           </div>
           <ul class="branch-info-list">
             <li class="branch-info-item">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              <span>سيُعلَن عن الموعد قريباً – تابعونا على وسائل التواصل</span>
+              <span data-ar="سيُعلَن عن الموعد قريباً – تابعونا على وسائل التواصل">Opening date to be announced — follow us on social media</span>
             </li>
           </ul>
           <div class="branch-actions">
             <a href="https://www.facebook.com/ahlelyemeneg/" target="_blank" rel="noopener" class="btn-navy" style="pointer-events:all;">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:15px;height:15px;"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-              تابعونا
+              <span data-ar="تابعونا">Follow Us</span>
             </a>
           </div>
         </div>
@@ -383,28 +385,28 @@
           <div class="branch-map-placeholder">
             <div class="branch-map-pattern"></div>
             <svg class="branch-map-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            <span class="branch-map-label">موقع قريباً</span>
+            <span class="branch-map-label" data-ar="موقع قريباً">Location TBA</span>
           </div>
           <div class="branch-coming-banner">
-            <span class="branch-coming-badge">قريباً</span>
+            <span class="branch-coming-badge" data-ar="قريباً">Coming Soon</span>
           </div>
         </div>
         <div class="branch-body">
-          <h2 class="branch-name">فرع جديد</h2>
+          <h2 class="branch-name" data-ar="فرع جديد">New Branch</h2>
           <div class="branch-area">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            يُحدَّد قريباً
+            <span data-ar="يُحدَّد قريباً">To Be Announced</span>
           </div>
           <ul class="branch-info-list">
             <li class="branch-info-item">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              <span>سيُعلَن عن الموعد قريباً – تابعونا على وسائل التواصل</span>
+              <span data-ar="سيُعلَن عن الموعد قريباً – تابعونا على وسائل التواصل">Opening date to be announced — follow us on social media</span>
             </li>
           </ul>
           <div class="branch-actions">
             <a href="https://www.instagram.com/ahlalyaman/" target="_blank" rel="noopener" class="btn-navy" style="pointer-events:all;">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:15px;height:15px;"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-              تابعونا
+              <span data-ar="تابعونا">Follow Us</span>
             </a>
           </div>
         </div>
@@ -414,20 +416,20 @@
 
     <!-- CTA -->
     <div class="branches-cta reveal">
-      <h2>اطلب الآن من أي مكان</h2>
-      <p>تفضّل بتصفح قائمتنا الكاملة وأضف ما تشتهيه — سنوصله إليك</p>
+      <h2 data-ar="اطلب الآن من أي مكان">Order from Anywhere</h2>
+      <p data-ar="تفضّل بتصفح قائمتنا الكاملة وأضف ما تشتهيه — سنوصله إليك">Browse our full menu and add what you love — we'll deliver it to you</p>
       <div class="branches-cta-btns">
         <a href="menu.html" class="btn-gold" style="gap:8px;">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:17px;height:17px;"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/></svg>
-          تصفح القائمة
+          <span data-ar="تصفح القائمة">Browse Menu</span>
         </a>
         <a href="https://wa.me/201212002005" target="_blank" rel="noopener" class="btn-navy" style="gap:8px;">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:17px;height:17px;"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-          واتساب
+          <span data-ar="واتساب">WhatsApp</span>
         </a>
         <a href="https://www.facebook.com/ahlelyemeneg/" target="_blank" rel="noopener" class="btn-outline-gold" style="gap:8px;">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:17px;height:17px;"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-          فيسبوك
+          <span data-ar="فيسبوك">Facebook</span>
         </a>
       </div>
     </div>
@@ -441,9 +443,9 @@
     <div>
       <a href="index.html" class="logo" style="margin-bottom:14px;display:inline-flex;">
         <img class="logo-img" src="photos/شعار.jpg" alt="أهل اليمن">
-        <div class="logo-text"><span class="logo-name">أهل اليمن</span><span class="logo-tagline">أصل الطعم اليمني في مصر</span></div>
+        <div class="logo-text"><span class="logo-name" data-ar="أهل اليمن">Bab AlYemen</span><span class="logo-tagline" data-ar="أصل الطعم اليمني في مصر">Authentic Yemeni Taste in Egypt</span></div>
       </a>
-      <p class="footer-tagline">معلمين المندي والمشويات والطواجن — مطعم يمني أصيل في قلب الجيزة.</p>
+      <p class="footer-tagline" data-ar="معلمين المندي والمشويات والطواجن — مطعم يمني أصيل في قلب الجيزة.">Masters of Mandi, Grills & Stews — Authentic Yemeni restaurant in the heart of Giza.</p>
       <div class="footer-social-row">
         <a href="https://www.facebook.com/ahlelyemeneg/" target="_blank" rel="noopener" class="footer-social-ico" aria-label="فيسبوك">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
@@ -457,27 +459,27 @@
       </div>
     </div>
     <div>
-      <h3 class="footer-col-title">روابط سريعة</h3>
+      <h3 class="footer-col-title" data-ar="روابط سريعة">Quick Links</h3>
       <ul class="footer-links">
-        <li><a href="index.html">الرئيسية</a></li>
-        <li><a href="menu.html">قائمة الطعام</a></li>
-        <li><a href="branches.html">فروعنا</a></li>
-        <li><a href="index.html#about">من نحن</a></li>
-        <li><a href="index.html#reviews">التقييمات</a></li>
+        <li><a href="index.html" data-ar="الرئيسية">Home</a></li>
+        <li><a href="menu.html" data-ar="قائمة الطعام">Food Menu</a></li>
+        <li><a href="branches.html" data-ar="فروعنا">Our Branches</a></li>
+        <li><a href="index.html#about" data-ar="من نحن">About Us</a></li>
+        <li><a href="index.html#reviews" data-ar="التقييمات">Reviews</a></li>
       </ul>
     </div>
     <div>
-      <h3 class="footer-col-title">تخصصنا</h3>
+      <h3 class="footer-col-title" data-ar="تخصصنا">Our Specialties</h3>
       <ul class="footer-links">
-        <li><a href="menu.html#sec-meat">مندي اللحم</a></li>
-        <li><a href="menu.html#sec-chicken">مندي الدجاج</a></li>
-        <li><a href="menu.html#sec-sweets">بنت الصحن</a></li>
-        <li><a href="menu.html#sec-hotdrinks">شاي عدني</a></li>
-        <li><a href="menu.html#sec-cocktails">كوكتيل أهل اليمن</a></li>
+        <li><a href="menu.html#sec-meat" data-ar="مندي اللحم">Meat Mandi</a></li>
+        <li><a href="menu.html#sec-chicken" data-ar="مندي الدجاج">Chicken Mandi</a></li>
+        <li><a href="menu.html#sec-sweets" data-ar="بنت الصحن">Bint Al-Sahn</a></li>
+        <li><a href="menu.html#sec-hotdrinks" data-ar="شاي عدني">Adeni Tea</a></li>
+        <li><a href="menu.html#sec-cocktails" data-ar="كوكتيل أهل اليمن">Bab AlYemen Cocktail</a></li>
       </ul>
     </div>
     <div>
-      <h3 class="footer-col-title">تواصل معنا</h3>
+      <h3 class="footer-col-title" data-ar="تواصل معنا">Contact Us</h3>
       <div class="footer-contact">
         <div class="footer-contact-row">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.09a16 16 0 006 6l1.45-1.45a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
@@ -485,17 +487,13 @@
         </div>
         <div class="footer-contact-row">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          <span>63 شارع الدقى، الدقي، الجيزة</span>
-        </div>
-        <div class="footer-contact-row">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          <span>يومياً — يغلق 3 صباحاً</span>
+          <span data-ar="63 شارع الدقى، الدقي، الجيزة">63 Al-Dokki St., Al-Dokki, Giza</span>
         </div>
       </div>
     </div>
   </div>
   <div class="container">
-    <div class="footer-bottom">© 2025 مطعم أهل اليمن · جميع الحقوق محفوظة · أصل الطعم اليمني في مصر</div>
+    <div class="footer-bottom" data-ar="© 2025 مطعم أهل اليمن · جميع الحقوق محفوظة · أصل الطعم اليمني في مصر">© 2025 Bab AlYemen Restaurant · All Rights Reserved · Authentic Yemeni Taste in Egypt</div>
   </div>
 </footer>
 
@@ -505,7 +503,7 @@
   <div class="cart-head">
     <div class="cart-head-title">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
-      سلة الطلب
+      <span data-ar="سلة الطلب">Your Cart</span>
       <span class="cart-head-count" id="cartHeadCount">0</span>
     </div>
     <button class="cart-close" onclick="closeCart()" aria-label="إغلاق">
@@ -517,20 +515,20 @@
       <div class="cart-empty-ico">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
       </div>
-      <h3>سلتك فارغة</h3>
-      <p>أضف أطباقك المفضلة من القائمة</p>
-      <a href="menu.html" class="btn btn-gold" style="font-size:0.88rem;padding:10px 24px;" onclick="closeCart()">شوف القائمة</a>
+      <h3 data-ar="سلتك فارغة">Your cart is empty</h3>
+      <p data-ar="أضف أطباقك المفضلة من القائمة">Add your favourite dishes from the menu</p>
+      <a href="menu.html" class="btn btn-gold" style="font-size:0.88rem;padding:10px 24px;" onclick="closeCart()" data-ar="شوف القائمة">Browse Menu</a>
     </div>
     <div class="cart-items-list" id="cartItemsList"></div>
   </div>
   <div class="cart-footer" id="cartFooter" hidden>
     <div class="cart-total-row">
-      <span class="cart-total-label">الإجمالي</span>
-      <span class="cart-total-amount" id="cartTotalAmt">0.00 جنيه</span>
+      <span class="cart-total-label" data-ar="الإجمالي">Total</span>
+      <span class="cart-total-amount" id="cartTotalAmt">0.00 EGP</span>
     </div>
     <button class="cart-checkout-btn" onclick="openCheckout()">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
-      إتمام الطلب
+      <span data-ar="إتمام الطلب">Checkout</span>
     </button>
   </div>
 </aside>
@@ -541,56 +539,56 @@
   <div class="checkout-head">
     <div class="checkout-title">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
-      تأكيد الطلب
+      <span data-ar="تأكيد الطلب">Confirm Order</span>
     </div>
     <button class="checkout-close" onclick="closeCheckout()" aria-label="إغلاق">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
     </button>
   </div>
   <div class="checkout-body">
-    <div class="checkout-section-title">بياناتك</div>
+    <div class="checkout-section-title" data-ar="بياناتك">Your Details</div>
     <div class="co-fields">
       <div class="co-field">
-        <label>الاسم <span class="req">*</span></label>
-        <input class="co-input" type="text" id="orderName" placeholder="اسمك الكريم">
-        <p class="field-error" id="errName">الاسم مطلوب</p>
+        <label><span data-ar="الاسم">Name</span> <span class="req">*</span></label>
+        <input class="co-input" type="text" id="orderName" placeholder="Your full name" data-ar-placeholder="اسمك الكريم">
+        <p class="field-error" id="errName" data-ar="الاسم مطلوب">Name is required</p>
       </div>
       <div class="co-field">
-        <label>رقم هاتفك <span class="req">*</span></label>
+        <label><span data-ar="رقم هاتفك">Phone Number</span> <span class="req">*</span></label>
         <input class="co-input" type="tel" id="orderPhone" placeholder="01xxxxxxxxx" dir="ltr">
-        <p class="field-error" id="errPhone">رقم الهاتف مطلوب</p>
+        <p class="field-error" id="errPhone" data-ar="رقم الهاتف مطلوب">Phone number is required</p>
       </div>
       <div class="co-field">
-        <label>عنوانك بالتفصيل <span class="req">*</span></label>
-        <textarea class="co-input" id="orderAddress" rows="2" placeholder="اسم الشارع، رقم العمارة، الدور، الشقة..."></textarea>
-        <p class="field-error" id="errAddress">العنوان مطلوب</p>
+        <label><span data-ar="عنوانك بالتفصيل">Detailed Address</span> <span class="req">*</span></label>
+        <textarea class="co-input" id="orderAddress" rows="2" placeholder="Street name, building no., floor, apartment..." data-ar-placeholder="اسم الشارع، رقم العمارة، الدور، الشقة..."></textarea>
+        <p class="field-error" id="errAddress" data-ar="العنوان مطلوب">Address is required</p>
       </div>
       <div class="co-field">
-        <label>ملاحظات <span class="opt">(اختياري)</span></label>
-        <textarea class="co-input" id="orderNotes" rows="2" placeholder="توابل أكتر، بدون حار..."></textarea>
+        <label><span data-ar="ملاحظات">Notes</span> <span class="opt" data-ar="(اختياري)">(Optional)</span></label>
+        <textarea class="co-input" id="orderNotes" rows="2" placeholder="Extra spice, no chili..." data-ar-placeholder="توابل أكتر، بدون حار..."></textarea>
       </div>
     </div>
-    <div class="checkout-section-title">ملخص الطلب</div>
+    <div class="checkout-section-title" data-ar="ملخص الطلب">Order Summary</div>
     <div class="co-order-summary" id="checkoutItems"></div>
     <div class="co-total-box">
       <div class="co-total-row">
-        <span class="co-total-label">إجمالي الأصناف</span>
-        <span class="co-total-val" id="checkoutTotal">0.00 جنيه</span>
+        <span class="co-total-label" data-ar="إجمالي الأصناف">Items Total</span>
+        <span class="co-total-val" id="checkoutTotal">0.00 EGP</span>
       </div>
       <div class="co-total-row">
-        <span class="co-total-label">رسوم التوصيل</span>
-        <span class="co-total-note">تُحدد عند التواصل</span>
+        <span class="co-total-label" data-ar="رسوم التوصيل">Delivery Fee</span>
+        <span class="co-total-note" data-ar="تُحدد عند التواصل">Confirmed upon contact</span>
       </div>
     </div>
     <div class="co-telegram-note">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13"/><path d="M22 2L15 22 11 13 2 9l20-7z"/></svg>
-      سيتم إرسال طلبك فوراً إلى المطعم
+      <span data-ar="سيتم إرسال طلبك فوراً إلى المطعم">Your order will be sent directly to the restaurant</span>
     </div>
   </div>
   <div class="checkout-foot">
     <button class="checkout-submit" onclick="submitOrder()">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><path d="M22 2L11 13"/><path d="M22 2L15 22 11 13 2 9l20-7z"/></svg>
-      أرسل الطلب
+      <span data-ar="أرسل الطلب">Send Order</span>
     </button>
   </div>
 </div>
@@ -600,7 +598,7 @@
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="width:18px;height:18px;color:var(--gold);flex-shrink:0;">
     <polyline points="20 6 9 17 4 12"/>
   </svg>
-  <span>تمت إضافة <strong class="toast-name"></strong> إلى السلة</span>
+  <span data-ar="تمت إضافة">Added</span> <strong class="toast-name"></strong> <span data-ar="للسلة">to cart</span>
 </div>
 
 <!-- Floating cart (mobile) -->
@@ -611,6 +609,19 @@
   </svg>
   <span class="cart-badge" id="cartBadgeFloat">0</span>
 </button>
+
+<!-- ORDER SUCCESS OVERLAY -->
+<div class="order-success-overlay" id="orderSuccessOverlay">
+  <div class="order-success-card">
+    <div class="order-success-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="20 6 9 17 4 12"/></svg>
+    </div>
+    <h3 class="order-success-title" data-ar="تم إرسال طلبك بنجاح!">Order Sent Successfully!</h3>
+    <p class="order-success-msg" data-ar="سيتواصل معك المطعم قريباً على رقم الهاتف المُدخل">The restaurant will contact you shortly on your phone number</p>
+    <div class="order-success-num" id="orderSuccessNum"></div>
+    <button class="order-success-btn" onclick="closeOrderSuccess()" data-ar="حسناً">OK</button>
+  </div>
+</div>
 
 <script src="js/main.js"></script>
 </body>

@@ -29,7 +29,7 @@
     <nav class="nav">
       <a href="index.html" class="active" data-ar="الرئيسية">Home</a>
       <a href="menu.html" data-ar="قائمة الطعام">Menu</a>
-      <a href="branches.html" data-ar="فروعنا">Our Branches</a>
+      <a href="about.html" data-ar="من نحن">About Us</a>
       <a href="contact.html" data-ar="تواصل معنا">Contact Us</a>
     </nav>
 
@@ -37,7 +37,7 @@
       <!-- Language Toggle -->
       <button class="lang-toggle" id="langToggle" onclick="toggleLanguage()" aria-label="Switch language">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
-        <span id="langLabel">English</span>
+        <span id="langLabel" class="lang-lbl">English</span>
       </button>
 
       <a href="tel:+201212002005" class="header-phone">
@@ -72,7 +72,7 @@
   <nav class="mobile-drawer-nav">
     <a href="index.html" class="active" data-ar="الرئيسية">Home</a>
     <a href="menu.html" data-ar="قائمة الطعام">Menu</a>
-    <a href="branches.html" data-ar="فروعنا">Our Branches</a>
+    <a href="about.html" data-ar="من نحن">About Us</a>
     <a href="contact.html" data-ar="تواصل معنا">Contact Us</a>
   </nav>
   <div class="mobile-drawer-foot">
@@ -81,6 +81,10 @@
       <span data-ar="سلة الطلب">Order Cart</span> <span class="cart-badge" hidden>0</span>
     </button>
     <a href="tel:+201212002005" class="btn btn-navy" style="width:100%;justify-content:center;direction:ltr;">012 12002005</a>
+    <button class="lang-toggle" onclick="toggleLanguage()" style="width:100%;justify-content:center;" aria-label="Switch language">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+      <span class="lang-lbl">English</span>
+    </button>
   </div>
 </aside>
 
@@ -132,12 +136,6 @@
 ══════════════════════════════════════ -->
 <div class="stats-bar">
   <div class="container stats-inner">
-    <div class="stat-item">
-      <div class="stat-ico">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-      </div>
-      <div><div class="stat-val" data-ar="مفتوح لـ 3 ص">Open till 3 AM</div><div class="stat-lbl" data-ar="يومياً بدون توقف">Daily Non-stop</div></div>
-    </div>
     <div class="stat-item">
       <div class="stat-ico">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -208,7 +206,7 @@
 
       <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:36px;">
         <a href="menu.html" class="btn btn-gold" data-ar="القائمة الكاملة">Full Menu</a>
-        <a href="branches.html" class="btn btn-navy" data-ar="فروعنا">Our Branches</a>
+        <a href="#branches" class="btn btn-navy" data-ar="فرعنا">Our Branch</a>
       </div>
     </div>
   </div>
@@ -308,6 +306,7 @@
       <!-- CHICKEN -->
       <article class="dish-card reveal" data-cat="chicken">
         <div class="dish-photo">
+          <img src="photos/NEW PHOTOS/نفر عقدة دجاج.jpg" alt="نفر دجاج">
           <div class="dish-photo-holder">
             <div class="dish-photo-pattern"></div>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8zM6 1v3M10 1v3M14 1v3"/></svg>
@@ -401,6 +400,7 @@
 
       <article class="dish-card reveal reveal-delay-1" data-cat="sweets">
         <div class="dish-photo">
+          <img src="photos/NEW PHOTOS/معصوب قشطة وعسل.jpg" alt="معصوب قشطة وعسل">
           <div class="dish-photo-holder">
             <div class="dish-photo-pattern"></div>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
@@ -551,15 +551,14 @@
     <div class="reviews-grid">
       <div class="review-card reveal">
         <div class="review-stars">★ ★ ★ ★ ★</div>
-        <p class="review-text" data-ar="«أجمل مطعم أهل اليمن بسم الله ماشاءالله على الطعم والرائحة الحلوه — تجربة لا تُنسى»">"The most beautiful restaurant, Ahl Al-Yemen — amazing taste and wonderful aroma — an unforgettable experience"</p>
+        <p class="review-text" data-ar="«أجمل مطعم أهل اليمن بسم الله ماشاءالله على الطعم والرائحة الحلوه — تجربة لا تُنسى»">"The most beautiful restaurant — amazing taste and wonderful aroma, an unforgettable experience"</p>
         <div class="review-tags">
           <span class="review-tag" data-ar="طعام رائع">Amazing Food</span>
-          <span class="review-tag" data-ar="مطبخ إبداعي">Creative Kitchen</span>
           <span class="review-tag" data-ar="أجواء مميزة">Great Atmosphere</span>
           <span class="review-tag" data-ar="ديكور أنيق">Elegant Decor</span>
         </div>
         <div class="review-author">
-          <div class="review-av">R</div>
+          <div class="review-av"><img src="photos/NEW PHOTOS/ققضص.jpg" alt=""></div>
           <div>
             <div class="review-name">Rhyb Hsnly Aldbyby</div>
             <div class="review-via" data-ar="فيسبوك · موصى به">Facebook · Recommended</div>
@@ -575,7 +574,7 @@
           <span class="review-tag" data-ar="أجواء شيك">Chic Atmosphere</span>
         </div>
         <div class="review-author">
-          <div class="review-av">A</div>
+          <div class="review-av"><img src="photos/NEW PHOTOS/ققضص.jpg" alt=""></div>
           <div>
             <div class="review-name">Ali Abdelghany</div>
             <div class="review-via" data-ar="فيسبوك · موصى به">Facebook · Recommended</div>
@@ -584,16 +583,63 @@
       </div>
       <div class="review-card reveal reveal-delay-2">
         <div class="review-stars">★ ★ ★ ★ ☆</div>
-        <p class="review-text" data-ar="«تجربة أكل يمنية حقيقية في قلب القاهرة — المندي كان رائعاً والخدمة سريعة جداً»">"A real Yemeni dining experience in the heart of Cairo — the mandi was excellent and the service was very fast"</p>
+        <p class="review-text" data-ar="«تجربة أكل يمنية حقيقية في قلب القاهرة — المندي كان رائعاً والخدمة سريعة جداً»">"A real Yemeni dining experience in the heart of Cairo — the mandi was excellent and service very fast"</p>
         <div class="review-tags">
           <span class="review-tag" data-ar="مندي ممتاز">Excellent Mandi</span>
           <span class="review-tag" data-ar="خدمة سريعة">Fast Service</span>
           <span class="review-tag" data-ar="قيمة ممتازة">Excellent Value</span>
         </div>
         <div class="review-author">
-          <div class="review-av">M</div>
+          <div class="review-av"><img src="photos/NEW PHOTOS/ققضص.jpg" alt=""></div>
           <div>
             <div class="review-name">Mohamed Abdullah</div>
+            <div class="review-via">Google Maps</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card reveal">
+        <div class="review-stars">★ ★ ★ ★ ★</div>
+        <p class="review-text" data-ar="«الفراخ والمشويات عندهم على مستوى عالي جداً، والأكل طازج دايماً — هيجي تاني وتالت!»">"Their grilled chicken is top-notch and the food is always fresh — I'll definitely be back again and again!"</p>
+        <div class="review-tags">
+          <span class="review-tag" data-ar="مشويات مميزة">Premium Grills</span>
+          <span class="review-tag" data-ar="طعام طازج">Fresh Food</span>
+        </div>
+        <div class="review-author">
+          <div class="review-av"><img src="photos/NEW PHOTOS/ققضص.jpg" alt=""></div>
+          <div>
+            <div class="review-name">Karim Mahmoud</div>
+            <div class="review-via">Google Maps</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card reveal reveal-delay-1">
+        <div class="review-stars">★ ★ ★ ★ ★</div>
+        <p class="review-text" data-ar="«أول ما دخلت حسيت إن أنا في اليمن! الريحة والأكل والناس — كل حاجة أصيلة ومحترمة»">"The moment I walked in I felt like I was in Yemen! The scent, the food, the people — everything is authentic and wonderful"</p>
+        <div class="review-tags">
+          <span class="review-tag" data-ar="أصالة يمنية">Yemeni Authenticity</span>
+          <span class="review-tag" data-ar="طاقم ودود">Friendly Staff</span>
+          <span class="review-tag" data-ar="تجربة فريدة">Unique Experience</span>
+        </div>
+        <div class="review-author">
+          <div class="review-av"><img src="photos/NEW PHOTOS/ققضص.jpg" alt=""></div>
+          <div>
+            <div class="review-name">Sarah Hassan</div>
+            <div class="review-via" data-ar="فيسبوك · موصى به">Facebook · Recommended</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card reveal reveal-delay-2">
+        <div class="review-stars">★ ★ ★ ★ ★</div>
+        <p class="review-text" data-ar="«المعصوب والسلتة والمندي — كل حاجة عملتها كانت تحفة. مطعم هيفضل في قلبي دايماً»">"The ma'soob, saltah, and mandi — everything I tried was a masterpiece. This restaurant will always have a place in my heart"</p>
+        <div class="review-tags">
+          <span class="review-tag" data-ar="معصوب لذيذ">Delicious Ma'soob</span>
+          <span class="review-tag" data-ar="سلتة أصلية">Authentic Saltah</span>
+          <span class="review-tag" data-ar="تنوع الأطباق">Dish Variety</span>
+        </div>
+        <div class="review-author">
+          <div class="review-av"><img src="photos/NEW PHOTOS/ققضص.jpg" alt=""></div>
+          <div>
+            <div class="review-name">Omar Fathy</div>
             <div class="review-via">Google Maps</div>
           </div>
         </div>
@@ -614,47 +660,70 @@
 <section class="branches-section" id="branches">
   <div class="container">
     <div class="section-header">
-      <div class="section-label" data-ar="فروعنا">Our Branches</div>
+      <div class="section-label" data-ar="فرعنا الرئيسي">Our Branch</div>
       <h2 class="section-title" data-ar="تقدر تلاقينا هنا">Find Us Here</h2>
       <p class="section-sub" data-ar="زورونا في فرعنا بالدقي — قريب منك دايماً">Visit us at our Dokki branch — always close to you</p>
     </div>
-    <div class="branch-card reveal">
-      <div class="branch-map-head">
-        <div class="branch-pin">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+
+    <div class="branch-showcase reveal">
+
+      <!-- Photo Slideshow -->
+      <div class="branch-slideshow">
+        <div class="slideshow-track" id="slideshowTrack">
+          <img src="photos/NEW PHOTOS/PLACE.jpg"  alt="مطعم أهل اليمن" loading="lazy">
+          <img src="photos/NEW PHOTOS/PLACE 1.jpg" alt="مطعم أهل اليمن" loading="lazy">
+          <img src="photos/NEW PHOTOS/PLACE2.jpg"  alt="مطعم أهل اليمن" loading="lazy">
+          <img src="photos/NEW PHOTOS/PLACE 3.jpg" alt="مطعم أهل اليمن" loading="lazy">
         </div>
-        <span class="branch-area" data-ar="الدقي · الجيزة">Dokki · Giza</span>
-        <a href="https://maps.app.goo.gl/UrzkGZxTTeP987tWA" target="_blank" rel="noopener" class="branch-map-link">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
-          <span data-ar="افتح على الخريطة">Open on Map</span>
-        </a>
-      </div>
-      <div class="branch-body">
-        <div class="branch-title">
+        <div class="slideshow-dots" id="slideshowDots">
+          <button class="ss-dot active" data-idx="0" aria-label="Slide 1"></button>
+          <button class="ss-dot" data-idx="1" aria-label="Slide 2"></button>
+          <button class="ss-dot" data-idx="2" aria-label="Slide 3"></button>
+          <button class="ss-dot" data-idx="3" aria-label="Slide 4"></button>
+        </div>
+        <button class="ss-arrow ss-prev" id="ssPrev" aria-label="Previous">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <button class="ss-arrow ss-next" id="ssNext" aria-label="Next">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+        <div class="slideshow-badge">
           <span data-ar="فرع الدقي">Dokki Branch</span>
           <span class="branch-badge" data-ar="الفرع الرئيسي">Main Branch</span>
         </div>
+      </div>
+
+      <!-- Info + Map -->
+      <div class="branch-info-panel">
         <div class="branch-info-list">
           <div class="branch-info">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            <span data-ar="63 شارع الدقى، الدقي أ، قسم الدقي، الجيزة 12611">63 Dokki St., Dokki A, Dokki District, Giza 12611</span>
+            <span data-ar="63 شارع الدقى، الدقي أ، قسم الدقي، الجيزة">63 Dokki St., Dokki A, Dokki District, Giza</span>
           </div>
           <div class="branch-info">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.09a16 16 0 006 6l1.45-1.45a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
             <span dir="ltr">+20 12 12002005</span>
           </div>
-          <div class="branch-info">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            <span class="branch-open" data-ar="مفتوح الآن · يغلق 3 صباحاً">Open Now · Closes at 3 AM</span>
-          </div>
         </div>
+
         <div class="branch-services">
           <span class="branch-svc" data-ar="جلوس داخلي">Dine-in</span>
           <span class="branch-svc" data-ar="تيك أواي">Takeaway</span>
           <span class="branch-svc" data-ar="توصيل">Delivery</span>
-          <span class="branch-svc">Visa / Mastercard</span>
-          <span class="branch-svc" data-ar="كاش">Cash</span>
+          <span class="branch-svc">Visa / Cash</span>
         </div>
+
+        <!-- Google Map -->
+        <div class="branch-map-embed">
+          <iframe
+            src="https://maps.google.com/maps?q=63+%D8%B4%D8%A7%D8%B1%D8%B9+%D8%A7%D9%84%D8%AF%D9%82%D9%89%D8%8C+%D8%A7%D9%84%D8%AF%D9%82%D9%8A%2C+%D8%A7%D9%84%D8%AC%D9%8A%D8%B2%D8%A9&output=embed"
+            title="موقع مطعم أهل اليمن"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen>
+          </iframe>
+        </div>
+
         <div class="branch-btns">
           <a href="tel:+201212002005" class="branch-btn branch-btn-call">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.09a16 16 0 006 6l1.45-1.45a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
@@ -662,11 +731,12 @@
           </a>
           <a href="https://maps.app.goo.gl/UrzkGZxTTeP987tWA" target="_blank" rel="noopener" class="branch-btn branch-btn-map">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            <span data-ar="الموقع على الخريطة">Location on Map</span>
+            <span data-ar="افتح على الخريطة">Open on Map</span>
           </a>
         </div>
       </div>
-    </div>
+
+    </div><!-- /branch-showcase -->
   </div>
 </section>
 
@@ -752,9 +822,9 @@
       <ul class="footer-links">
         <li><a href="index.html" data-ar="الرئيسية">Home</a></li>
         <li><a href="menu.html" data-ar="قائمة الطعام">Food Menu</a></li>
-        <li><a href="branches.html" data-ar="فروعنا">Our Branches</a></li>
         <li><a href="#about" data-ar="من نحن">About Us</a></li>
         <li><a href="#reviews" data-ar="التقييمات">Reviews</a></li>
+        <li><a href="#branches" data-ar="فرعنا">Our Branch</a></li>
       </ul>
     </div>
     <div>
@@ -777,10 +847,6 @@
         <div class="footer-contact-row">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
           <span data-ar="63 شارع الدقى، الدقي، الجيزة">63 Dokki St., Dokki, Giza</span>
-        </div>
-        <div class="footer-contact-row">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          <span data-ar="يومياً — يغلق 3 صباحاً">Daily — Closes at 3 AM</span>
         </div>
       </div>
     </div>
@@ -909,6 +975,19 @@
 <div class="toast" id="cartToast" role="status" aria-live="polite">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
   <span data-ar="تمت إضافة">Added</span> <strong class="toast-name"></strong> <span data-ar="للسلة">to cart</span>
+</div>
+
+<!-- ORDER SUCCESS OVERLAY -->
+<div class="order-success-overlay" id="orderSuccessOverlay">
+  <div class="order-success-card">
+    <div class="order-success-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="20 6 9 17 4 12"/></svg>
+    </div>
+    <h3 class="order-success-title" data-ar="تم إرسال طلبك بنجاح!">Order Sent Successfully!</h3>
+    <p class="order-success-msg" data-ar="سيتواصل معك المطعم قريباً على رقم الهاتف المُدخل">The restaurant will contact you shortly on your phone number</p>
+    <div class="order-success-num" id="orderSuccessNum"></div>
+    <button class="order-success-btn" onclick="closeOrderSuccess()" data-ar="حسناً">OK</button>
+  </div>
 </div>
 
 <script src="js/main.js"></script>
