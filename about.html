@@ -50,7 +50,7 @@
       display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;
     }
     .about-story-photos {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+      display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px;
     }
     .story-photo-slot {
       background: var(--navy-dark);
@@ -61,7 +61,7 @@
       transition: var(--t);
     }
     .story-photo-slot:first-child {
-      grid-column: 1 / -1; aspect-ratio: 16/9;
+      grid-column: 1 / -1; aspect-ratio: 16/7;
     }
     .story-photo-slot img {
       position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
@@ -284,23 +284,16 @@
       <!-- Photos -->
       <div class="about-story-photos reveal">
         <div class="story-photo-slot">
-          <!-- Main large photo — replace src when available -->
-          <div class="story-photo-placeholder">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-            <span data-ar="صورة المطعم">Restaurant Photo</span>
-          </div>
+          <img src="photos/NEW PHOTOS/PLACE.jpg" alt="مطعم أهل اليمن">
         </div>
         <div class="story-photo-slot">
-          <div class="story-photo-placeholder">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-            <span data-ar="صورة المطعم">Restaurant Photo</span>
-          </div>
+          <img src="photos/NEW PHOTOS/PLACE 1.jpg" alt="مطعم أهل اليمن">
         </div>
         <div class="story-photo-slot">
-          <div class="story-photo-placeholder">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-            <span data-ar="صورة المطعم">Restaurant Photo</span>
-          </div>
+          <img src="photos/NEW PHOTOS/PLACE2.jpg" alt="مطعم أهل اليمن">
+        </div>
+        <div class="story-photo-slot">
+          <img src="photos/NEW PHOTOS/PLACE 3.jpg" alt="مطعم أهل اليمن">
         </div>
       </div>
 
