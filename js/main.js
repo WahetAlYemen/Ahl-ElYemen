@@ -438,6 +438,30 @@ function initMenuTabs() {
 /* ───────────────────────────────────────────
    VIDEO MUTE TOGGLE
 ─────────────────────────────────────────── */
+/* ───────────────────────────────────────────
+   FLOAT ORDER BUTTON — hide over hero
+─────────────────────────────────────────── */
+function initFloatOrder() {
+  const btn  = document.getElementById('floatOrder');
+  const hero = document.getElementById('home');
+  if (!btn || !hero) return;
+
+  /* Start hidden — hero is visible on load */
+  btn.style.opacity  = '0';
+  btn.style.pointerEvents = 'none';
+  btn.style.transform = 'translateY(12px)';
+  btn.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+
+  const io = new IntersectionObserver(([entry]) => {
+    const visible = entry.isIntersecting;
+    btn.style.opacity       = visible ? '0' : '1';
+    btn.style.pointerEvents = visible ? 'none' : 'all';
+    btn.style.transform     = visible ? 'translateY(12px)' : 'translateY(0)';
+  }, { threshold: 0.15 });
+
+  io.observe(hero);
+}
+
 function initVideoCtrl() {
   const btn   = document.getElementById('videoCtrl');
   const video = document.getElementById('heroVideo');
@@ -612,6 +636,7 @@ document.addEventListener('DOMContentLoaded', () => {
   migrateCartNames();
   initCatFilter();
   initMenuTabs();
+  initFloatOrder();
   initVideoCtrl();
   initVideos();
   initScrollProgress();
