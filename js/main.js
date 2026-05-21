@@ -241,12 +241,15 @@ async function submitOrder() {
   const address = addressEl?.value.trim() || '';
   const notes   = notesEl?.value.trim()   || '';
 
+  const isDelivery = document.querySelector('input[name="orderType"]:checked')?.value !== 'pickup';
+  const orderType  = isDelivery ? 'delivery' : 'pickup';
+
   /* Validation */
   let valid = true;
   [
     [nameEl,    document.getElementById('errName'),    !name],
     [phoneEl,   document.getElementById('errPhone'),   !phone],
-    [addressEl, document.getElementById('errAddress'), !address]
+    [addressEl, document.getElementById('errAddress'), isDelivery && !address],
   ].forEach(([input, errEl, invalid]) => {
     if (input)  input.classList.toggle('error', invalid);
     if (errEl)  errEl.classList.toggle('show',  invalid);
@@ -256,10 +259,12 @@ async function submitOrder() {
 
   /* Build payload */
   const payload = {
-    orderNum: Date.now().toString().slice(-6),
+    orderNum:   Date.now().toString().slice(-6),
     name,
     phone,
-    address,
+    address:    isDelivery ? address : '',
+    orderType,
+    branchName: isDelivery ? '' : 'فرع الدقي — 63 شارع الدقى، الدقي، الجيزة',
     notes,
     items: window.cart.items.map(i => ({
       name:   i.name,
@@ -296,6 +301,15 @@ async function submitOrder() {
     if (phoneEl)   phoneEl.value   = '';
     if (addressEl) addressEl.value = '';
     if (notesEl)   notesEl.value   = '';
+    /* reset order type to delivery */
+    const rdDel = document.querySelector('input[name="orderType"][value="delivery"]');
+    if (rdDel) rdDel.checked = true;
+    document.getElementById('lblDelivery')?.classList.add('selected');
+    document.getElementById('lblPickup')?.classList.remove('selected');
+    const fAddr = document.getElementById('fieldAddress');
+    const fBranch = document.getElementById('fieldBranch');
+    if (fAddr)   fAddr.style.display   = '';
+    if (fBranch) fBranch.style.display = 'none';
     if (submitBtn) { submitBtn.disabled = false; submitBtn.style.cssText = ''; submitBtn.innerHTML = origHtml; }
     showOrderSuccess(payload.orderNum);
 
@@ -490,6 +504,38 @@ function initFormValidation() {
 }
 
 /* ───────────────────────────────────────────
+   DELIVERY / PICKUP TOGGLE
+─────────────────────────────────────────── */
+function initDeliveryToggle() {
+  const lblDelivery = document.getElementById('lblDelivery');
+  const lblPickup   = document.getElementById('lblPickup');
+  if (!lblDelivery || !lblPickup) return;
+
+  function setType(type) {
+    const fieldAddr   = document.getElementById('fieldAddress');
+    const fieldBranch = document.getElementById('fieldBranch');
+    if (type === 'delivery') {
+      lblDelivery.classList.add('selected');
+      lblPickup.classList.remove('selected');
+      if (fieldAddr)   fieldAddr.style.display   = '';
+      if (fieldBranch) fieldBranch.style.display = 'none';
+    } else {
+      lblPickup.classList.add('selected');
+      lblDelivery.classList.remove('selected');
+      if (fieldAddr)   fieldAddr.style.display   = 'none';
+      if (fieldBranch) fieldBranch.style.display = '';
+      const addrEl = document.getElementById('orderAddress');
+      const errEl  = document.getElementById('errAddress');
+      if (addrEl) addrEl.classList.remove('error');
+      if (errEl)  errEl.classList.remove('show');
+    }
+  }
+
+  lblDelivery.addEventListener('click', () => setType('delivery'));
+  lblPickup.addEventListener('click',   () => setType('pickup'));
+}
+
+/* ───────────────────────────────────────────
    SCROLL PROGRESS BAR
 ─────────────────────────────────────────── */
 function initScrollProgress() {
@@ -641,6 +687,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initVideos();
   initScrollProgress();
   initFormValidation();
+  initDeliveryToggle();
   initSlideshow();
 
   /* Cart overlay close */

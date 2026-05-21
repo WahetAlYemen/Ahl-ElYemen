@@ -1414,6 +1414,28 @@ textarea.co-input { resize: vertical; min-height: 80px; }
 }
 .field-error.show { display: block; }
 
+/* ─── Delivery / Pickup selector ─── */
+.co-type-options { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.co-type-card {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 7px; padding: 14px 10px; cursor: pointer;
+  border: 2px solid var(--border-2); border-radius: var(--r-md);
+  background: var(--cream); transition: border-color var(--t), background var(--t), color var(--t);
+  font-size: 0.85rem; font-weight: 700; color: var(--text-muted); text-align: center;
+}
+.co-type-card input[type="radio"] { display: none; }
+.co-type-card svg { width: 28px; height: 28px; stroke: var(--text-muted); transition: stroke var(--t); }
+.co-type-card.selected { border-color: var(--gold); background: var(--gold-bg); color: var(--navy); }
+.co-type-card.selected svg { stroke: var(--gold); }
+.co-branch-card {
+  display: flex; align-items: center; gap: 12px;
+  padding: 13px 16px; background: var(--gold-bg);
+  border: 1.5px solid var(--gold); border-radius: var(--r-md);
+}
+.co-branch-card svg { width: 20px; height: 20px; flex-shrink: 0; stroke: var(--gold); }
+.co-branch-name { font-size: 0.9rem; font-weight: 800; color: var(--navy); }
+.co-branch-addr { font-size: 0.78rem; color: var(--text-muted); margin-top: 3px; }
+
 /* ─────────────────────────────────────
    TOAST NOTIFICATION (corner — non-intrusive)
 ───────────────────────────────────── */

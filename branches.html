@@ -558,10 +558,38 @@
         <input class="co-input" type="tel" id="orderPhone" placeholder="01xxxxxxxxx" dir="ltr">
         <p class="field-error" id="errPhone" data-ar="رقم الهاتف مطلوب">Phone number is required</p>
       </div>
+      <div class="co-field co-order-type">
+        <label><span data-ar="طريقة الاستلام">Order Type</span></label>
+        <div class="co-type-options">
+          <label class="co-type-card selected" id="lblDelivery">
+            <input type="radio" name="orderType" value="delivery" checked>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v4h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            <span data-ar="توصيل">Delivery</span>
+          </label>
+          <label class="co-type-card" id="lblPickup">
+            <input type="radio" name="orderType" value="pickup">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            <span data-ar="استلام من الفرع">Pickup</span>
+          </label>
+        </div>
+      </div>
+      <div id="fieldAddress">
       <div class="co-field">
         <label><span data-ar="عنوانك بالتفصيل">Detailed Address</span> <span class="req">*</span></label>
         <textarea class="co-input" id="orderAddress" rows="2" placeholder="Street name, building no., floor, apartment..." data-ar-placeholder="اسم الشارع، رقم العمارة، الدور، الشقة..."></textarea>
         <p class="field-error" id="errAddress" data-ar="العنوان مطلوب">Address is required</p>
+      </div>
+      </div>
+      <div id="fieldBranch" style="display:none">
+      <div class="co-field">
+        <div class="co-branch-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <div>
+            <div class="co-branch-name" data-ar="فرع الدقي">Dokki Branch</div>
+            <div class="co-branch-addr" data-ar="63 شارع الدقى، الدقي، الجيزة">63 Dokki St., Dokki, Giza</div>
+          </div>
+        </div>
+      </div>
       </div>
       <div class="co-field">
         <label><span data-ar="ملاحظات">Notes</span> <span class="opt" data-ar="(اختياري)">(Optional)</span></label>

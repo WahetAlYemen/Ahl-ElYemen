@@ -33,8 +33,8 @@ async function handleRequest(request) {
   }
 
   /* Validate */
-  if (!order.phone || !order.address) {
-    return jsonRes({ ok: false, error: 'phone and address are required' }, 422);
+  if (!order.phone) {
+    return jsonRes({ ok: false, error: 'phone is required' }, 422);
   }
 
   /* BOT_TOKEN and CHAT_ID come from Worker environment variables */
@@ -80,16 +80,23 @@ function esc(s) {
 }
 
 function buildMessage(order) {
-  const { name, phone, address, notes, items, total, orderNum } = order;
+  const { name, phone, address, notes, items, total, orderNum, orderType, branchName } = order;
+  const isPickup = orderType === 'pickup';
   const lines = [
     '🍽️ <b>طلب جديد — مطعم باب اليمن</b>',
     '━━━━━━━━━━━━━━━━━━━',
     `📋 <b>رقم الطلب:</b> #${esc(orderNum)}`,
     '',
   ];
-  if (name)  lines.push(`👤 <b>الاسم:</b> ${esc(name)}`);
+  if (name) lines.push(`👤 <b>الاسم:</b> ${esc(name)}`);
   lines.push(`📞 <b>الهاتف:</b> <code>${esc(phone)}</code>`);
-  lines.push(`📍 <b>العنوان:</b> ${esc(address)}`);
+  if (isPickup) {
+    lines.push(`🏪 <b>نوع الطلب:</b> استلام من الفرع`);
+    if (branchName) lines.push(`📍 <b>الفرع:</b> ${esc(branchName)}`);
+  } else {
+    lines.push(`🚗 <b>نوع الطلب:</b> توصيل`);
+    if (address) lines.push(`📍 <b>العنوان:</b> ${esc(address)}`);
+  }
   if (notes) lines.push(`📝 <b>ملاحظات:</b> ${esc(notes)}`);
   lines.push('', '🛒 <b>الطلبات:</b>');
   if (Array.isArray(items) && items.length) {
