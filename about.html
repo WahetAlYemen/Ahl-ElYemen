@@ -47,7 +47,7 @@
     /* ── Story Section ── */
     .about-story-section { padding: var(--sp-24) 0; background: var(--cream); }
     .about-story-grid {
-      display: flex; flex-direction: column; gap: 44px;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;
     }
     .about-story-photos {
       display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px;
@@ -61,7 +61,7 @@
       transition: var(--t);
     }
     .story-photo-slot:first-child {
-      grid-column: 1 / -1; aspect-ratio: 16/6;
+      grid-column: 1 / -1; aspect-ratio: 16/7;
     }
     .story-photo-slot img {
       position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
@@ -72,12 +72,9 @@
     }
     .story-photo-placeholder svg { width: 32px; height: 32px; }
     .story-photo-placeholder span { font-size: 0.7rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; }
-    .about-story-content {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start;
-    }
-    .about-story-content .story-text-col { display: flex; flex-direction: column; gap: 18px; }
+    .about-story-content { display: flex; flex-direction: column; gap: 20px; }
     .about-story-content .section-label { text-align: right; }
-    .about-story-content .section-title { text-align: right; font-size: clamp(1.5rem, 2.5vw, 2rem); }
+    .about-story-content .section-title { text-align: right; font-size: clamp(1.6rem, 3vw, 2.2rem); }
     .about-story-content p {
       font-size: 0.97rem; line-height: 1.85; color: var(--text-muted);
     }
@@ -302,24 +299,20 @@
 
       <!-- Story Text -->
       <div class="about-story-content reveal">
-        <div class="story-text-col">
-          <div class="section-label" data-ar="قصتنا">Our Story</div>
-          <h2 class="section-title" data-ar="أهل اليمن .. أهلك وناسك">Ahl Al-Yemen... Your Family</h2>
-          <p data-ar="مطعم أهل اليمن هو وجهتك الأولى لتذوق أصيل الطعم اليمني في قلب مصر. نقدم لك أشهى المندي والمشويات والطواجن المحضّرة بأجود الخامات وأعرق التوابل اليمنية.">
-            Ahl Al-Yemen Restaurant is your first destination for authentic Yemeni cuisine in the heart of Egypt. We serve the finest Mandi, grills and stews prepared with the best ingredients and the most authentic Yemeni spices.
-          </p>
-          <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:8px;">
-            <a href="menu.html" class="btn btn-gold" data-ar="اطلب الان">Order Now</a>
-            <a href="contact.html" class="btn btn-navy" data-ar="تواصل معنا">Contact Us</a>
-          </div>
-        </div>
-        <div class="story-text-col">
-          <p data-ar="وُلد المطعم من شغف حقيقي بالمطبخ اليمني الأصيل، ورغبة صادقة في نقل نكهات اليمن إلى مائدة كل عائلة مصرية. طاقمنا من الطهاة المختصين يضمن لك تجربة لا تُنسى في كل زيارة.">
-            The restaurant was born from a genuine passion for authentic Yemeni cuisine and a sincere desire to bring the flavors of Yemen to every Egyptian family's table. Our team of specialized chefs ensures an unforgettable experience with every visit.
-          </p>
-          <p data-ar="سواء كنت تبحث عن وجبة عائلية دافئة أو تجربة طعام فريدة، نرحب بك في مطعم يجمعك بأهلك وناسك.">
-            Whether you're looking for a warm family meal or a unique dining experience, we welcome you to a restaurant that brings you together with your people.
-          </p>
+        <div class="section-label" data-ar="قصتنا">Our Story</div>
+        <h2 class="section-title" data-ar="أهل اليمن .. أهلك وناسك">Ahl Al-Yemen... Your Family</h2>
+        <p data-ar="مطعم أهل اليمن هو وجهتك الأولى لتذوق أصيل الطعم اليمني في قلب مصر. نقدم لك أشهى المندي والمشويات والطواجن المحضّرة بأجود الخامات وأعرق التوابل اليمنية.">
+          Ahl Al-Yemen Restaurant is your first destination for authentic Yemeni cuisine in the heart of Egypt. We serve the finest Mandi, grills and stews prepared with the best ingredients and the most authentic Yemeni spices.
+        </p>
+        <p data-ar="وُلد المطعم من شغف حقيقي بالمطبخ اليمني الأصيل، ورغبة صادقة في نقل نكهات اليمن إلى مائدة كل عائلة مصرية. طاقمنا من الطهاة المختصين يضمن لك تجربة لا تُنسى في كل زيارة.">
+          The restaurant was born from a genuine passion for authentic Yemeni cuisine and a sincere desire to bring the flavors of Yemen to every Egyptian family's table. Our team of specialized chefs ensures an unforgettable experience with every visit.
+        </p>
+        <p data-ar="سواء كنت تبحث عن وجبة عائلية دافئة أو تجربة طعام فريدة، نرحب بك في مطعم يجمعك بأهلك وناسك.">
+          Whether you're looking for a warm family meal or a unique dining experience, we welcome you to a restaurant that brings you together with your people.
+        </p>
+        <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:28px;">
+          <a href="menu.html" class="btn btn-gold" data-ar="اطلب الان">Order Now</a>
+          <a href="contact.html" class="btn btn-navy" data-ar="تواصل معنا">Contact Us</a>
         </div>
       </div>
 
