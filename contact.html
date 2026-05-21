@@ -801,7 +801,7 @@
       </div>
       <h3 data-ar="سلتك فارغة">Your cart is empty</h3>
       <p data-ar="أضف أطباقك المفضلة من القائمة">Add your favourite dishes from the menu</p>
-      <a href="menu.html" class="btn btn-gold" style="font-size:0.88rem;padding:10px 24px;" onclick="closeCart()" data-ar="شوف القائمة">Browse Menu</a>
+      <a href="menu.html" class="btn btn-gold" style="font-size:0.88rem;padding:10px 24px;" onclick="closeCart()" data-ar="اطلب الان">Order Now</a>
     </div>
     <div class="cart-items-list" id="cartItemsList"></div>
   </div>
@@ -892,6 +892,12 @@
   </svg>
   <span class="cart-badge" id="cartBadgeFloat">0</span>
 </button>
+
+<!-- FLOATING ORDER NOW BUTTON -->
+<a href="menu.html#sec-meat" class="float-order" id="floatOrder">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+  <span data-ar="اطلب الان">Order Now</span>
+</a>
 
 <!-- ORDER SUCCESS OVERLAY -->
 <div class="order-success-overlay" id="orderSuccessOverlay">

@@ -1810,3 +1810,22 @@ html[dir="rtl"] .toast { right: auto; left: 20px; }
 }
 .order-success-btn:hover { opacity: 0.88; transform: translateY(-1px); }
 
+/* ───────────────────────────────────────────
+   FLOATING ORDER NOW BUTTON
+─────────────────────────────────────────── */
+.float-order {
+  position: fixed; bottom: 24px; left: 24px; z-index: 910;
+  display: inline-flex; align-items: center; gap: 9px;
+  background: var(--gold); color: var(--navy-dark);
+  border: none; border-radius: var(--r-full);
+  padding: 13px 22px; font-size: 0.92rem; font-weight: 800;
+  cursor: pointer; text-decoration: none;
+  box-shadow: 0 6px 24px rgba(201,168,76,0.45);
+  transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease), opacity 0.2s;
+  white-space: nowrap;
+}
+.float-order:hover { transform: translateY(-3px); box-shadow: 0 10px 32px rgba(201,168,76,0.55); }
+.float-order:active { transform: translateY(0); }
+.float-order svg { width: 18px; height: 18px; flex-shrink: 0; }
+html[dir="ltr"] .float-order { left: auto; right: 24px; }
+
